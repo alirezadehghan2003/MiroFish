@@ -1,0 +1,85 @@
+{
+  "run": "S1 Brand Perception pilot",
+  "date": "2026-10-15",
+  "platform": "reddit (OASIS via MiroFish)",
+  "model": [
+    "claude-haiku-5-5"
+  ],
+  "graph_memory_updates": false,
+  "project_id": "proj_25ad158459b1",
+  "graph_id": "mirofish_e60ebfc8501b4e0c",
+  "simulation_id": "sim_3f26967f5fdf",
+  "report_id": "report_1bf40f9dbbe0",
+  "agents": {
+    "count": 10,
+    "entity_types": [
+      "LuxuryConsumer",
+      "WellnessJournalist"
+    ],
+    "names_invented": [
+      "Daniel Okafor",
+      "Khalid Al-Mansouri",
+      "Margaret Hughes",
+      "Natalie Ford",
+      "Claire Whitfield",
+      "Emma Clarke",
+      "Priya Desai",
+      "James Holloway",
+      "Isla Bennett",
+      "Sofia Lambert"
+    ],
+    "excluded_from_agents": "Helena Marsh (type Person, shared with the real founder role) and Dr Tom Reeves (type MedicalPractitioner, shared with HVN staff roles) - excluded to avoid agents representing real people"
+  },
+  "rounds": {
+    "requested_max": 8,
+    "completed": 8,
+    "evidence": "simulation.log: 'simulation loop complete', 10.7 s; config truncated 72 -> 8",
+    "simulated_hours_covered": "00:00-08:00 (round 1 = hour 0)",
+    "note": "MiroFish run-status counter stayed at 0 (tracker did not update); OASIS log confirms loop completion"
+  },
+  "activity": {
+    "posts": 4,
+    "posts_note": "seeded initial posts from config event_config",
+    "comments": 5,
+    "likes": 1,
+    "agent_llm_actions": 3,
+    "active_agents": [
+      "daniel_okafor",
+      "margaret_hughes",
+      "james_holloway"
+    ]
+  },
+  "requests": {
+    "total_forwarded": 53,
+    "free_connectivity_check": 1,
+    "http_200": 53,
+    "refused_by_proxy": 0,
+    "upstream_errors": 0
+  },
+  "tokens": {
+    "input": 452459,
+    "output": 77574,
+    "max_input_per_request": 25382
+  },
+  "cost_usd": {
+    "total": 0.084033,
+    "cap": 1.0,
+    "by_stage": {
+      "ontology": 0.003353,
+      "prepare_profiles_config": 0.023472,
+      "simulation": 0.004242,
+      "report": 0.052966
+    },
+    "pricing": "claude-haiku-5-5: USD 0.10 per million input tokens, USD 0.50 per million output tokens (prompts up to 100K tokens)"
+  },
+  "safeguards_verified": [
+    "proxy injected real key; backend held placeholder only (verified from process env, booleans only)",
+    "direct API calls with backend credentials returned HTTP 401",
+    "upstream reachable via free count_tokens through proxy",
+    "routing verified on first paid call",
+    "upstream retries converted to non-retryable 400 (none occurred)",
+    "pre-flight worst-case reservation against  cap",
+    "Haiku-only allow-list",
+    "no .env override present"
+  ]
+}

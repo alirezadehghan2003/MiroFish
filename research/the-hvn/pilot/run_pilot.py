@@ -39,6 +39,11 @@ API = os.environ.get("MIROFISH_API", "http://127.0.0.1:5001")
 PROXY = os.environ.get("BUDGET_PROXY", "http://127.0.0.1:8787")
 MODEL = "claude-haiku-5-5"
 MAX_ROUNDS = 8
+# MiroFish picks its prompt language from Accept-Language and defaults to Chinese.
+LOCALE = "en"
+STOP_SIM_AT_USD = 0.70      # stop the simulation if spend reaches this
+SKIP_REPORT_AT_USD = 0.80   # do not start the report agent above this
+MAX_ERROR_SHARE = 0.30      # stop if >30% of (>=10) forwarded requests fail upstream
 AGENT_MIN, AGENT_MAX = 10, 12
 SEED = os.path.join(HERE, "..", "seeds", "s1-brand-perception.md")
 REQUIREMENT = os.path.join(HERE, "..", "seeds", "s1-simulation-requirement.txt")
@@ -54,7 +59,7 @@ LOCAL = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 def call(method, path, payload=None, base=API, timeout=120):
     data = json.dumps(payload).encode() if payload is not None else None
     req = urllib.request.Request(base + path, data=data, method=method,
-                                 headers={"Content-Type": "application/json"})
+                                 headers={"Content-Type": "application/json", "Accept-Language": LOCALE})
     try:
         with LOCAL.open(req, timeout=timeout) as r:
             return json.loads(r.read() or b"{}")
@@ -76,7 +81,8 @@ def multipart(path, fields, files):
                      + content + b"\r\n")
     body = b"".join(parts) + f"--{boundary}--\r\n".encode()
     req = urllib.request.Request(API + path, data=body, method="POST",
-                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}",
+                                          "Accept-Language": LOCALE})
     with LOCAL.open(req, timeout=600) as r:
         return json.loads(r.read())
 
@@ -197,23 +203,45 @@ def stage_prepare(st, a):
     print("  simulation:", st["simulation_id"])
 
 
+def unsafe(b):
+    """Return a reason to stop, or None. b is the proxy snapshot (None = proxy down)."""
+    if not b:
+        return "budget proxy unreachable"
+    if b["spent_usd"] >= STOP_SIM_AT_USD:
+        return f"spend ${b['spent_usd']} reached the ${STOP_SIM_AT_USD} stop threshold"
+    if b["requests"] >= 10 and b["upstream_errors"] / b["requests"] > MAX_ERROR_SHARE:
+        return f"{b['upstream_errors']}/{b['requests']} upstream requests failed"
+    return None
+
+
 def stage_start(st, a):
     print(f"[start] PAID: Reddit, max_rounds={MAX_ROUNDS}, graph memory updates OFF")
     call("POST", "/api/simulation/start", {"simulation_id": st["simulation_id"], "platform": "reddit",
                                            "max_rounds": MAX_ROUNDS, "enable_graph_memory_update": False})
     while True:
         d = call("GET", f"/api/simulation/{st['simulation_id']}/run-status")["data"]
-        b = spend() or {}
+        b = spend()
         print(f"  round {d.get('reddit_current_round', d.get('current_round'))}/{d.get('total_rounds')} "
-              f"{d.get('runner_status')} | spent ${b.get('spent_usd', '?')}", flush=True)
+              f"{d.get('runner_status')} | spent ${(b or {}).get('spent_usd', '?')} "
+              f"| upstream errors {(b or {}).get('upstream_errors', '?')}", flush=True)
+        reason = unsafe(b)
+        if reason:
+            call("POST", "/api/simulation/stop", {"simulation_id": st["simulation_id"]})
+            st["run_status"] = "stopped_by_guard: " + reason
+            save(a.state, st)
+            sys.exit(f"  GUARD STOP: {reason}; simulation stopped")
         if d.get("runner_status") in ("completed", "stopped", "failed"):
             st["run_status"] = d.get("runner_status")
+            st["rounds_completed"] = d.get("reddit_current_round", d.get("current_round"))
             break
         time.sleep(15)
 
 
 def stage_report(st, a):
     print("[report] PAID: MiroFish report agent")
+    b = spend()
+    if not b or b["spent_usd"] >= SKIP_REPORT_AT_USD:
+        sys.exit(f"  GUARD STOP: report skipped (proxy {'down' if not b else 'spend $%s' % b['spent_usd']})")
     r = call("POST", "/api/report/generate", {"simulation_id": st["simulation_id"]})
     d = wait_task("/api/report/generate/status", {"task_id": r["data"].get("task_id"),
                                                   "simulation_id": st["simulation_id"]}, "report", every=15)
@@ -242,6 +270,8 @@ def main():
             sys.exit(f"stop: stage '{s}' makes paid LLM calls - re-run with --confirm-paid")
         if s in ZEP and not a.confirm_zep:
             sys.exit(f"stop: stage '{s}' sends data to Zep Cloud - re-run with --confirm-zep")
+        if s in PAID and s != "ontology" and not spend():
+            sys.exit("GUARD STOP: budget proxy unreachable")
         globals()["stage_" + s](st, a)
         st.setdefault("log", []).append({"stage": s, "t": time.strftime("%Y-%m-%dT%H:%M:%S"),
                                          "spent_usd": (spend() or {}).get("spent_usd")})

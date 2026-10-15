@@ -1,55 +1,45 @@
-# S1 Brand Perception Pilot: Launch Runbook
+# MiroFish Pilot Runbook (budget-capped, Haiku-only)
 
-**Status:** prepared, **not run**. Requires explicit approval.
-**Fixed parameters:** Reddit only · `claude-haiku-5-5` only · 10–12 agents · `max_rounds=8` · graph memory updates **off** · hard budget cap **$1.00** · expected cost **≈ $0.10–0.40** (see `../simulation-plan.md` §4).
+**S1 pilot executed once on 15 Oct 2026** ($0.084; results in `../results/s1-pilot-2026-10-15/`).
+**Fixed parameters:** Reddit only · `claude-haiku-5-5` only · 10–12 agents · `max_rounds=8` · graph memory updates **off** · hard cap **$1.00**.
 
 ## Files
 | File | Purpose |
 |---|---|
-| `budget_proxy.py` | Local proxy that meters every LLM response and refuses requests after the cap or for any model other than Haiku. Writes `ledger.jsonl` (tokens and cost only; no prompts, no keys). |
-| `start_backend_via_proxy.sh` | Starts the MiroFish backend with `LLM_BASE_URL` pointed at the proxy and `LLM_MODEL_NAME=claude-haiku-5-5`. |
-| `run_pilot.py` | Staged driver with a gate on every paid or Zep stage; aborts if traffic bypasses the proxy or if the agent count is outside 10–12. |
+| `budget_proxy.py` | Local proxy. **Holds the real API key** (injected per request; the backend only gets a placeholder). Reserves each request's worst-case cost before forwarding and refuses anything that could breach the cap. Converts upstream 408/409/429/5xx and network errors into non-retryable 400s. Allows Haiku only; refuses streaming. Writes `ledger.jsonl` (tokens and cost only). |
+| `start_proxy.sh` | Starts the proxy with the pilot settings (`BUDGET_USD`, default 1.00). |
+| `start_backend_via_proxy.sh` | Starts MiroFish with a **placeholder key**, `LLM_BASE_URL` set to the proxy, model pinned to Haiku, and client timeouts above the proxy's upstream timeout. |
+| `run_pilot.py` | Staged driver: `--confirm-paid` / `--confirm-zep` gates, English locale header, routing check after the first paid call, agent count must be 10–12, guard stops (proxy down, spend ≥ $0.70, >30% upstream errors; report skipped at ≥ $0.80). |
 
-## Commands (three terminals, from the repository root)
-
-**Terminal 1: budget proxy (free)**
+## Procedure (from the repository root)
 ```bash
+bash research/the-hvn/pilot/start_proxy.sh &                 # real key stays in this process
+bash research/the-hvn/pilot/start_backend_via_proxy.sh &     # placeholder key only
 cd research/the-hvn/pilot
-python3 budget_proxy.py --budget-usd 1.00 --allow-model claude-haiku-5-5 \
-  --input-per-mtok 0.10 --output-per-mtok 0.50 \
-  --long-context-threshold 100000 --long-input-per-mtok 0.50 --long-output-per-mtok 2.50 \
-  --ledger ledger.jsonl
+python3 run_pilot.py --stage preflight
+python3 run_pilot.py --stage ontology --confirm-paid         # verifies routing (~$0.003)
+python3 run_pilot.py --stage build --confirm-zep
+python3 run_pilot.py --stage entities                         # pick types totalling 10-12 invented participants
+python3 run_pilot.py --stage entities --entity-types TypeA,TypeB
+python3 run_pilot.py --stage prepare --confirm-paid
+python3 run_pilot.py --stage start --confirm-paid
+python3 run_pilot.py --stage report --confirm-paid
+curl -s --noproxy 127.0.0.1 http://127.0.0.1:8787/__budget
 ```
 
-**Terminal 2: backend routed through the proxy (free to start)**
-```bash
-bash research/the-hvn/pilot/start_backend_via_proxy.sh
-```
+## Lessons from the 15 Oct run (apply before the next run)
+1. **Run-status bug:** OASIS finishes the loop and waits for commands, but MiroFish's run-status stays at round 0 / "running". When `simulation.log` shows "模拟循环完成" (loop complete), run batch interviews first (`/api/simulation/interview/batch`), then `POST /api/simulation/close-env`, and only then `--stage report` (the report returns 409 while the run is "running").
+2. **Simulated clock starts at 00:00:** 8 rounds of 60 minutes is night-time, so almost no agents are active. Use ≥ 16–24 rounds, or adjust `time_config` before `start`.
+3. **Locale:** fixed. The driver now sends `Accept-Language: en` (the 15 Oct run produced Chinese profiles).
+4. **Check `event_config.initial_posts` authors** before `start` (they were mis-assigned between personas).
+5. **Treat the MiroFish auto-report as raw output;** verify every claim against `simulation-db-export.json`.
 
-**Terminal 3: the pilot, stage by stage**
-```bash
-cd research/the-hvn/pilot
-python3 run_pilot.py --stage preflight                    # free
-python3 run_pilot.py --stage ontology --confirm-paid      # ~$0.002, verifies proxy routing
-python3 run_pilot.py --stage build    --confirm-zep       # uploads S1 seed (~9 KB) to Zep
-python3 run_pilot.py --stage entities                     # free; must show 10–12 agents
-#   if not 10–12, re-run with:  --entity-types TypeA,TypeB
-python3 run_pilot.py --stage prepare  --confirm-paid      # profiles + config (~$0.02–0.05)
-python3 run_pilot.py --stage start    --confirm-paid      # 8 Reddit rounds (~$0.05–0.20)
-python3 run_pilot.py --stage report   --confirm-paid      # report agent (~$0.03–0.12)
-curl -s http://127.0.0.1:8787/__budget                     # actual spend so far
-python3 run_pilot.py --stage cleanup  --confirm-zep       # optional: delete the Zep graph
-```
+## Verified safeguards (15 Oct 2026)
+- Backend process environment: placeholder key only, the real key absent (booleans checked).
+- Direct calls to Anthropic with the backend's credentials: HTTP 401.
+- Free `count_tokens` call through the proxy: HTTP 200 (TLS through the environment proxy works).
+- 53/53 requests Haiku, all through the proxy, 0 refused, 0 upstream errors.
+- Offline tests (fake upstream): key injection, auth stripping, 429/503 → non-retryable 400, worst-case reservation refusal, model and stream blocks, no secrets in ledger or banner.
 
-**Single command after approval** (stops at the entities check if the agent count is wrong):
-```bash
-python3 run_pilot.py --stage all --confirm-paid --confirm-zep
-```
-
-## Safety behaviour (verified offline on 15 Oct 2026, no API calls)
-- Without `--confirm-paid` the driver stops before `ontology` (dry run: preflight passed, ledger $0.00).
-- The proxy refused a request once spend reached the cap, refused `claude-sonnet-5-5`, refused streaming, forwarded the auth header unchanged, and wrote no key material to the ledger.
-- The long-context tier is applied to prompts over 100K tokens.
-
-## Independent backstop (recommended)
-Set a low monthly spend limit on the Anthropic workspace that holds this API key, in the Claude Console. This can't be checked or set from the container with a regular API key.
+## Independent backstop
+Set a low monthly spend limit in the Claude Console for the workspace that holds the API key; it can't be set or verified from the container.

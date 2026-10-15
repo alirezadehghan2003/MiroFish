@@ -1,0 +1,56 @@
+{
+  "preflight": "2026-10-15T18:35:24",
+  "log": [
+    {
+      "stage": "preflight",
+      "t": "2026-10-15T18:35:24",
+      "spent_usd": 0.0
+    },
+    {
+      "stage": "ontology",
+      "t": "2026-10-15T18:35:48",
+      "spent_usd": 0.003353
+    },
+    {
+      "stage": "build",
+      "t": "2026-10-15T18:37:23",
+      "spent_usd": 0.003353
+    },
+    {
+      "stage": "entities",
+      "t": "2026-10-15T18:37:45",
+      "spent_usd": 0.003353
+    },
+    {
+      "stage": "prepare",
+      "t": "2026-10-15T18:39:46",
+      "spent_usd": 0.026825
+    },
+    {
+      "stage": "report",
+      "t": "2026-10-15T18:56:10",
+      "spent_usd": 0.084033
+    }
+  ],
+  "project_id": "proj_25ad158459b1",
+  "entity_types": [
+    "LuxuryConsumer",
+    "MedicalPractitioner",
+    "TherapyPractitioner",
+    "WellnessJournalist",
+    "WellnessVenue",
+    "HealthRegulator",
+    "ConciergeService",
+    "WellnessClinic",
+    "Person",
+    "Organization"
+  ],
+  "graph_id": "mirofish_e60ebfc8501b4e0c",
+  "chosen_types": [
+    "LuxuryConsumer",
+    "WellnessJournalist"
+  ],
+  "agent_count": 10,
+  "simulation_id": "sim_3f26967f5fdf",
+  "report_id": "report_1bf40f9dbbe0"
+}

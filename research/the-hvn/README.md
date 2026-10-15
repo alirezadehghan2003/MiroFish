@@ -3,8 +3,8 @@
 | | |
 |---|---|
 | **Subject** | The HVN, 57–63 Knightsbridge, London ([the-hvn.com](https://the-hvn.com)) |
-| **Status** | **Phase 0 complete (15 Oct 2026).** Phase 1 pilot prepared, **not run**; it awaits explicit approval. |
-| **Simulated results** | **None yet.** |
+| **Status** | Phase 0 complete. **S1 pilot run once (15 Oct 2026, $0.084)**: see `results/`. |
+| **Simulated results** | `results/s1-pilot-2026-10-15/` (thin activity; read the analysis caveats) |
 
 ## Contents
 | File | What it is |
@@ -16,6 +16,7 @@
 | [`simulation-plan.md`](simulation-plan.md) | Phased MiroFish plan, cost model, spend controls, limitations |
 | [`seeds/`](seeds/) | Public-only simulation seeds S1–S4 (+ hypothetical S2b) and their simulation requirements |
 | [`pilot/`](pilot/) | S1 pilot runbook, budget-capping proxy, staged driver |
+| [`results/`](results/) | Simulation runs: raw logs, metrics, cost ledger, analysis ([SIMULATED]) |
 | [`evidence/`](evidence/) | Crawl table, price register, broken-link list, source log |
 | [`archive/`](archive/) | Superseded v1 files and the list of retired claims |
 

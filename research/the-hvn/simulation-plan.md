@@ -1,6 +1,6 @@
 # The HVN: MiroFish Simulation Plan v2
 
-**Status (15 Oct 2026):** Phase 0 complete. **Phase 1 pilot prepared but NOT run.** Nothing has been uploaded to Zep, no agents have been created, and no paid simulation calls have been made.
+**Status (15 Oct 2026):** Phase 0 complete. **Phase 1 S1 pilot run once on 15 Oct 2026: $0.084, 10 agents, 8 rounds**. Results, raw logs and quality issues are in `results/s1-pilot-2026-10-15/`. Low agent activity (simulated night hours) means the go/no-go gate is **"go, after fixes Q1–Q4"**; see the analysis.
 **Supersedes:** `archive/simulation-plan-v1-2026-10-15.md`.
 
 ## 1. Principles

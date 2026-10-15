@@ -20,7 +20,7 @@
 | **[V1-NOT-REVERIFIED]** | Carried from v1 (search-indexed); could not be re-checked from this environment | Low–Medium |
 | **[HYPOTHESIS]** | Analyst inference | Not evidence |
 | **[NEEDS TESTING]** | Requires a live session, booking test, analytics or primary research | — |
-| **[SIMULATED]** | MiroFish output. **None exist yet.** Never to be quoted as customer data. | — |
+| **[SIMULATED]** | MiroFish output (S1 pilot in `results/`). Never to be quoted as customer data. | — |
 
 ### 0.2 Method and limits
 1. **Website:** all 216 URLs in The HVN's XML sitemap were fetched politely (sequential, with back-off after the site rate-limited parallel requests), plus 45 internal link targets not in the sitemap. Derived data is in `evidence/`; raw HTML was not committed.
@@ -152,7 +152,9 @@ Tiered in `competitors.md`:
 ---
 
 ## 6. Simulation findings
-**None.** Runs S1–S4 are specified in `simulation-plan.md`. Results will be appended to `results/` labelled [SIMULATED], with model, agent count, rounds and actual cost.
+**S1 pilot (15 Oct 2026):** see `results/s1-pilot-2026-10-15/analysis.md`. All content there is [SIMULATED], with thin activity (3 agent actions); its signals are mapped to verified evidence, and none is used as evidence on its own.
+
+**Earlier status:** none. Runs S1–S4 are specified in `simulation-plan.md`. Results will be appended to `results/` labelled [SIMULATED], with model, agent count, rounds and actual cost.
 
 ## 7. Open questions and validation backlog
 | # | Question | How |
