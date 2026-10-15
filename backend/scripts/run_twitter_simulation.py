@@ -118,6 +118,7 @@ def setup_oasis_logging(log_dir: str):
 try:
     from camel.models import ModelFactory
     from camel.types import ModelPlatformType
+    from app.utils.openai_chat_compat import claude_model_config
     import oasis
     from oasis import (
         ActionType,
@@ -457,6 +458,8 @@ class TwitterSimulationRunner:
         return ModelFactory.create(
             model_platform=ModelPlatformType.OPENAI,
             model_type=llm_model,
+            # Claude 需要显式 max_tokens；其他模型保持 camel 默认配置
+            model_config_dict=claude_model_config(llm_model),
         )
     
     def _get_active_agents_for_round(

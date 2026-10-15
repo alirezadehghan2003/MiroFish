@@ -2,12 +2,23 @@
 OpenAI Chat Completions compatibility helpers.
 
 This module keeps existing behavior for legacy models/providers while
-gracefully adapting request parameters for GPT-5 family models.
+gracefully adapting request parameters for GPT-5 family models and for
+Claude models served through Anthropic's OpenAI-compatible endpoint.
 """
 
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
+
+# Anthropic requires an explicit output limit on every request.
+CLAUDE_DEFAULT_MAX_TOKENS = 8192
+
+# Anthropic's OpenAI-compatible endpoint ignores response_format, so JSON
+# mode is requested through an instruction instead.
+CLAUDE_JSON_INSTRUCTION = (
+    "Respond with a single valid JSON object only. "
+    "Do not wrap it in Markdown code fences or add any text before or after it."
+)
 
 
 def is_gpt5_family(model: Optional[str]) -> bool:
@@ -15,6 +26,20 @@ def is_gpt5_family(model: Optional[str]) -> bool:
     if not model:
         return False
     return model.strip().lower().startswith("gpt-5")
+
+
+def is_claude_model(model: Optional[str]) -> bool:
+    """Return True for Anthropic Claude model IDs (e.g. claude-haiku-5-5)."""
+    if not model:
+        return False
+    return model.strip().lower().startswith("claude-")
+
+
+def claude_model_config(model: Optional[str]) -> Optional[Dict[str, Any]]:
+    """Return a camel-ai model config for Claude, or None to keep defaults."""
+    if not is_claude_model(model):
+        return None
+    return {"max_tokens": CLAUDE_DEFAULT_MAX_TOKENS}
 
 
 def create_chat_completion(
@@ -32,9 +57,25 @@ def create_chat_completion(
     Compatibility strategy:
     - For GPT-5 family, avoid sending temperature by default.
     - For token limit, use `max_completion_tokens` on GPT-5, `max_tokens` otherwise.
-    - Preserve the legacy request shape for every non-GPT-5 model/provider.
+    - For Claude, omit temperature and response_format (current models reject
+      non-default sampling; the compatible endpoint ignores response_format),
+      ask for JSON through a system instruction instead, and always send
+      `max_tokens`.
+    - Preserve the legacy request shape for every other model/provider.
     - Propagate provider errors unchanged instead of guessing from message text.
     """
+    if is_claude_model(model):
+        if response_format is not None:
+            messages = [
+                *messages,
+                {"role": "system", "content": CLAUDE_JSON_INSTRUCTION},
+            ]
+        return client.chat.completions.create(
+            model=model,
+            messages=messages,
+            max_tokens=max_tokens or CLAUDE_DEFAULT_MAX_TOKENS,
+        )
+
     kwargs: Dict[str, Any] = {
         "model": model,
         "messages": messages,
