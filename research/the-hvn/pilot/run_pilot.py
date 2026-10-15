@@ -352,7 +352,7 @@ def stage_activity(st, a):
 def stage_interview(st, a):
     print("[interview] PAID: one English question to every agent (environment must be alive)")
     r = call("POST", "/api/simulation/interview/all", {"simulation_id": st["simulation_id"],
-                                                       "prompt": INTERVIEW_PROMPT, "platform": "reddit",
+                                                       "prompt": a.interview_prompt or INTERVIEW_PROMPT, "platform": "reddit",
                                                        "timeout": 300}, timeout=400)
     out = os.path.join(sim_dir(st), "interviews.json")
     json.dump(r, open(out, "w"), ensure_ascii=False, indent=2)
@@ -404,6 +404,7 @@ def main():
     p.add_argument("--start-hour", type=int, default=0, help="simulated clock hour for round 1 (clockshift)")
     p.add_argument("--project-name", default="HVN S1 Brand Perception Pilot")
     p.add_argument("--seed", default=SEED)
+    p.add_argument("--interview-prompt", default=None, help="scenario-specific interview question (English)")
     p.add_argument("--requirement", default=REQUIREMENT)
     a = p.parse_args()
     stages = ORDER if a.stage == "all" else [a.stage]

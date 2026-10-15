@@ -1,0 +1,9 @@
+Isla Bennett: country 英国 -> United Kingdom
+Natalie Ford: country 英国 -> United Kingdom
+Emma Clarke: country 英国 -> United Kingdom
+Priya Desai: country 英国 -> United Kingdom
+Daniel Okafor: country 英国 -> United Kingdom
+Khalid Al-Mansouri: country 阿联酋 -> United Arab Emirates
+Claire Whitfield: country 英国 -> United Kingdom
+Isla Bennett, Daniel Okafor: profession and interested_topics translated from Chinese to English (meaning preserved)
+opening post 4 ('free consultations elsewhere'): author Emma Clarke -> Sofia Lambert (matches persona)

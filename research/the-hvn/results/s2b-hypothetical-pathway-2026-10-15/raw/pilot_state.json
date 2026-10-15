@@ -1,0 +1,126 @@
+{
+  "preflight": "2026-10-15T21:52:04",
+  "log": [
+    {
+      "stage": "preflight",
+      "t": "2026-10-15T21:52:04",
+      "spent_usd": 0.0
+    },
+    {
+      "stage": "ontology",
+      "t": "2026-10-15T21:52:29",
+      "spent_usd": 0.003551
+    },
+    {
+      "stage": "build",
+      "t": "2026-10-15T21:53:49",
+      "spent_usd": 0.003551
+    },
+    {
+      "stage": "entities",
+      "t": "2026-10-15T21:54:06",
+      "spent_usd": 0.003551
+    },
+    {
+      "stage": "prepare",
+      "t": "2026-10-15T21:56:07",
+      "spent_usd": 0.029292
+    },
+    {
+      "stage": "postprepare",
+      "t": "2026-10-15T21:56:23",
+      "spent_usd": 0.029292
+    },
+    {
+      "stage": "clockshift",
+      "t": "2026-10-15T21:56:23",
+      "spent_usd": 0.029292
+    },
+    {
+      "stage": "start",
+      "t": "2026-10-15T21:58:30",
+      "spent_usd": 0.089548
+    },
+    {
+      "stage": "activity",
+      "t": "2026-10-15T21:58:30",
+      "spent_usd": 0.089548
+    },
+    {
+      "stage": "interview",
+      "t": "2026-10-15T21:58:38",
+      "spent_usd": 0.104341
+    },
+    {
+      "stage": "close",
+      "t": "2026-10-15T21:58:44",
+      "spent_usd": 0.104341
+    }
+  ],
+  "project_id": "proj_cc9d3138a89e",
+  "entity_types": [
+    "WellnessConsumer",
+    "LongevityOptimiser",
+    "FertilityPatient",
+    "FamilyOfficeGatekeeper",
+    "GeneralPractitioner",
+    "WellnessJournalist",
+    "MembersClubMember",
+    "ConciergeAdvisor",
+    "Person",
+    "Organization"
+  ],
+  "graph_id": "mirofish_9ea0f63cb07644b5",
+  "pruned_nodes": [
+    "members' clubs"
+  ],
+  "chosen_types": [
+    "Person",
+    "WellnessConsumer",
+    "FamilyOfficeGatekeeper",
+    "LongevityOptimiser",
+    "WellnessJournalist",
+    "MembersClubMember"
+  ],
+  "agent_count": 11,
+  "simulation_id": "sim_cf05ca6a74ed",
+  "agent_names": [
+    "Margaret Hughes",
+    "Isla Bennett",
+    "Natalie Ford",
+    "Emma Clarke",
+    "Priya Desai",
+    "Daniel Okafor",
+    "Helena Marsh",
+    "James Holloway",
+    "Khalid Al-Mansouri",
+    "Claire Whitfield",
+    "Sofia Lambert"
+  ],
+  "clock_shift_hours": 9,
+  "run_status": "loop_complete",
+  "rounds_completed": 24,
+  "activity": {
+    "seed_posts": 9,
+    "agent_posts": 1,
+    "comments": 37,
+    "replies_to_others": 33,
+    "likes_dislikes": 46,
+    "participants": 11,
+    "meaningful": 38,
+    "actions": 96,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "gate_passed": true
+  },
+  "interviews": 11
+}

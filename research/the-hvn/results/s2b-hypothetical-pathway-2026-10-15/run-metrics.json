@@ -1,0 +1,103 @@
+{
+  "scenario": "S2b Booking Decision with HYPOTHETICAL Starter Pathway",
+  "results_folder": "results/s2b-hypothetical-pathway-2026-10-15/",
+  "model": [
+    "claude-haiku-5-5"
+  ],
+  "graph_memory_updates": false,
+  "mirofish_native_report": "skipped (analysis built from raw logs and interviews)",
+  "project_id": "proj_cc9d3138a89e",
+  "graph_id": "mirofish_9ea0f63cb07644b5",
+  "simulation_id": "sim_cf05ca6a74ed",
+  "pruned_graph_nodes": [
+    "members' clubs"
+  ],
+  "agent_entity_types": [
+    "Person",
+    "WellnessConsumer",
+    "FamilyOfficeGatekeeper",
+    "LongevityOptimiser",
+    "WellnessJournalist",
+    "MembersClubMember"
+  ],
+  "agents": {
+    "count": 11,
+    "names": [
+      "Margaret Hughes",
+      "Isla Bennett",
+      "Natalie Ford",
+      "Emma Clarke",
+      "Priya Desai",
+      "Daniel Okafor",
+      "Helena Marsh",
+      "James Holloway",
+      "Khalid Al-Mansouri",
+      "Claire Whitfield",
+      "Sofia Lambert"
+    ],
+    "all_invented": true
+  },
+  "clock": "round 1 behaves as 09:00 (config hour lists shifted)",
+  "rounds": {
+    "max": 24,
+    "completed": 24
+  },
+  "activity": {
+    "seed_posts": 9,
+    "agent_posts": 1,
+    "comments": 37,
+    "replies_to_others": 33,
+    "likes_dislikes": 46,
+    "participants": 11,
+    "meaningful": 38,
+    "actions": 96,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "gate_passed": true,
+    "authored_items_per_agent": {
+      "Daniel Okafor": 7,
+      "Claire Whitfield": 4,
+      "Margaret Hughes": 2,
+      "Isla Bennett": 3,
+      "Priya Desai": 4,
+      "Natalie Ford": 5,
+      "Helena Marsh": 4,
+      "James Holloway": 1,
+      "Khalid Al-Mansouri": 2,
+      "Emma Clarke": 4,
+      "Sofia Lambert": 2
+    },
+    "authors": 11,
+    "interviews": 11
+  },
+  "requests": {
+    "total": 72,
+    "free_connectivity_checks": 1,
+    "http_200": 72,
+    "upstream_errors": 0
+  },
+  "tokens": {
+    "input": 619045,
+    "output": 84873
+  },
+  "cost_usd": {
+    "total": 0.104341,
+    "cap": 1.0,
+    "by_stage": {
+      "ontology": 0.003551,
+      "prepare": 0.025741,
+      "simulation": 0.060256,
+      "interviews": 0.014793
+    },
+    "pricing": "claude-haiku-5-5: USD 0.10 per million input tokens, USD 0.50 per million output tokens"
+  }
+}

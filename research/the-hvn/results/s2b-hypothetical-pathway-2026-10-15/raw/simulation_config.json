@@ -1,0 +1,417 @@
+{
+  "simulation_id": "sim_cf05ca6a74ed",
+  "project_id": "proj_cc9d3138a89e",
+  "graph_id": "mirofish_9ea0f63cb07644b5",
+  "simulation_requirement": "Simulate a Reddit-style discussion in a London luxury-wellness community about how people would choose, and pay for, a first appointment at The HVN, a real Knightsbridge clinic, using only the attached briefing. The agents are the twelve invented participants in Part E; the clinic, staff, competitors and regulators are background facts, not participants. The thread starts with the question in Part D.\n\nResearch questions: (1) Which entry point (£175, £350 or £400 consultation; £450-£750 tests; single treatments) does each participant choose, and why? (2) What total spend do they expect, and how do they react to programme prices not being published (apart from 8R from £3,000)? (3) Which objections stop them: price, evidence, terms (card on file, 24-hour cancellation), regulation, time? (4) How do HUM2N's monthly model and members' clubs change their view? (5) For variant S2b only: does the hypothetical, clearly labelled Starter Health Pathway change their intent?\n\nRules: stay in character, use only briefing facts, say when unsure, never invent prices, offers, reviews or treatment experiences. The S2b offer is hypothetical and must be discussed as hypothetical.\n\nAlways keep two facts straight: The HVN does not currently offer any membership, and CQC registration does not mean it has been inspected (it is registered but not yet inspected). Participants have different personalities and decision styles (Part F): write in natural first-person consumer voices, not uniformly cautious analysis. Never invent visits to, or experiences with, real competitor clinics.",
+  "time_config": {
+    "total_simulation_hours": 72,
+    "minutes_per_round": 60,
+    "agents_per_hour_min": 1,
+    "agents_per_hour_max": 6,
+    "peak_hours": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "peak_activity_multiplier": 1.5,
+    "off_peak_hours": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "off_peak_activity_multiplier": 0.05,
+    "morning_hours": [
+      21,
+      22,
+      23
+    ],
+    "morning_activity_multiplier": 0.4,
+    "work_hours": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "work_activity_multiplier": 0.7,
+    "clock_shift_note": "hour index 0 == 09:00 (hour lists shifted by -9)"
+  },
+  "agent_configs": [
+    {
+      "agent_id": 0,
+      "entity_uuid": "cdaa9c51-e6d9-4392-b5c1-c6dc1b76474c",
+      "entity_name": "Margaret Hughes",
+      "entity_type": "FamilyOfficeGatekeeper",
+      "activity_level": 0.45,
+      "posts_per_hour": 0.15,
+      "comments_per_hour": 0.6,
+      "active_hours": [
+        0,
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        22,
+        23
+      ],
+      "response_delay_min": 10,
+      "response_delay_max": 60,
+      "sentiment_bias": -0.4,
+      "stance": "neutral",
+      "influence_weight": 1.1
+    },
+    {
+      "agent_id": 1,
+      "entity_uuid": "a7644aa4-08c4-4475-a26b-27ac7151b421",
+      "entity_name": "Isla Bennett",
+      "entity_type": "Person",
+      "activity_level": 0.8,
+      "posts_per_hour": 0.5,
+      "comments_per_hour": 1.4,
+      "active_hours": [
+        0,
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "response_delay_min": 2,
+      "response_delay_max": 12,
+      "sentiment_bias": 0.2,
+      "stance": "neutral",
+      "influence_weight": 0.9
+    },
+    {
+      "agent_id": 2,
+      "entity_uuid": "9dcf1805-12cf-4321-a034-916ad8fc0c50",
+      "entity_name": "Natalie Ford",
+      "entity_type": "WellnessJournalist",
+      "activity_level": 0.5,
+      "posts_per_hour": 0.4,
+      "comments_per_hour": 0.8,
+      "active_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "response_delay_min": 5,
+      "response_delay_max": 30,
+      "sentiment_bias": -0.1,
+      "stance": "observer",
+      "influence_weight": 1.8
+    },
+    {
+      "agent_id": 3,
+      "entity_uuid": "910e399f-592b-463e-9420-f51e9cd839eb",
+      "entity_name": "Emma Clarke",
+      "entity_type": "WellnessConsumer",
+      "activity_level": 0.7,
+      "posts_per_hour": 0.4,
+      "comments_per_hour": 1.1,
+      "active_hours": [
+        3,
+        4,
+        10,
+        11,
+        12,
+        13,
+        22,
+        23
+      ],
+      "response_delay_min": 2,
+      "response_delay_max": 15,
+      "sentiment_bias": 0.1,
+      "stance": "neutral",
+      "influence_weight": 0.9
+    },
+    {
+      "agent_id": 4,
+      "entity_uuid": "9036c487-0838-460b-8963-587a81467af1",
+      "entity_name": "Priya Desai",
+      "entity_type": "Person",
+      "activity_level": 0.7,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 1.0,
+      "active_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        12,
+        13,
+        14,
+        22,
+        23
+      ],
+      "response_delay_min": 3,
+      "response_delay_max": 15,
+      "sentiment_bias": 0.0,
+      "stance": "neutral",
+      "influence_weight": 0.8
+    },
+    {
+      "agent_id": 5,
+      "entity_uuid": "7309e53f-1e5d-466a-8524-00a84cba85bb",
+      "entity_name": "Daniel Okafor",
+      "entity_type": "LongevityOptimiser",
+      "activity_level": 0.75,
+      "posts_per_hour": 0.5,
+      "comments_per_hour": 1.2,
+      "active_hours": [
+        3,
+        9,
+        10,
+        11,
+        12,
+        13,
+        21,
+        22,
+        23
+      ],
+      "response_delay_min": 2,
+      "response_delay_max": 12,
+      "sentiment_bias": 0.3,
+      "stance": "supportive",
+      "influence_weight": 1.2
+    },
+    {
+      "agent_id": 6,
+      "entity_uuid": "4fb41a71-2593-468a-88d8-539b514c3116",
+      "entity_name": "Helena Marsh",
+      "entity_type": "Person",
+      "activity_level": 0.55,
+      "posts_per_hour": 0.2,
+      "comments_per_hour": 0.7,
+      "active_hours": [
+        3,
+        4,
+        8,
+        9,
+        10,
+        11,
+        21,
+        22,
+        23
+      ],
+      "response_delay_min": 5,
+      "response_delay_max": 20,
+      "sentiment_bias": -0.5,
+      "stance": "opposing",
+      "influence_weight": 1.0
+    },
+    {
+      "agent_id": 7,
+      "entity_uuid": "4ebf7588-3976-45b5-8af7-ec9fed243877",
+      "entity_name": "James Holloway",
+      "entity_type": "MembersClubMember",
+      "activity_level": 0.5,
+      "posts_per_hour": 0.2,
+      "comments_per_hour": 0.8,
+      "active_hours": [
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        13,
+        22,
+        23
+      ],
+      "response_delay_min": 5,
+      "response_delay_max": 25,
+      "sentiment_bias": -0.2,
+      "stance": "observer",
+      "influence_weight": 1.0
+    },
+    {
+      "agent_id": 8,
+      "entity_uuid": "350c4fdc-6b0c-4e3b-9c8f-a1a8b3af816a",
+      "entity_name": "Khalid Al-Mansouri",
+      "entity_type": "Person",
+      "activity_level": 0.6,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 0.9,
+      "active_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "response_delay_min": 4,
+      "response_delay_max": 20,
+      "sentiment_bias": 0.1,
+      "stance": "neutral",
+      "influence_weight": 0.8
+    },
+    {
+      "agent_id": 9,
+      "entity_uuid": "11d4118a-735f-41ce-9c7f-dfc1b4aa6b67",
+      "entity_name": "Claire Whitfield",
+      "entity_type": "WellnessConsumer",
+      "activity_level": 0.65,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 1.0,
+      "active_hours": [
+        0,
+        3,
+        4,
+        11,
+        12,
+        13,
+        14,
+        22,
+        23
+      ],
+      "response_delay_min": 3,
+      "response_delay_max": 15,
+      "sentiment_bias": 0.1,
+      "stance": "neutral",
+      "influence_weight": 0.9
+    },
+    {
+      "agent_id": 10,
+      "entity_uuid": "0bfaaaaf-d241-469f-b597-6299eb8c8414",
+      "entity_name": "Sofia Lambert",
+      "entity_type": "WellnessConsumer",
+      "activity_level": 0.7,
+      "posts_per_hour": 0.4,
+      "comments_per_hour": 1.2,
+      "active_hours": [
+        0,
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "response_delay_min": 2,
+      "response_delay_max": 12,
+      "sentiment_bias": -0.6,
+      "stance": "opposing",
+      "influence_weight": 0.9
+    }
+  ],
+  "event_config": {
+    "initial_posts": [
+      {
+        "content": "Has anyone thought seriously about booking a first appointment at The HVN in Knightsbridge? I'm trying to work out which entry point makes sense: the £175 aesthetic consultation, the £350 Discovery Consultation, or the £400 8R Longevity Consultation. What would you pick, and what total would you expect to spend once you know what the plan costs? The site doesn't seem to publish programme prices apart from 8R from £3,000, so I'd like to hear how others are approaching this.",
+        "poster_type": "Person",
+        "poster_agent_id": 1
+      },
+      {
+        "content": "I'd start with the £350 Discovery Consultation because it's the functional, root-cause route and £100 of it can be redeemed against future functional medicine packages. What I can't see is what those packages cost. Nothing is published, so I'd have to pay for the consultation before I learn the total. Is anyone comfortable with that? I'm not, without at least a rough range first.",
+        "poster_type": "Person",
+        "poster_agent_id": 4
+      },
+      {
+        "content": "Before I put a card on file I want to read the terms properly. The booking needs a payment card to confirm appointments and you need 24 hours' notice to cancel. That's fine as long as I know exactly what I'm being charged for and when. Also worth remembering: CQC registration is not an inspection. The HVN is registered, but the register lists it as not yet inspected and unrated. I'd want to see that stated plainly before committing to anything expensive.",
+        "poster_type": "FamilyOfficeGatekeeper",
+        "poster_agent_id": 0
+      },
+      {
+        "content": "Honestly, I'd rather not spend £175 on a consultation just to be told the price. I've had free consultations elsewhere, so paying for the privilege of being quoted feels wrong. If I went at all, I'd want to know what the aesthetic consultation actually covers before I hand over money.",
+        "poster_type": "WellnessConsumer",
+        "poster_agent_id": 10
+      },
+      {
+        "content": "I want a total price up front. I'm 52, I've got no time for vague quotes, and I'd like a doctor-led plan I can see on paper. The £450 and £550 blood profiles are published, but the £750 HRU assessment is just a number without a clear plan behind it. If the programme price isn't on the site, I'll assume it's expensive and move on. I'd book a consultation only if the next step's cost was given clearly.",
+        "poster_type": "Person",
+        "poster_agent_id": 6
+      },
+      {
+        "content": "I compare cost per biomarker, so the £450 Complete Wellness profile (50+ biomarkers) and the £550 Elite profile (60+ biomarkers across 10 areas) are the numbers I'd look at first. But those are one-off tests. The question is whether there's an annual plan that makes sense. There's no membership at The HVN as far as I can tell, and no published programme beyond 8R from £3,000. I'd like to know whether anyone has a sense of what a full year would cost before I book the first test.",
+        "poster_type": "LongevityOptimiser",
+        "poster_agent_id": 5
+      },
+      {
+        "content": "I'm weighing pay-as-you-go against membership. My club charges a fixed annual fee and I know what I'm getting. HUM2N in Chelsea is reported to price monthly programmes, but those figures come from press and may be out of date. The HVN doesn't offer a membership, so I'd be paying per visit and per test. Has anyone compared a clinic like this with a members' club to see whether the total cost comes out higher or lower?",
+        "poster_type": "MembersClubMember",
+        "poster_agent_id": 7
+      },
+      {
+        "content": "For a story like this, the interesting point is the gap between the published ladder and the programme. The HVN lists single consultations from £175 to £400, tests from £450 to £750 and 8R from £3,000, but no functional medicine package prices. Readers want to know what a realistic first year costs, and the answer is that visitors must pay for a consultation to find out. That's worth stating clearly in any piece.",
+        "poster_type": "WellnessJournalist",
+        "poster_agent_id": 2
+      },
+      {
+        "content": "HYPOTHETICAL, not a real HVN offer: imagine a clearly labelled 'Starter Health Pathway' that bundles a first consultation with a baseline test. The price isn't specified here, so I can't judge value yet. If it was genuinely fixed and told me the total before I booked, that would change my mind about booking. If it still hid the follow-on costs, it wouldn't.",
+        "poster_type": "Person",
+        "poster_agent_id": 8
+      }
+    ],
+    "scheduled_events": [],
+    "hot_topics": [
+      "The HVN first appointment",
+      "Knightsbridge wellness clinic",
+      "£175 aesthetic consultation",
+      "£350 Discovery Consultation",
+      "£400 8R Longevity Consultation",
+      "unpublished programme prices",
+      "8R from £3,000",
+      "card on file",
+      "24-hour cancellation",
+      "CQC registered not yet inspected",
+      "HUM2N monthly membership comparison",
+      "members' clubs vs pay-as-you-go",
+      "hypothetical Starter Health Pathway"
+    ],
+    "narrative_direction": "The thread opens with a practical question about which first appointment to book at The HVN and what the full cost would be. Early replies split by decision style: some participants pick the cheapest entry point and accept a paid consultation as a way to learn more, while others say they will not commit without a total price. The lack of published programme prices (other than 8R from £3,000) becomes the main source of frustration, and several posters note that finding a total cost requires paying for a consultation first. Terms such as the card-on-file requirement and 24-hour cancellation prompt debate about commitment. Some participants raise regulation, pointing out that CQC registration means the clinic is registered but has not yet been inspected and is unrated. The discussion then turns to comparisons: HUM2N's monthly model and members' clubs are used to ask whether a membership-style or pay-as-you-go structure would suit them better, although the HVN does not currently offer any membership. In the S2b variant, a clearly labelled hypothetical Starter Health Pathway is introduced, and participants discuss whether it would change their intent, with no price or offer treated as real."
+  },
+  "twitter_config": null,
+  "reddit_config": {
+    "platform": "reddit",
+    "recency_weight": 0.3,
+    "popularity_weight": 0.4,
+    "relevance_weight": 0.3,
+    "viral_threshold": 15,
+    "echo_chamber_strength": 0.6
+  },
+  "llm_model": "claude-haiku-5-5",
+  "llm_base_url": "http://127.0.0.1:8787/v1",
+  "generated_at": "2026-10-15T21:56:03.757916",
+  "generation_reasoning": "Time Config: The simulation is set in London, so hours are London local time (BST, UTC+1, in mid-October 2026). The 12 agents are adults with varied routines: Helena Marsh, Margaret Hughes and James Holloway are City or office-based and post mainly at lunchtime and in the evening; Priya Desai, Claire Whitfield and Emma Clarke are likely to post in the evening, after work or childcare; Natalie Ford and Daniel Okafor are self-employed or flexible and may post during the working day; Khalid Al-Mansouri is a visitor who books through a concierge and may be active during London office hours; Isla Bennett and Sofia Lambert are likely to be active in the evening and at weekends. The peak is set at 19-22, when most consumer discussion on Reddit happens. Work hours are kept at moderate activity because the thread is a consumer decision discussion, not breaking news. The early hours (0-5) are off-peak, with morning activity ramping up from 6-8. Hour 23 is left out of the named bands and treated as a tail-off. The total duration is 72 hours (three days) so the thread can develop across several cycles of replies, price comparisons and follow-up questions. Activity per hour is kept low (1-6 agents) because the cast is small (12 participants) and not every participant needs to respond in every round. | Event Config: The posts follow the research questions: entry-point choice, expected total spend, the unpublished programme pricing, objections about terms and regulation, and comparisons with HUM2N and members' clubs. Each initial post is assigned to a participant whose personality and decision style matches the content, using the poster types in the available entity list. Prices and terms are limited to the briefing's published and reported facts, with the 8R from £3,000 figure as the only programme price. The HVN is described as having no membership, and CQC registration is described as registration without inspection. The S2b hypothetical pathway is clearly labelled, has no invented price, and is discussed only as hypothetical. Part D's exact wording was not included in the attached material, so the opening question paraphrases the stated task. | Agent Config: 11 generated | Post Assignment: 9 posts assigned"
+}
