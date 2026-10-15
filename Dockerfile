@@ -23,6 +23,11 @@ RUN npm ci \
 # 复制项目源码
 COPY . .
 
+# 容器内需监听所有接口，端口映射由 docker-compose 限制为仅本机
+ENV FLASK_HOST=0.0.0.0 \
+    MIROFISH_FRONTEND_HOST=0.0.0.0 \
+    MIROFISH_FRONTEND_OPEN=false
+
 EXPOSE 3000 5001
 
 # 同时启动前后端（开发模式）

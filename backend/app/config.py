@@ -1,6 +1,7 @@
 """\n配置管理\n统一从项目根目录的 .env 文件加载配置\n"""
 
 import os
+import secrets
 from dotenv import load_dotenv
 
 # 加载项目根目录的 .env 文件
@@ -14,13 +15,26 @@ else:
     load_dotenv(override=True)
 
 
+def _env_list(name: str, default: list[str]) -> list[str]:
+    """读取逗号分隔的环境变量，未设置时使用默认值"""
+    items = [item.strip() for item in os.environ.get(name, '').split(',') if item.strip()]
+    return items or default
+
+
 class Config:
     """Flask配置类"""
     
     # Flask配置
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'mirofish-secret-key')
+    SECRET_KEY = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
     DEBUG = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
-    
+
+    # 访问控制：默认只接受本机请求（逗号分隔，"*" 表示不限制）
+    CORS_ALLOWED_ORIGINS = _env_list(
+        'CORS_ALLOWED_ORIGINS',
+        ['http://localhost:3000', 'http://127.0.0.1:3000'],
+    )
+    ALLOWED_HOSTS = _env_list('ALLOWED_HOSTS', ['localhost', '127.0.0.1', '::1'])
+
     # JSON配置 - 禁用ASCII转义，让中文直接显示
     JSON_AS_ASCII = False
     

@@ -20,6 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from app import create_app
 from app.config import Config
+from app.utils.security import is_loopback_host
 
 
 def main():
@@ -37,10 +38,15 @@ def main():
     app = create_app()
     
     # 获取运行配置
-    host = os.environ.get('FLASK_HOST', '0.0.0.0')
+    host = os.environ.get('FLASK_HOST', '127.0.0.1')
     port = int(os.environ.get('FLASK_PORT', 5001))
     debug = Config.DEBUG
-    
+
+    # Werkzeug 调试器允许执行任意代码，只能在仅本机可访问时启用
+    if debug and not is_loopback_host(host):
+        print(f"拒绝启动：FLASK_DEBUG=true 时不能监听非本机地址 {host}")
+        sys.exit(1)
+
     # 启动服务
     app.run(host=host, port=port, debug=debug, threaded=True)
 

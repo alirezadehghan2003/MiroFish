@@ -12,8 +12,10 @@ export default defineConfig({
     }
   },
   server: {
+    // 默认仅本机可访问；Docker 中通过 MIROFISH_FRONTEND_HOST=0.0.0.0 覆盖
+    host: process.env.MIROFISH_FRONTEND_HOST || '127.0.0.1',
     port: 3000,
-    open: true,
+    open: process.env.MIROFISH_FRONTEND_OPEN !== 'false',
     proxy: {
       '/api': {
         target: 'http://localhost:5001',
