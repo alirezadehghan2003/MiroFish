@@ -3,12 +3,15 @@
 | | |
 |---|---|
 | **Subject** | The HVN, 57–63 Knightsbridge, London ([the-hvn.com](https://the-hvn.com)) |
-| **Status** | Phase 0 complete. S1 run twice on 15 Oct 2026: pilot ($0.084, thin) and **corrected run 2 ($0.180; 12/12 agents, 39 posts and comments)**. |
-| **Simulated results** | `results/s1-run2-2026-10-15/` (main) · `results/s1-pilot-2026-10-15/` (first pilot) |
+| **Status** | Phases 0–2 and synthesis complete (15 Oct 2026). 6 simulation runs (S1 pilot, S1 run 2, S2a, S2b, S3, S4), total API cost **$0.713**. Real-client validation pending. |
+| **Start here** | [`strategic-intelligence-report.md`](strategic-intelligence-report.md) · [`executive-presentation-outline.md`](executive-presentation-outline.md) |
+| **Simulated results** | `results/` (one folder per run, each with `analysis.md`) · totals in `results/summary-metrics.json` |
 
 ## Contents
 | File | What it is |
 |---|---|
+| [`strategic-intelligence-report.md`](strategic-intelligence-report.md) | Final evidence-backed strategic report: positioning, personas, pricing, website, competitors, SWOT, 30/60/90 plan |
+| [`executive-presentation-outline.md`](executive-presentation-outline.md) | 12-slide management presentation outline |
 | [`dossier.md`](dossier.md) | Integrated evidence dossier v2: brand, offer and prices, trust, market, regulation, open questions |
 | [`website-audit.md`](website-audit.md) | Live website audit: 12 prioritised findings (P1–P3) with evidence and fixes |
 | [`competitors.md`](competitors.md) | Tiered competitor matrix (direct / longevity substitutes / specialists / substitutes / partner) |

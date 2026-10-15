@@ -1,6 +1,6 @@
 # The HVN: MiroFish Simulation Plan v2
 
-**Status (15 Oct 2026):** Phase 0 complete. **Phase 1 S1 pilot run once on 15 Oct 2026: $0.084, 10 agents, 8 rounds**. Results, raw logs and quality issues are in `results/s1-pilot-2026-10-15/`. Low agent activity (simulated night hours) means the go/no-go gate is **"go, after fixes Q1–Q4"**; see the analysis.
+**Status (15 Oct 2026):** Phases 0–2 and synthesis complete; see `strategic-intelligence-report.md` and `results/summary-metrics.json`. Earlier note: Phase 0 complete. **Phase 1 S1 pilot run once on 15 Oct 2026: $0.084, 10 agents, 8 rounds**. Results, raw logs and quality issues are in `results/s1-pilot-2026-10-15/`. Low agent activity (simulated night hours) means the go/no-go gate is **"go, after fixes Q1–Q4"**; see the analysis.
 **Run 2 (corrected) on 15 Oct 2026: $0.180, 12 agents, 24 rounds from 09:00, English, 39 meaningful posts and comments, gate passed**. See `results/s1-run2-2026-10-15/analysis.md`. Recommendation for S2–S4: same procedure; skip the MiroFish auto-report unless graph memory is enabled.
 **Supersedes:** `archive/simulation-plan-v1-2026-10-15.md`.
 
@@ -16,14 +16,14 @@
 | Phase | Scenario | Seed | Agents | Rounds | Status |
 |---|---|---|---|---|---|
 | 0 | Evidence refresh: dossier v2, audit, competitors, personas, seeds | — | — | — | **Done** |
-| **1 (pilot)** | **S1 Brand perception** | `seeds/s1-brand-perception.md` | **10–12** | **8** | **Prepared, awaiting approval** |
+| **1 (pilot)** | **S1 Brand perception** | `seeds/s1-brand-perception.md` | **10–12** | **8** | **Done** (pilot + run 2) |
 | Gate | Go/no-go: agents in character and grounded in the seed, actual cost measured | | | | |
-| 2 | S2 Booking decision (current offer) | `s2-booking-decision.md` | 10–12 | 10–15 | Seed ready |
-| 2 | S2b same, plus a clearly hypothetical "Starter Pathway" | `s2` + `s2b-hypothetical-pathway-addendum.md` | 10–12 | 10–15 | Seed ready |
-| 2 | S3 Messaging (live copy vs 3 test messages) | `s3-messaging.md` | 10–12 | 10–15 | Seed ready |
-| 2 | S4 Competitor choice | `s4-competitor-choice.md` | 10–12 | 10–15 | Seed ready |
+| 2 | S2 Booking decision (current offer) | `s2-booking-decision.md` | 10–12 | 10–15 | **Done** (24 rounds) |
+| 2 | S2b same, plus a clearly hypothetical "Starter Pathway" | `s2` + `s2b-hypothetical-pathway-addendum.md` | 10–12 | 10–15 | **Done** (24 rounds) |
+| 2 | S3 Messaging (live copy vs 3 test messages) | `s3-messaging.md` | 10–12 | 10–15 | **Done** (24 rounds) |
+| 2 | S4 Competitor choice | `s4-competitor-choice.md` | 10–12 | 10–15 | **Done** (24 rounds) |
 | 3 | Repeat the most decision-relevant run twice (stochastic stability) | as chosen | 10–12 | as chosen | Planned |
-| 4 | Synthesis into the executive report | — | — | — | Planned |
+| 4 | Synthesis into the executive report | — | — | — | **Done**: `strategic-intelligence-report.md` |
 
 ## 3. Agent roster
 The 12 [Invented] participants are identical across S1–S4 so results can be compared:
