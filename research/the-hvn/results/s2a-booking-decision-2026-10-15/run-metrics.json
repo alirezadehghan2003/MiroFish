@@ -1,0 +1,95 @@
+{
+  "scenario": "S2a Booking Decision (current offer)",
+  "results_folder": "results/s2a-booking-decision-2026-10-15/",
+  "model": [
+    "claude-haiku-5-5"
+  ],
+  "graph_memory_updates": false,
+  "mirofish_native_report": "skipped (analysis built from raw logs and interviews)",
+  "project_id": "proj_650be20644ee",
+  "graph_id": "mirofish_e2321b595fb24b06",
+  "simulation_id": "sim_7c2c1a9234ee",
+  "pruned_graph_nodes": [
+    "Ary"
+  ],
+  "agent_entity_types": [
+    "WellnessConsumer",
+    "FamilyOfficeAdvisor",
+    "Journalist"
+  ],
+  "agents": {
+    "count": 11,
+    "names": [
+      "James Holloway",
+      "Priya Desai",
+      "Natalie Ford",
+      "Khalid Al-Mansouri",
+      "Daniel Okafor",
+      "Helena Marsh",
+      "Margaret Hughes",
+      "Claire Whitfield",
+      "Sofia Lambert",
+      "Emma Clarke",
+      "Isla Bennett"
+    ],
+    "all_invented": true
+  },
+  "clock": "round 1 behaves as 09:00 (config hour lists shifted)",
+  "rounds": {
+    "max": 24,
+    "completed": 24
+  },
+  "activity": {
+    "seed_posts": 4,
+    "agent_posts": 4,
+    "comments": 45,
+    "replies_to_others": 42,
+    "likes_dislikes": 43,
+    "participants": 11,
+    "meaningful": 49,
+    "actions": 99,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "gate_passed": true,
+    "authored_items_per_agent": {
+      "Isla Bennett": 7,
+      "Helena Marsh": 6,
+      "Emma Clarke": 5,
+      "Daniel Okafor": 4,
+      "Khalid Al-Mansouri": 3,
+      "Margaret Hughes": 3,
+      "Priya Desai": 4,
+      "Sofia Lambert": 4,
+      "Claire Whitfield": 5,
+      "Natalie Ford": 3,
+      "James Holloway": 5
+    },
+    "authors": 11,
+    "interviews": 11
+  },
+  "requests": {
+    "total": 87,
+    "free_connectivity_checks": 1,
+    "http_200": 87,
+    "upstream_errors": 0
+  },
+  "tokens": {
+    "input": 796324,
+    "output": 94577
+  },
+  "cost_usd": {
+    "total": 0.126921,
+    "cap": 1.0,
+    "by_stage": {
+      "ontology": 0.003297,
+      "prepare": 0.023266,
+      "simulation": 0.085438,
+      "interviews": 0.01492
+    },
+    "pricing": "claude-haiku-5-5: USD 0.10 per million input tokens, USD 0.50 per million output tokens"
+  }
+}

@@ -3,3 +3,5 @@ Simulate a Reddit-style discussion in a London luxury-wellness community reactin
 Research questions: (1) Which real phrases build trust, which feel generic, and which trigger scepticism (for example "London's leading", "transformational", IV benefit claims)? (2) Is the clinic's category clear from its wording, including the "Skin & Hair" page titles? (3) How do the three TEST MESSAGES compare with the published wording for each participant? (4) Which wording would make each participant book?
 
 Rules: participants cannot browse the website and must not claim to have used it; stay in character; use only briefing facts; never invent prices, reviews or experiences; treat TEST MESSAGES as hypothetical alternatives, not as The HVN's real copy.
+
+Always keep two facts straight: The HVN does not currently offer any membership, and CQC registration does not mean it has been inspected (it is registered but not yet inspected). Participants have different personalities and decision styles (Part F): write in natural first-person consumer voices, not uniformly cautious analysis. Never invent visits to, or experiences with, real competitor clinics.

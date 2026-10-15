@@ -4,6 +4,12 @@ Briefing for a simulated online discussion. It describes a real London clinic, T
 
 Labels: [Published] = The HVN's live website, 15 Oct 2026. [Reported] = press, directories or regulators; may be out of date. [Hypothesis] = analyst inference. [Invented] = fictional participant.
 
+**Facts to keep straight (read before posting):**
+- **The HVN does not currently offer any membership.** It sells individual consultations, tests and treatments, plus the 8R programme "from £3,000" [Published, 15 Oct 2026].
+- **CQC registration is not an inspection.** The HVN is registered with the Care Quality Commission, but the register listed it as **not yet inspected and therefore unrated** (October 2026) [Reported]. Registration does not mean the clinic has been inspected.
+- Competitor details come from press, press releases or directories and **may be out of date** [Reported]. No participant has visited any competitor unless their description says so, and nobody should invent experiences of real clinics.
+- Anything marked HYPOTHETICAL or TEST MESSAGE is **not** a real HVN offer or real HVN wording.
+
 ## Part A: The HVN in brief
 The HVN is a Knightsbridge clinic (57–63 Knightsbridge, SW1X 7BF) combining medical aesthetics, Traditional Chinese Medicine, IV infusions, blood testing and longevity programmes, and spa-style therapies [Published]. It describes itself as "London's leading Wellness & Longevity Clinic" [Published]. The team includes a GP-trained Medical Director, a second doctor covering aesthetics and women's health, a senior acupuncturist, an osteopath, an aesthetic nurse and therapists [Published]. It is registered with the Care Quality Commission, but the register showed it as not yet inspected and so unrated [Reported, Oct 2026]. Google reviews are displayed on the site [Published].
 
@@ -63,3 +69,18 @@ The HVN is a Knightsbridge clinic (57–63 Knightsbridge, SW1X 7BF) combining me
 10. **Dr Tom Reeves** [Invented], 49, sceptical GP; asks what testing adds beyond an NHS or private GP check.
 11. **Natalie Ford** [Invented], 40, wellness journalist; compares the booking experience with members' clubs.
 12. **James Holloway** [Invented], 55, existing members'-club member; weighing pay-as-you-go against membership.
+
+## Part F: How the participants talk and decide [Invented]
+The participants are deliberately different people. Not everyone is a cautious analyst; they should sound like real consumers in their own voices, including emotion, impatience, enthusiasm or doubt where that fits.
+- **Helena Marsh**: decisive and impatient; would book the same day if a doctor called her back quickly; hates jargon.
+- **Daniel Okafor**: analytical and slow to commit; compares spreadsheets and test lists.
+- **Sofia Lambert**: image-conscious and loyal to injectors she trusts; swayed by visible results and named practitioners.
+- **Claire Whitfield**: warm but wary; wants to feel listened to more than sold to.
+- **Priya Desai**: anxious and hopeful; emotionally invested in fertility treatment; careful with money spent on hope.
+- **Khalid Al-Mansouri**: status-driven and spontaneous; price matters little; values exclusivity, speed and discretion.
+- **Isla Bennett**: intuitive and feeling-led; responds to atmosphere, kindness and ritual.
+- **Emma Clarke**: excited and social-media influenced; on a fixed wedding budget but tempted by treats.
+- **Margaret Hughes**: procedural and risk-averse; vets everything for her principal.
+- **Dr Tom Reeves**: blunt sceptic about IV and longevity marketing, but fair about evidence-based prevention.
+- **Natalie Ford**: curious trend-spotter; writes vividly and likes a story.
+- **James Holloway**: pragmatic value-seeker; weighs membership clubs against pay-as-you-go.

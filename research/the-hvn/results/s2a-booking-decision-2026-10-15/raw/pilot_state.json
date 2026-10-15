@@ -1,0 +1,118 @@
+{
+  "preflight": "2026-10-15T21:42:17",
+  "log": [
+    {
+      "stage": "preflight",
+      "t": "2026-10-15T21:42:17",
+      "spent_usd": 0.0
+    },
+    {
+      "stage": "ontology",
+      "t": "2026-10-15T21:42:38",
+      "spent_usd": 0.003297
+    },
+    {
+      "stage": "build",
+      "t": "2026-10-15T21:44:09",
+      "spent_usd": 0.003297
+    },
+    {
+      "stage": "entities",
+      "t": "2026-10-15T21:44:41",
+      "spent_usd": 0.003297
+    },
+    {
+      "stage": "prepare",
+      "t": "2026-10-15T21:46:35",
+      "spent_usd": 0.026563
+    },
+    {
+      "stage": "postprepare",
+      "t": "2026-10-15T21:46:46",
+      "spent_usd": 0.026563
+    },
+    {
+      "stage": "clockshift",
+      "t": "2026-10-15T21:46:46",
+      "spent_usd": 0.026563
+    },
+    {
+      "stage": "start",
+      "t": "2026-10-15T21:50:42",
+      "spent_usd": 0.112001
+    },
+    {
+      "stage": "activity",
+      "t": "2026-10-15T21:50:47",
+      "spent_usd": 0.112001
+    },
+    {
+      "stage": "interview",
+      "t": "2026-10-15T21:51:04",
+      "spent_usd": 0.126921
+    },
+    {
+      "stage": "close",
+      "t": "2026-10-15T21:51:15",
+      "spent_usd": 0.126921
+    }
+  ],
+  "project_id": "proj_650be20644ee",
+  "entity_types": [
+    "WellnessConsumer",
+    "HealthcareProfessional",
+    "FamilyOfficeAdvisor",
+    "WellnessClinic",
+    "MembersClub",
+    "Journalist",
+    "RegulatoryBody",
+    "ConciergeService",
+    "Person",
+    "Organization"
+  ],
+  "graph_id": "mirofish_e2321b595fb24b06",
+  "pruned_nodes": [
+    "Ary"
+  ],
+  "chosen_types": [
+    "WellnessConsumer",
+    "FamilyOfficeAdvisor",
+    "Journalist"
+  ],
+  "agent_count": 11,
+  "simulation_id": "sim_7c2c1a9234ee",
+  "agent_names": [
+    "James Holloway",
+    "Priya Desai",
+    "Natalie Ford",
+    "Khalid Al-Mansouri",
+    "Daniel Okafor",
+    "Helena Marsh",
+    "Margaret Hughes",
+    "Claire Whitfield",
+    "Sofia Lambert",
+    "Emma Clarke",
+    "Isla Bennett"
+  ],
+  "clock_shift_hours": 9,
+  "run_status": "loop_complete",
+  "rounds_completed": 24,
+  "activity": {
+    "seed_posts": 4,
+    "agent_posts": 4,
+    "comments": 45,
+    "replies_to_others": 42,
+    "likes_dislikes": 43,
+    "participants": 11,
+    "meaningful": 49,
+    "actions": 99,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "gate_passed": true
+  },
+  "interviews": 11
+}

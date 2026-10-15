@@ -61,7 +61,7 @@ INTERVIEW_PROMPT = (
 
 PAID = {"ontology", "prepare", "start", "interview", "report"}
 ZEP = {"build", "cleanup"}
-ORDER = ["preflight", "ontology", "build", "entities", "prepare", "clockshift", "start",
+ORDER = ["preflight", "ontology", "build", "entities", "prepare", "postprepare", "clockshift", "start",
          "activity", "interview", "close", "report"]
 
 # Opener that ignores HTTP(S)_PROXY: all traffic here is to local services.
@@ -146,8 +146,8 @@ def stage_preflight(st, a):
             sys.exit(f"  ABORT: {sorted(clash)} set in .env would override the budget proxy; remove them first")
     print("  routing: verified after the first paid call (ontology); the run aborts if the "
           "backend is not sending LLM traffic through the proxy")
-    size = os.path.getsize(SEED)
-    print(f"  seed: {os.path.basename(SEED)} {size/1024:.1f} KB (~{size // 450} Zep chunks)")
+    size = os.path.getsize(a.seed)
+    print(f"  seed: {os.path.basename(a.seed)} {size/1024:.1f} KB (~{size // 450} Zep chunks)")
     st["preflight"] = time.strftime("%Y-%m-%dT%H:%M:%S")
 
 
@@ -155,9 +155,9 @@ def stage_ontology(st, a):
     print("[ontology] PAID: 1 LLM call")
     before = (spend() or {}).get("requests", 0)
     r = multipart("/api/graph/ontology/generate",
-                  {"simulation_requirement": open(REQUIREMENT).read().strip(),
+                  {"simulation_requirement": open(a.requirement).read().strip(),
                    "project_name": a.project_name},
-                  [("files", SEED)])
+                  [("files", a.seed)])
     d = r["data"]
     st["project_id"] = d["project_id"]
     st["entity_types"] = [e.get("name") for e in d["ontology"].get("entity_types", [])]
@@ -258,6 +258,39 @@ def activity(st):
 def loop_done(st):
     log = os.path.join(sim_dir(st), "simulation.log")
     return os.path.exists(log) and "模拟循环完成" in open(log, errors="ignore").read()
+
+
+COUNTRY_EN = {"英国": "United Kingdom", "阿联酋": "United Arab Emirates", "美国": "United States",
+              "法国": "France", "印度": "India", "沙特阿拉伯": "Saudi Arabia", "中国": "China"}
+
+
+def stage_postprepare(st, a):
+    """Free checks after prepare: force English data, list opening posts for an author check."""
+    import re
+    cjk = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+    d = sim_dir(st)
+    pp, cp = os.path.join(d, "reddit_profiles.json"), os.path.join(d, "simulation_config.json")
+    for f in (pp, cp):
+        if not os.path.exists(f + ".as-generated.json"):
+            open(f + ".as-generated.json", "w").write(open(f).read())
+    prof, cfg = json.load(open(pp)), json.load(open(cp))
+    log = []
+    for x in prof:
+        if x.get("country") in COUNTRY_EN:
+            log.append(f"{x.get('name')}: country {x['country']} -> {COUNTRY_EN[x['country']]}")
+            x["country"] = COUNTRY_EN[x["country"]]
+    json.dump(prof, open(pp, "w"), ensure_ascii=False, indent=2)
+    with open(os.path.join(d, "data_fixes_log.txt"), "a") as f:
+        f.writelines(l + "\n" for l in log)
+    left = [(x.get("name"), k) for x in prof for k, v in x.items() if cjk.search(json.dumps(v, ensure_ascii=False))]
+    left += [("config", "simulation_config")] if cjk.search(json.dumps(cfg, ensure_ascii=False)) else []
+    print(f"[postprepare] {len(log)} country fixes; remaining non-English fields: {left or 'none'}")
+    names = {ag["agent_id"]: ag["entity_name"] for ag in cfg["agent_configs"]}
+    for i, ip in enumerate(cfg["event_config"].get("initial_posts", [])):
+        print(f"  opening post {i}: author {names.get(ip.get('poster_agent_id'))} | {ip.get('content', '')[:150]}")
+    st["agent_names"] = list(names.values())
+    if left:
+        sys.exit("  STOP: non-English text remains; fix it (and log it) before starting")
 
 
 def stage_clockshift(st, a):
@@ -370,6 +403,8 @@ def main():
     p.add_argument("--max-rounds", type=int, default=MAX_ROUNDS)
     p.add_argument("--start-hour", type=int, default=0, help="simulated clock hour for round 1 (clockshift)")
     p.add_argument("--project-name", default="HVN S1 Brand Perception Pilot")
+    p.add_argument("--seed", default=SEED)
+    p.add_argument("--requirement", default=REQUIREMENT)
     a = p.parse_args()
     stages = ORDER if a.stage == "all" else [a.stage]
     st = load(a.state)
