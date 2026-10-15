@@ -1,4 +1,6 @@
-# The HVN: Executive Presentation Outline (management meeting, ~25 minutes)
+# The HVN: Executive Presentation Outline (v1, superseded)
+
+> **Superseded on 15 Oct 2026** by the full deck `executive-presentation.pptx` (PDF: `executive-presentation.pdf`), built from report v2.0. This v1 outline is kept for the record; see `report-audit.md` for what changed (e.g. positioning is now *validate, then adopt*; CQC status and competitor figures are Unknown).
 
 Source: `strategic-intelligence-report.md` (15 Oct 2026). Labels: **[V]** verified · **[R]** reported · **[S]** simulated (hypothesis, not customer data).
 

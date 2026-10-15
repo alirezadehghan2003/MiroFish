@@ -58,3 +58,19 @@
 
 ## E. Carried from v1 (not re-verifiable on 15 Oct 2026)
 HUM2N NAD/HBOT/programme prices; Harrods Wellness Clinic prices (pages ~1,350 days old); Lanesborough treatment prices; Lanserhof 2022 price list; IV Drip Clinic London (directory); The Online GP prices. See `../archive/dossier-v1-2026-10-15.md` §4.2 for the original URLs.
+
+## F. Strategy-phase checks (15 Oct 2026, after the simulations)
+| Check | Result | Used in |
+|---|---|---|
+| Live re-fetch of 16 the-hvn.com pages (home, contact, 2 menu targets, retired 360° URL, functional medicine, menopause, PCOS, PMDD, discovery and aesthetic consultations, NAD, fatigue, 8R, fertility acupuncture, IV menu) | W1 still live; menu 404s confirmed; credit wording only on Discovery; "London's leading" visible on the home page and in the site-wide schema description; tel: only on the home page in the sample | `report-audit.md` |
+| Direct fetch of competitor sites, cqc.org.uk, asa.org.uk, partner.pabau.com | **Blocked** (proxy refusal / DNS) | `competitor-benchmark.md` §1 |
+| Web search: The HVN CQC record | Not surfaced; status remains **Unknown** | `report-audit.md` U1 |
+| Web search: Surrenne fees | £10k/yr + £5k joining repeated in [Gentleman's Journal 2026 guide](https://www.thegentlemansjournal.com/de/article/die-luxuriosesten-fitnessclubs-in-london-2026/), [Yahoo AU](https://au.news.yahoo.com/inside-most-expensive-gyms-london-100054338.html); cap ~100 in [Sotheby's Realty](https://sothebysrealty.co.uk/the-journal/most-expensive-gyms-in-london) | Benchmark (Unknown, reported) |
+| Web search: Lanesborough membership | Only undated/conflicting figures | Benchmark (Unknown) |
+| Web search: HUM2N programme prices | None found; only the [Six Senses opening](https://www.spabusiness.com/wellness-news/HUM2N-opens-longevity-clinic-at-Six-Senses-London/363082) | Benchmark (Unknown) |
+| Web search: Pillar 12-week programme | £15,500 confirmed in 2026 press release and [Globetrender](https://globetrender.com/2026/01/06/raffles-london-15k-transformed-three-months/) | Benchmark (reported, Medium) |
+| Web search: Harrods Wellness Clinic 2026 | Only 2017–2018 sources found | Benchmark (Unknown) |
+| Web search: Lanserhof at The Arts Club | Conflicting older figures ([The Week](https://www.theweek.co.uk/102929/a-gym-like-no-other-the-lanserhof-at-the-royal-arts-club)) | Benchmark (Unknown) |
+| Web search: Taktouk Clinic CQC | Good overall, inspected Mar 2023; non-surgical cosmetic treatments outside CQC scope ([CQC location page via search](https://cqc.org.uk/location/1-11010496756/reports)) | Benchmark B5; R05 |
+| Web search: The Online GP longevity prices | Not found | Benchmark (Unknown) |
+| Web search: "The HVN" reviews | Only the June 2025 blog anecdote | Journey stage 8; R21 |
