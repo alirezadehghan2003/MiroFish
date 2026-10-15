@@ -1,120 +1,72 @@
-# The HVN — MiroFish Simulation Plan (for approval)
+# The HVN: MiroFish Simulation Plan v2
 
-**Status:** Proposal only. Nothing has been uploaded, simulated or charged.
-**Seed source:** [`seed/hvn-seed.md`](./seed/hvn-seed.md) (public-information-only, de-identified version of [`dossier.md`](./dossier.md))
-**Branch:** `claude/focused-franklin-nfz9cx` (security-hardened)
+**Status (15 Oct 2026):** Phase 0 complete. **Phase 1 pilot prepared but NOT run.** Nothing has been uploaded to Zep, no agents have been created, and no paid simulation calls have been made.
+**Supersedes:** `archive/simulation-plan-v1-2026-10-15.md`.
 
----
+## 1. Principles
+1. **Simulations generate hypotheses; they do not measure customers.** Every output is labelled [SIMULATED] and kept separate from evidence in all reports.
+2. **Reddit mode only.** Twitter mode downloads a Hugging Face model, which this environment blocks.
+3. **Claude Haiku only** (`claude-haiku-5-5`). No Sonnet or Opus runs in this plan.
+4. **Graph memory updates off** (`enable_graph_memory_update: false`).
+5. **Seeds are public-information only** (`seeds/`), with staff referred to by role and participants clearly marked [Invented].
+6. **Spend is hard-capped** by a local budget proxy (§5), with a separate approval for every paid or data-sharing stage.
 
-## 1. What MiroFish can and cannot tell us
+## 2. Phases
+| Phase | Scenario | Seed | Agents | Rounds | Status |
+|---|---|---|---|---|---|
+| 0 | Evidence refresh: dossier v2, audit, competitors, personas, seeds | — | — | — | **Done** |
+| **1 (pilot)** | **S1 Brand perception** | `seeds/s1-brand-perception.md` | **10–12** | **8** | **Prepared, awaiting approval** |
+| Gate | Go/no-go: agents in character and grounded in the seed, actual cost measured | | | | |
+| 2 | S2 Booking decision (current offer) | `s2-booking-decision.md` | 10–12 | 10–15 | Seed ready |
+| 2 | S2b same, plus a clearly hypothetical "Starter Pathway" | `s2` + `s2b-hypothetical-pathway-addendum.md` | 10–12 | 10–15 | Seed ready |
+| 2 | S3 Messaging (live copy vs 3 test messages) | `s3-messaging.md` | 10–12 | 10–15 | Seed ready |
+| 2 | S4 Competitor choice | `s4-competitor-choice.md` | 10–12 | 10–15 | Seed ready |
+| 3 | Repeat the most decision-relevant run twice (stochastic stability) | as chosen | 10–12 | as chosen | Planned |
+| 4 | Synthesis into the executive report | — | — | — | Planned |
 
-**What MiroFish does:**
-1. Builds a knowledge graph from a seed document.
-2. Generates LLM "agents" from the entities in that graph.
-3. Lets them post, comment and react on a simulated Reddit- or Twitter-style platform.
-4. Writes a report.
+## 3. Agent roster
+The 12 [Invented] participants are identical across S1–S4 so results can be compared:
+- **Customer archetypes (9):** P1 executive, P2 longevity optimiser, P3 aesthetics, P4 women's health, P5 fertility, P6 international visitor, P7 holistic seeker, P8 bridal, P9 gatekeeper.
+- **Challenger voices (3):** sceptical GP, wellness journalist, competitor members'-club member.
+- **No competitor brand accounts**, and no HVN brand account.
 
-**What that gives us:** a structured way to stress-test **how plausible personas might react to narratives, prices and claims**, and to surface objections we haven't thought of.
+MiroFish creates agents from the knowledge-graph entity types chosen at the `prepare` step. The pilot driver lists entity types and counts after the graph is built and **aborts unless the chosen types total 10–12 agents**.
 
-**Limits:**
-- It does **not** measure real demand, conversion or market share.
-- Agents inherit the biases of the seed text and the model.
-- Every output is labelled **[SIMULATED]** and treated as hypotheses to validate, never as customer data.
+## 4. Cost model for the S1 pilot (estimate)
 
-**Platform choice:** **Reddit mode only.**
-- OASIS's Twitter mode downloads an AI model from Hugging Face, which is blocked here and adds supply-chain surface.
-- Reddit-style threads also suit considered, high-ticket purchase discussion better.
+**Prices:** Claude Haiku 5.5 at $0.10 per million input tokens and $0.50 per million output tokens (prompts up to 100K tokens). Above 100K: $0.50 / $2.50, which the proxy also prices in.
 
----
-
-## 2. Proposed simulations
-
-Each simulation uses the **same base seed** (dossier §§1–4, with individual names replaced by roles; see §4) plus a short **scenario brief**. MiroFish turns the scenario brief into its "simulation requirement".
-
-### A. Brand perception
-
-- **Question:** *How do prospective luxury-wellness clients in London interpret what The HVN is (spa, medical clinic, longevity clinic, or aesthetics clinic), and which elements build or erode their sense of luxury and credibility?*
-- **Scenario brief:** A thread starts with "Has anyone tried The HVN in Knightsbridge? Is it a spa or a clinic?" Agents draw on the positioning statements, founder pedigree, CQC status and service breadth in the seed.
-- **What we'll look for:** category confusion; which proof points get cited (CQC, Medical Director, Levitas, Hydrobed); luxury cues vs scepticism.
-
-### B. Pricing and trust
-
-- **Question:** *How do different personas react to The HVN's published pricing (consultations £100–£400, single treatments £200–£500, programmes £999–£14,500, annual price unpublished) and its booking terms (card on file, 100% late-cancellation charge)? Where is the main drop-off risk?*
-- **Scenario brief:** A thread comparing the 360° Programme (£14,500, 16 weeks) and the Sleep Programme (£8,000) against single treatments and competitor memberships.
-- **Variants:** two runs on one seed:
-  - B1: current state.
-  - B2: hypothetical mid-tier option (e.g. a £1,500–£2,500 "introductory pathway"). Clearly marked as a **hypothetical test**, not a real offer.
-
-### C. Marketing messaging
-
-- **Question:** *Which framing resonates most with each persona: "conscious wellbeing / conscious luxury", "evidence-based longevity", or "root-cause functional medicine"? And how do evidence-literate personas respond to IV-drip benefit claims?*
-- **Scenario brief:** Three alternative campaign messages (drafted from The HVN's own published language) posted as if from the brand. Agents react, compare and challenge.
-- **What we'll look for:** resonance per persona; backlash triggers; credibility of claims (links to the ASA context in dossier §2.4).
-
-### D. Competitive positioning
-
-- **Question:** *When choosing between The HVN, Lanserhof at The Arts Club, HUM2N, the Harrods Wellness Clinic and The Lanesborough Club & Spa, which personas choose which, and why?*
-- **Scenario brief:** "Best longevity/wellness clinic in London?" thread with competitor positioning and published prices from dossier §4.2, each with its caveats.
-- **What we'll look for:** switching reasons; membership vs programme preference; where The HVN wins or loses.
-- **Care point:** competitor information is limited to publicly published facts, and agents are told prices may be outdated.
-
-### Run parameters (each simulation)
-
-| Parameter | Value | Why |
-|---|---|---|
-| Platform | Reddit only | No model download; suits considered purchases |
-| Agents | ~15–25 (generated from persona entities) | Enough diversity, low cost |
-| Rounds | 10 (max 15) | README advises starting below 40 |
-| Graph memory updates | **Off** | Fewer Zep calls and less data sent |
-| Report agent | On (default settings) | Produces the summary |
-
-Total: **5 runs** (A, B1, B2, C, D).
-
----
-
-## 3. Estimated costs
-
-> **These are estimates, not measurements.** The first run will be metered and costs re-estimated before continuing. Claude 5-series models also bill internal reasoning as output tokens, which can push costs up.
-
-**Assumed volume per run:** about 0.75–1.5 M input tokens and 0.1–0.2 M output tokens. This covers ontology, profiles, config, ~10 rounds × ~20 agents, and the report.
-
-| Model (Anthropic API) | Price per M tokens (in / out) | Per run | 5 runs |
+| Step (from MiroFish code) | Model calls | Tokens per call (in / out, est.) | Est. cost |
 |---|---|---|---|
-| **Claude Haiku 5.5** (recommended start) | $0.10 / $0.50 | ~$0.15–0.50 | **~$1–3** |
-| Claude Sonnet 5.5 | $2 / $10 | ~$2.50–5 | ~$12–25 |
-| Claude Opus 5.5 | $4 / $20 | ~$5–10 | ~$25–50 |
+| Ontology (`/api/graph/ontology/generate`) | 1 | 6k / 3k | $0.002 |
+| Graph build (Zep; no LLM calls from MiroFish) | 0 | — | $0 (Zep usage: ~19–22 chunks) |
+| Agent profiles (1 per agent, up to 3 attempts) | 12–36 | 3k / 1.5k | $0.01–0.04 |
+| Simulation config (3 + 1 batch of agents) | 4 | 10k / 3k | $0.01 |
+| Simulation: 8 rounds × ~6–10 active agents × ~1–2 calls | 50–160 | 4–8k / 0.3–0.6k | $0.05–0.20 |
+| Report (outline + 2–5 sections × up to 5 steps, plus tool calls) | 15–45 | 8–20k / 1.5k | $0.03–0.12 |
+| **Total** | **~80–250** | | **≈ $0.10–0.40 expected** |
 
-- **Zep Cloud:** free tier assumed. The seed is about 30 KB, so roughly 60–80 text chunks become graph episodes per run. Confirm limits in your Zep dashboard.
-- **Recommendation:**
-  1. Run everything on **Haiku 5.5** first, with a hard spend limit on the API key (e.g. $10).
-  2. Re-run only the most decision-relevant simulation on Sonnet 5.5 if Haiku's reasoning looks shallow.
+- **Uncertainty:** Haiku 5.5 bills any internal reasoning as output tokens, and feed size grows each round. The estimate is therefore wide, and the cap below sits well above it.
+- **Recommended hard cap: $1.00** for the pilot. The proxy ledger gives the real figure, which will be used to re-estimate Phase 2.
+- **Phase 2 projection** (to be re-estimated after the pilot): about $0.25–0.60 per run, so **about $1–3 for S2, S2b, S3 and S4**.
 
----
+## 5. Spending control: what is and is not enforceable
 
-## 4. Data handling
+| Control | Enforced by | Reliability |
+|---|---|---|
+| **Local budget proxy** (`pilot/budget_proxy.py`): meters `usage` on every response, refuses all requests once the cap is reached (HTTP 400, which the SDK does not retry), blocks any model other than `claude-haiku-5-5`, refuses streaming | Runs in this container; MiroFish and its OASIS subprocess reach Anthropic only through `LLM_BASE_URL` | **Hard** for traffic that passes through it. Overshoot is limited to requests already in flight (about $0.01). Tested offline against a fake upstream: cap, model block, stream block, auth pass-through, and no keys in the ledger. |
+| Routing check | The driver aborts after the first paid call (~$0.002) if the proxy didn't see it; preflight aborts if a `.env` would override `LLM_BASE_URL` | Prevents unmetered runs |
+| Staged approvals | `--confirm-paid` and `--confirm-zep` flags; `--stage` gating | Procedural |
+| Round and agent limits | `max_rounds=8`; agent count must be 10–12 | Bounds work, not cost |
+| **Anthropic Console spend limit** on the API key's workspace | Anthropic | **Cannot be verified or set from this container.** A regular API key can't read or change org limits (that needs the Admin API). Recommended as an independent backstop: set a low monthly limit on the workspace that holds this key, in the Claude Console. |
 
-- The seed is sent to **Anthropic** (LLM processing) and **Zep Cloud** (stores the knowledge graph). Both are external services; please confirm you're comfortable with that.
-- The seed contains **only public information**. For the seed version:
-  - replace named individuals with roles (e.g. "the Medical Director"), as names aren't needed for the simulations;
-  - include **no** patient or customer data;
-  - keep evidence labels, so agents can see which facts are verified versus hypothetical.
-- After the runs, I can delete the Zep graphs (MiroFish has a delete endpoint) if you prefer nothing to persist there.
+## 6. Limitations
+- Reddit-style threads stand in for considered peer discussion; UK HNW clients rarely discuss clinics on Reddit.
+- All agents run on one model and inherit its biases. Outputs vary between runs (Phase 3 checks this).
+- Agents know only the seed. Competitor facts in the seeds are search-sourced and dated.
+- No real demand, conversion or willingness-to-pay can be inferred.
+- MiroFish's report agent can overstate; every simulated claim will be checked against the raw action logs before it reaches the executive report.
 
----
-
-## 5. Required environment settings and approvals
-
-**You change (environment settings, cloud environment menu → Edit):**
-1. **Network access:** add both to Allowed domains. Required.
-   - `api.getzep.com` (the knowledge graph);
-   - `openaipublic.blob.core.windows.net`: the simulation library's token counter (`tiktoken`) downloads its data file from there on first use. Without it, simulations crash before the first round. It's a one-off download of public data; no project data is sent.
-2. **Network secrets:** add `LLM_API_KEY` (new Anthropic key with a low spend limit) and `ZEP_API_KEY`. Please don't paste keys into chat.
-3. **Optional, for a live website audit:** allow `the-hvn.com` and the competitor domains in §4.2. That lets me load pages directly, check the booking flow up to (not including) payment, and run Lighthouse to turn several [NEEDS TESTING] items into verified findings. In this session even search-based page fetching failed DNS lookup, so live verification needs this.
-
-**I do, after your approval:**
-1. ~~Claude compatibility fix~~ **Done** (commit `35db9c8`): temperature and `response_format` omitted for Claude, JSON requested by instruction, `max_tokens` always sent; 164 tests pass.
-2. **One test API call**, costing under $0.01, to confirm the Claude connection and JSON handling.
-3. ~~Create the seed file~~ **Done**: `seed/hvn-seed.md`.
-4. **Run A** (Haiku 5.5, Reddit, ~20 agents, 10 rounds), then report the actual cost.
-5. **Continue with B1, B2, C and D** only if the cost and quality look right.
-6. Add the **[SIMULATED]** findings to dossier §5 and summarise them.
+## 7. Data handling
+- Seeds go to **Anthropic** (LLM) and **Zep Cloud** (knowledge graph) only when the `build` stage is approved.
+- `pilot/run_pilot.py --stage cleanup --confirm-zep` deletes the pilot graph from Zep afterwards.

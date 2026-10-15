@@ -1,245 +1,171 @@
-# The HVN — Market Intelligence Dossier
+# The HVN: Business & Marketing Intelligence Dossier
 
-**Subject:** The HVN, wellness, longevity and aesthetics clinic, 57–63 Knightsbridge, London SW1X 7BF
-**Official site:** https://the-hvn.com
-**Compiled:** 15 October 2026
-**Purpose:** Research base and MiroFish seed material. Not medical, legal or investment advice.
+**Version:** 2.0 (Phase 0), compiled **15 October 2026**
+**Subject:** The HVN Wellbeing Ltd, 57–63 Knightsbridge, London SW1X 7BF ([the-hvn.com](https://the-hvn.com))
+**Purpose:** Evidence base for the HVN study and its MiroFish simulations. Not medical, legal or investment advice.
+**Supersedes:** `archive/dossier-v1-2026-10-15.md` (retired claims listed in `archive/README.md`).
 
 ---
 
 ## 0. How to read this dossier
 
-### Evidence labels
+### 0.1 Evidence labels
+| Label | Meaning | Confidence |
+|---|---|---|
+| **[LIVE]** | Loaded directly from the-hvn.com on 15 Oct 2026 (full sitemap crawl, 216 URLs) | High, as of that date |
+| **[OFFICIAL-PR]** | Organisation's own press release, found by search | Medium–High |
+| **[TRADE/PRESS]** | Independent press or trade media | Medium |
+| **[REGULATOR]** | Regulator's register, rulings or guidance | High at time of publication |
+| **[DIRECTORY]** | Aggregator / directory | Low |
+| **[V1-NOT-REVERIFIED]** | Carried from v1 (search-indexed); could not be re-checked from this environment | Low–Medium |
+| **[HYPOTHESIS]** | Analyst inference | Not evidence |
+| **[NEEDS TESTING]** | Requires a live session, booking test, analytics or primary research | — |
+| **[SIMULATED]** | MiroFish output. **None exist yet.** Never to be quoted as customer data. | — |
 
-Every claim carries one label.
-
-| Label | Meaning |
-|---|---|
-| **[OFFICIAL-INDEXED]** | Content of an official the-hvn.com page, as captured by a search engine's index. The page was **not loaded live** (see limitation below), so wording or prices may have changed since indexing. |
-| **[THIRD-PARTY]** | Reported by an independent publication, directory, regulator or competitor site. Accuracy depends on that source. |
-| **[REGULATOR]** | From a regulator's own register or guidance (CQC, ASA, Parliament). |
-| **[HYPOTHESIS]** | Analyst inference from the evidence. Plausible, not established. |
-| **[NEEDS TESTING]** | Can only be confirmed by a live visit, a test booking, tooling (e.g. Lighthouse, Search Console) or primary research. |
-| **[SIMULATED]** | Output of a MiroFish run. **None exist yet.** Simulated findings must never be quoted as customer data. |
-
-### Research limitations (read first)
-
-1. **No live page access.** Direct HTTP access and the page-fetch tool both failed DNS resolution from the research environment, for the-hvn.com and every other site tried (including bbc.co.uk). All website evidence therefore comes from search-engine results and their summaries of indexed pages. The website audit (§2) is consequently partial. Anything about live behaviour (booking flow, page speed, mobile layout, forms) is **[NEEDS TESTING]**.
-2. **Index staleness.** Search results reported page ages from roughly 80 to 900 days for some pages. Prices are "as indexed", not "as of today".
-3. **No customer data.** There are no reviews, surveys, CRM or analytics data in this dossier. Independent review listings (Google, Trustpilot, Treatwell) were searched for and **not found** in results. Personas (§3) are hypotheses.
-4. **No personal patient information** was sought, collected or processed. Named individuals are limited to publicly listed company leadership and clinicians, in their professional capacity.
-5. **Competitor prices** are "as published" on competitor or third-party pages, with stated caveats. They are not quotes and may be outdated or promotional.
-6. **Quoted wording** from the-hvn.com comes from search-engine summaries of indexed pages. Exact phrasing may differ from the live page.
-
-### Verification review (15 October 2026)
-
-Every claim was re-checked against its cited source before the seed document was prepared. Changes made:
-
-| Claim | Change |
-|---|---|
-| Hashnode "thehvn" page described as The HVN's own content | Ownership marked **unverified** (§2.5) |
-| Site avoids brand names for botulinum toxin | Narrowed to the page **title** only (§2.4) |
-| Name pronounced "haven" | Source marked **unconfirmed** (§1.1) |
-| UK assessments "£2,000–£8,000" | Marked **low reliability**; excluded from the seed (§4.1) |
-| Quoted brand language | Noted as search-summary wording (limitation 6) |
-| Lanserhof described as having "German medical heritage" | **Removed**: not supported by any cited source (§4.2) |
-
-Unchanged but still caveated: conflicting membership fees for Lanserhof at The Arts Club and The Lanesborough (both values shown); the IV Drip Clinic London prices (directory source); the Harrods prices (some pages ~1,350 days old).
+### 0.2 Method and limits
+1. **Website:** all 216 URLs in The HVN's XML sitemap were fetched politely (sequential, with back-off after the site rate-limited parallel requests), plus 45 internal link targets not in the sitemap. Derived data is in `evidence/`; raw HTML was not committed.
+2. **Competitors, regulators, reviews:** competitor sites, cqc.org.uk, asa.org.uk, review platforms and the Pabau booking domain were **blocked by this environment's network policy**. Evidence comes from web search results, press releases and directories, labelled accordingly.
+3. **No customer data** (CRM, bookings, analytics, review text) was available. All personas and behavioural statements are hypotheses.
+4. **No personal data** was collected. Clinicians are referred to by role, except where a name is part of a page URL or title.
+5. The full source log is in `evidence/sources.md`.
 
 ---
 
-## 1. Brand intelligence
+## 1. Executive summary of Phase 0 findings
 
-### 1.1 Verified facts
+| # | Finding | Label |
+|---|---|---|
+| 1 | **The programme tier has disappeared from the website.** The 360° (£14,500), Sleep (£8,000), Skin (£12,000), Body and Anti-Jetlag programme pages and the hyperbaric page all return 404. `/functional-medicine/` redirects to an orphan page titled "Functional Medicine Programmes Updated" (not in the sitemap, no H1, no prices). Only 8R ("from £3,000") remains. | [LIVE] |
+| 2 | **The women's-health pages show the wrong treatments.** Menopause, PCOS and PMDD pages promise "evidence-based care" but their treatment block is headed "Explore our specialised solutions for rosacea, acne, and acne scarring" and lists acne lasers and peels. | [LIVE] |
+| 3 | **Price transparency is a real asset.** 149 of 151 service pages display a price, unusual at this tier, where rivals use membership or "price on request". | [LIVE] + [TRADE/PRESS] |
+| 4 | **The step from first visit to plan is unpriced.** Consultations £175 / £350 / £400 and tests £180–£750 are priced, but the next step (functional medicine packages) has no published price. The £350 Discovery Consultation's £100 credit applies only to those unpriced packages. | [LIVE] |
+| 5 | **Brand language has shifted.** "Conscious wellbeing / conscious luxury" (v1 positioning, still in 2024 press) now appears only on the sustainability page. The site-wide line is "London's leading Wellness & Longevity Clinic", a superlative, while the Contact and Booking page titles say "Skin & Hair". | [LIVE] |
+| 6 | **Health-claim exposure.** Immune or "boost" wording appears on 19 of 20 IV/IM pages (immune: 16; boost: 18); one product is named "Fat Burner"; NAD and glutathione pages cite "anti-ageing", "cellular repair" and "detoxification". The ASA has ruled against comparable IV claims elsewhere. Needs review by a qualified adviser. | [LIVE] + [REGULATOR] |
+| 7 | **Trust signals are present but under-used.** A "CQC Regulated" badge is on 212/212 pages but links to the CQC register on none. A Google-reviews widget is on 157/212 pages. "Evidence-based" or "science-backed" wording appears on 18 pages. | [LIVE] |
+| 8 | **The competitive model gap is membership.** Tier 1–2 rivals (Surrenne £10k/yr + £5k, Lanesborough, Lanserhof, Pillar, Hooke, HUM2N monthly) sell belonging and continuity. The HVN sells per visit. | [TRADE/PRESS] |
+| 9 | **The £15k / 12–16-week programme price point exists in the market** (Pillar at Raffles OWO, 2026), at about the price of The HVN's retired 360° programme. | [OFFICIAL-PR] |
+| 10 | **New 2026 supply:** HUM2N opened inside Six Senses London (June 2026). Four Seasons Park Lane launched spa and wellness memberships. | [TRADE/PRESS] / [OFFICIAL-PR] |
 
+Full website findings: `website-audit.md`. Competitors: `competitors.md`. Segments: `personas.md`.
+
+---
+
+## 2. Brand and positioning
+
+### 2.1 Verified facts
 | Fact | Label | Source |
 |---|---|---|
-| Wellness clinic at 57–63 Knightsbridge, London SW1X 7BF | [OFFICIAL-INDEXED] | [Contact](https://the-hvn.com/contact/), [Consultations](https://the-hvn.com/consultations/) |
-| Opened October 2023 | [THIRD-PARTY] | [CLAD news](https://www.cladglobal.com/CLADnews/architecture-design/Conscious-wellbeing-inspires-Knightsbridges-newest-urban-retreat-The-Hvn/351987), [Globetrender](https://globetrender.com/2024/08/22/the-hvn-is-a-spa-that-promotes-conscious-wellbeing/) |
-| Name reportedly pronounced "haven" (stated in a search summary of press coverage; the specific article was not pinned down) | [THIRD-PARTY] — source unconfirmed | Press coverage listed in §1.1 |
-| Founded by Muriel Zingraff (CEO, formerly CEO of Paco Rabanne), with Jo Harris (COO) and Dr Tanja Phillips (Medical Director) | [THIRD-PARTY] | [Cosmetics Business](https://www.cosmeticsbusiness.com/former-paco-rabanne-ceo-opens-new-wellness-retreat), [CLAD](https://www.cladglobal.com/CLADnews/architecture-design/Conscious-wellbeing-inspires-Knightsbridges-newest-urban-retreat-The-Hvn/351987) |
-| Medical Director's name is spelled both "Philips" and "Phillips" across sources. The official team page uses "Phillips". | [OFFICIAL-INDEXED] / [THIRD-PARTY] | [Expert team](https://the-hvn.com/the-expert-team/) |
-| Self-description: "the home of conscious wellbeing"; a "tailored, evidence-based approach"; approach "rooted in authenticity, transparency, and conscious luxury" | [OFFICIAL-INDEXED] | [Homepage](https://the-hvn.com/), [About](https://the-hvn.com/about/) |
-| Longevity framing: "feel better for longer"; "science and sensibility"; extend "the number of years we live at peak performance – physically, mentally and emotionally" | [OFFICIAL-INDEXED] | [Longevity](https://the-hvn.com/longevity-wellness/) |
-| Approach: integrates "advanced technologies with ancient modalities and functional medicine" into "bespoke treatment plans"; root-cause orientation | [OFFICIAL-INDEXED] | [Homepage](https://the-hvn.com/), [Longevity](https://the-hvn.com/longevity-wellness/) |
-| Homepage title: "The HVN: Wellness & Longevity Clinic London" | [OFFICIAL-INDEXED] | [Homepage](https://the-hvn.com/) |
-| Press describes it as "not a spa" but a spa–clinic hybrid | [THIRD-PARTY] | [Brummell](https://www.brummellmagazine.co.uk/discover/a-holistic-cutting-edge-approach-to-wellbeing-is-on-offer-at-the-hvn/), [Globetrender](https://globetrender.com/2024/08/22/the-hvn-is-a-spa-that-promotes-conscious-wellbeing/) |
-| Signature equipment reported: Hydrobed (described as UK-only), Fotona laser, medical-grade hyperbaric chamber; an urban "forest bathing"-inspired space | [THIRD-PARTY] | [Knightsbridge LDN](https://knightsbridgeldn.co.uk/inside-the-hvn-knightsbridge/), [Fact London](https://www.factlondon.com/spa-wellness/the-hvn-offers-londoners-a-sanctuary-for-self-care) |
-| Partnership with Levitas: "8R Longevity Programme", developed by Dr Ash Kapoor (Levitas), delivered at The HVN | [OFFICIAL-INDEXED] / [THIRD-PARTY] | [8R programme](https://the-hvn.com/8r-longevity-programme-levitas/), [Levitas listing](https://longevity.technology/clinics/longevity-clinics/levitas-london/) |
-| CQC: provider "The HVN Wellbeing Ltd" (also known as HVN Clinic), 57–63 Knightsbridge, listed as **not yet inspected** | [REGULATOR] | [CQC provider page](https://www.cqc.org.uk/provider/1-22154280768/services) |
-| Site footers carry a "CQC Regulated" label | [OFFICIAL-INDEXED] | [About](https://the-hvn.com/about/) |
+| Trading entity "The HVN Wellbeing Ltd", 57–63 Knightsbridge SW1X 7BF; hours Mon–Sat 08:30–21:30, Sun 10:00–18:00; enquiries to a "Concierge Team" (concierge@ email) | [LIVE] | [/contact/](https://the-hvn.com/contact/) |
+| Opened October 2023 | [TRADE/PRESS] | [Cosmetics Business](https://cosmeticsbusiness.com/former-paco-rabanne-ceo-opens-new-wellness-retreat), [Globetrender](https://globetrender.com/2024/08/22/the-hvn-is-a-spa-that-promotes-conscious-wellbeing/) |
+| Founder and CEO formerly CEO of a global fashion and fragrance house | [TRADE/PRESS] | Cosmetics Business |
+| Site-wide line: "LONDON'S LEADING WELLNESS & LONGEVITY CLINIC"; home banners "REGENERATIVE AESTHETICS IN KNIGHTSBRIDGE", "DOCTOR-LED FOTONA LASER 5D FACE LIFT", "NOW OFFERING ACUPUNCTURE WITH [senior TCM practitioner]" | [LIVE] | [Home](https://the-hvn.com/) |
+| About: "wellness is not just a goal—it's an ongoing journey … clinical innovation is perfectly balanced with unbridled attention to care … bespoke treatment plans"; every journey "begins with a personalised consultation" | [LIVE] | [/about/](https://the-hvn.com/about/) |
+| Team: Medical Director (BM, MRCGP, DCH, DRCOG; "global award-winning laser specialist"); a second aesthetic doctor (surgeon and GP; aesthetics, menopause, women's health); senior TCM practitioner and acupuncturist; osteopath (also delivers the HRU assessment); aesthetic nurse; aesthetic practitioner; holistic and massage therapists | [LIVE] | [/the-expert-team/](https://the-hvn.com/the-expert-team/), [/about/](https://the-hvn.com/about/) |
+| Partnership: 8R Longevity Programme with Levitas, "from £3,000"; 8R consultation £400 (up to 90 min) | [LIVE] | [/8r-longevity-programme-levitas/](https://the-hvn.com/8r-longevity-programme-levitas/), [/consultations/](https://the-hvn.com/consultations/) |
+| Levitas's medical director is described elsewhere as founder of "Nomad & **10R** Longevity Plans" (naming differs from The HVN's "8R") | [DIRECTORY] | [Doctify](https://www.doctify.com/uk/specialist/ash-kapoor) |
+| 2023–24 press framed The HVN as "the home of conscious wellbeing", "not a spa"; reported 6 treatment suites, 2 recovery pods, a Hydrobed described as the UK's only one, Fotona laser, a medical-grade hyperbaric chamber | [TRADE/PRESS] | [Brummell](https://www.brummellmagazine.co.uk/discover/a-holistic-cutting-edge-approach-to-wellbeing-is-on-offer-at-the-hvn/), Globetrender |
+| "Conscious wellbeing / luxury" wording now appears only on `/sustainability-strategy/` | [LIVE] | crawl |
+| CQC: provider registered, **not yet inspected** (no rating) | [V1-NOT-REVERIFIED] (REGULATOR, Oct 2026 via search) | [CQC provider page](https://www.cqc.org.uk/provider/1-22154280768/services) |
 
-### 1.2 Positioning analysis
-
-- **Category ambiguity.** The brand spans five categories at once: spa rituals (abhyanga, Alqvimia, reflexology), medical aesthetics (injectables, Fotona, mesotherapy), functional medicine, IV and biohacking (NAD+, hyperbaric oxygen), and longevity programmes (8R, 360°). The homepage title leads with "Wellness & Longevity", while press frames it as "conscious wellbeing" and "not a spa". **[HYPOTHESIS]** This breadth widens appeal but risks a blurred "what is it for?" for first-time visitors. That is a core question for Simulation A.
-- **Luxury codes.** Knightsbridge address, fashion-industry founder pedigree, "conscious luxury" language, concierge contact model (concierge@ email), and programmes priced up to £14,500. **[HYPOTHESIS]** The positioning borrows from fashion and beauty luxury more than from clinical-prestige codes (e.g. Lanserhof's medical heritage).
-- **Credibility assets.**
-  - A named, GMC-registered Medical Director (described on-site as having 30 years in laser and aesthetic medicine) [OFFICIAL-INDEXED].
-  - CQC registration [REGULATOR].
-  - A named longevity partner (Levitas) [OFFICIAL-INDEXED].
-  - Trade and lifestyle press [THIRD-PARTY].
-- **Credibility gaps.**
-  - No CQC inspection rating exists yet [REGULATOR].
-  - No independent review listings were found in search results [THIRD-PARTY search, absence of evidence only].
-  - The site's "evidence-based" framing sits alongside IV-drip benefit claims (see §2.4). **[HYPOTHESIS]** This creates a trust tension for evidence-literate buyers.
-- **Differentiation candidates.**
-  - **Hydrobed:** "UK-only" claim reported by press, not verified.
-  - **Integrated multi-disciplinary plans:** medical, TCM and osteopathy under one roof.
-  - **Levitas 8R programme.**
-  - **Breadth:** a single Knightsbridge site combining all of the above.
-  - **[HYPOTHESIS]** Most individual modalities (IV, HBOT, injectables, Fotona) are available from competitors (§4). The defensible element is likely the curation, setting and service, not any single treatment.
+### 2.2 Positioning analysis [HYPOTHESIS]
+- **From "conscious wellbeing" to "leading longevity clinic".** The brand has moved from a values-led, spa-adjacent idea towards a clinical superlative. That suits longevity buyers, but "leading" is unsubstantiated on the page, and "Skin & Hair" titles on Contact and Booking pull the other way.
+- **Category breadth remains the core ambiguity.** Five service families (aesthetics, TCM, IV, testing/longevity, rituals) are offered under one roof, with 150+ service pages. For first-time visitors, "what is it for?" is answered by the navigation, not by a single proposition.
+- **The most defensible differentiation is integration plus transparency.** A doctor-led team spanning aesthetics, TCM, osteopathy and testing, at one Knightsbridge address, with no membership and published prices. Individual modalities (IV, NAD, lasers, injectables) are available from many rivals (`competitors.md`).
+- **The credibility stack is strong but partly invisible.** A named GP-trained Medical Director, doctor screening before IV (a "10 minute consultation with one of our doctors"), CQC registration, Google reviews and press are all present. The CQC badge doesn't link to the register; there is no inspection rating; the reviews widget's rating isn't visible in page source.
 
 ---
 
-## 2. Website audit
+## 3. Offer and price architecture [LIVE, 15 Oct 2026]
 
-> Scope reminder: audited from indexed content only. Items marked [NEEDS TESTING] require a live session.
+Full register (342 price points on 148 pages): `evidence/hvn-price-register-2026-10-15.csv`.
 
-### 2.1 Information architecture and content (verified from index)
-
-| Area | Finding | Label |
+| Layer | Offer (examples) | Published price |
 |---|---|---|
-| Site sections (pages found in the index; actual menu structure [NEEDS TESTING]) | Treatments, Concerns, Consultations, Longevity, Functional Medicine, Programmes, Expert Team, Journal, Book Now, Contact, shop products (e.g. a candle) | [OFFICIAL-INDEXED] |
-| "Concerns" hub | Concern-led entry pages, e.g. [Fatigue & Burnout](https://the-hvn.com/concerns/fatigue-and-burnout/), linked from [/concerns/](https://the-hvn.com/concerns/) | [OFFICIAL-INDEXED] |
-| Treatment pages | Most show **"Price: … \| Duration: …"** near the top | [OFFICIAL-INDEXED] |
-| Journal | Content hub at [/journal/](https://the-hvn.com/journal/) (e.g. "Attainable Wellness Habits for Renewal & Longevity") | [OFFICIAL-INDEXED] |
-| E-commerce | Product pages (e.g. [/product/hvn001/](https://the-hvn.com/product/hvn001/)) and a product [refund policy](https://the-hvn.com/refund-policy/) | [OFFICIAL-INDEXED] |
-| Age policy | Most services limited to clients aged 16+ | [OFFICIAL-INDEXED] |
+| **Consultations** | Aesthetic consultation (60 min) | £175 |
+| | Discovery Consultation (up to 60 min; £100 redeemable against functional medicine packages) | £350 |
+| | Nutrition consultation (60 min) | £350 |
+| | 8R Longevity Consultation with Levitas (up to 90 min) | £400 |
+| **Diagnostics** | Igloo blood reader | £60 |
+| | Vitamins & minerals profile / Essential wellness profile | £180 / £220 |
+| | Complete Wellness profile (50+ biomarkers) / Elite Functional Health (60+) | £450 / £550 (+£150 doctor follow-up call) |
+| | Fertility panel | £500 |
+| | HRU Health & Performance Assessment (35 min, "230 physiological markers") | £750 |
+| **IV / IM** | 14 IV infusions, 60–90 min | £275–£425 |
+| | NAD+ tiers (90 / 150 / 240 min); NAD + bespoke | £350 / £500 / £800; £675 |
+| | Iron infusion (with a partner provider) | from £895 |
+| **Aesthetics** | Muscle-relaxing injections (per-area price table) | from £260 |
+| | Dermal fillers / Profhilo / Polynucleotides | from £450 / £450 / from £450 |
+| | Fotona 5D Lift / Exosomes / PRP | from £850 / from £500 / from £550 |
+| | HydrO2 facial | from £200 (also £145 / £245 variants) |
+| **TCM & therapies** | Acupuncture (15-min consultation + 30 min needling) / course | from £200 / from £1,620 |
+| | Osteopathy / Reflexology / Oxygen-ozone therapy | from £260 / £230 / from £210 |
+| | Hydrobed Reset Massage, 60 / 90 min with facial ("dry flotation & holistic massage") | £250 / £375 |
+| **Programmes** | 8R Longevity Programme with Levitas | from £3,000 |
+| | Functional medicine "packages" | **not published** |
+| **Retail** | 14 product pages (candles, diffusers, room spray etc.) | priced in shop |
 
-### 2.2 Pricing transparency (verified from index; may be outdated)
+**Booking terms [LIVE]:** online booking via Pabau on every page; card required to confirm; 24-hour cancellation notice ([/terms-of-service/](https://the-hvn.com/terms-of-service/)).
 
-**Pricing is unusually transparent for this tier.** Most treatment and programme pages publish a price.
-
-| Offer | Published price | Duration | Source |
-|---|---|---|---|
-| Aesthetic consultation | £175 | 60 min | [Consultations](https://the-hvn.com/consultations/) |
-| Functional Medicine Discovery Session | £100 (credited to programmes) | — | [Consultations](https://the-hvn.com/consultations/) |
-| 8R Longevity Consultation (Levitas) | £400 | Up to 90 min (another page says 75 min) | [Consultations](https://the-hvn.com/consultations/), [8R](https://the-hvn.com/8r-longevity-programme-levitas/) |
-| 8R Longevity Programme | from £3,000 | — | [8R](https://the-hvn.com/8r-longevity-programme-levitas/) |
-| Baseline Wellness (functional medicine) | £999 | 4 weeks | [Functional medicine](https://the-hvn.com/functional-medicine/) |
-| Signature Wellness | £3,500 | 3 months | [Functional medicine](https://the-hvn.com/functional-medicine/) |
-| Annual Longevity Programme | **No price shown** | 12 months | [Functional medicine](https://the-hvn.com/functional-medicine/) |
-| HVN 360° Proactive Health Programme | £14,500 | 16 weeks / 4 months | [360°](https://the-hvn.com/hvn-360-proactive-health-programme/) |
-| Sleep, Rest, Recover, De-Stress Programme | £8,000 | 10 weeks | [Sleep](https://the-hvn.com/hvn-sleep-rest-recover-de-stress-programme/) |
-| Skin Prevent, Rejuvenate & Restore Programme | £12,000 | 12 weeks | [Skin](https://the-hvn.com/hvn-skin-prevent-rejuvenate-restore-programme/) |
-| Body Rebalance & Reshape Programme | **No price found** | — | [Body](https://the-hvn.com/hvn-body-rebalance-reshape-programme/) |
-| IV infusions | £275 (Hydration) to £400 (Vital AA); Bespoke £425; NAD from £350; NAD 500mg add-on £250; Iron (by Effect Doctors) from £895 | 60–90 min | [IV](https://the-hvn.com/iv-infusions/), [NAD](https://the-hvn.com/nad-iv-infusion/), [Bespoke](https://the-hvn.com/bespoke-iv-infusion/) |
-| Anti-Jetlag Programme (incl. HBOT) | £375 | 90 min | [Anti-jetlag](https://the-hvn.com/anti-jetlag-programme/) |
-| Hyperbaric oxygen (standalone) | **No standalone price found** | — | [HBOT](https://the-hvn.com/pages/hyperbaric-oxygen-therapy) |
-| Muscle-relaxing injections | from £260 | 30 min | [Injections](https://the-hvn.com/muscle-relaxing-injections/) |
-| Dermal fillers | from £450 | 40+ min | [Cosmetic procedures](https://the-hvn.com/cosmetic-procedures/) |
-| Mesotherapy | from £500 | 30–50 min | [Mesotherapy](https://the-hvn.com/mesotherapy/) |
-| HydrO2 Facial | from £200 (Deluxe £245) | 60–70 min | [HydrO2](https://the-hvn.com/hydro2-facial/) |
-| Acupuncture | from £200; course from £1,620 | 45+ min | [Acupuncture](https://the-hvn.com/acupuncture-pain-management/) |
-| Osteopathy | from £260 | 45+ min | [Osteopathy](https://the-hvn.com/osteopathy-pain-management/) |
-| Hydrobed Reset Massage | £250 / 60 min; £375 / 90 min incl. facial | — | [THIRD-PARTY: Travel and Retreat](https://travelandretreat.com/2025/11/26/the-hvn-spa-knightsbridge-a-heavenly-escape-for-body-mind-and-soul/) |
-| Entry price | "From £90 for 30 minutes" | — | [THIRD-PARTY: The Nudge](https://thenudge.com/the-best-spas-in-london/) |
-
-**[HYPOTHESIS]** Price transparency is a trust asset versus competitors that use "price on request". The jump from single treatments (£200–£500) to programmes (£3,000–£14,500), with few published mid-tier options, may create a "commitment cliff" for new clients. Tested in Simulation B.
-
-### 2.3 Booking journey and contact
-
-| Finding | Label |
-|---|---|
-| Dedicated [Book Now](https://the-hvn.com/book-now/) page exists | [OFFICIAL-INDEXED] |
-| Terms: 24 h cancellation notice, or within 4 h for same-day bookings; late cancellation or no-show charged at **100%** of service; card on file required to confirm any appointment; cancellations only by phone or the booking platform (not email, text or social media) | [OFFICIAL-INDEXED], terms page indexed ~525 days ago: [Terms](https://the-hvn.com/terms-of-service/) |
-| **Two different phone numbers** appear across pages: 020 8015 7987 and 020 7160 0003 | [OFFICIAL-INDEXED] |
-| Hours: Mon–Sat 08:30–21:30, Sun 10:00–18:00 | [OFFICIAL-INDEXED] |
-| Which booking platform is used, how many steps, whether online booking covers medical consultations, and how deposits are handled | [NEEDS TESTING] (a test booking up to, but not including, payment) |
-| Mobile booking usability, form errors, confirmation emails | [NEEDS TESTING] |
-
-**[HYPOTHESIS]** The 100%-charge, card-on-file and phone-or-platform-only cancellation rules are common in luxury clinics. However, they are a known friction point for first-time high-ticket buyers. The two-phone-number inconsistency is a small but real trust signal issue.
-
-### 2.4 Trust signals and claims
-
-| Finding | Label |
-|---|---|
-| "CQC Regulated" label in footer; CQC register confirms registration, **not yet inspected** | [OFFICIAL-INDEXED] + [REGULATOR] |
-| Named clinicians with stated credentials on the [Expert Team](https://the-hvn.com/the-expert-team/) page (e.g. GMC-registered Medical Director; an aesthetic doctor; TCM lead; osteopath) | [OFFICIAL-INDEXED] |
-| The injectables page is **titled** "Muscle Relaxing Injections for Wrinkles London" rather than using a brand name for botulinum toxin, which is consistent with UK rules against advertising prescription-only medicines to the public. Whether brand names appear elsewhere on the site was not checked. | [OFFICIAL-INDEXED] (title only) + [HYPOTHESIS on intent] — full-site check [NEEDS TESTING] |
-| IV pages state benefits such as boosting energy, "Anti-Ageing Support", "Enhanced Cellular Repair", and faster recovery from colds, flu or infections | [OFFICIAL-INDEXED]: [NAD](https://the-hvn.com/nad-iv-infusion/), [Immunity](https://the-hvn.com/immunity-iv-infusion/) |
-| ASA has ruled against IV-drip benefit claims lacking adequate evidence in healthy people (Dec 2023 rulings, e.g. Get A Drip, REVIV), and against advertising prescription-only IVs and injections to the public | [REGULATOR]: [ASA guidance](https://www.asa.org.uk/advice-online/healthcare-intravenous-nutritional-therapy.html), [Get A Drip ruling](https://www.asa.org.uk/rulings/get-a-drip-ltd-a19-549582-get-a-drip-ltd.html), [REVIV ruling](https://www.asa.org.uk/rulings/reviv-uk-ltd-a19-562605-reviv-uk-ltd.html) |
-| **[HYPOTHESIS]** Some IV benefit wording may carry regulatory and reputational exposure under the ASA's approach. This is not a legal determination: a qualified advertising and regulatory adviser should review it. It is also the sharpest tension with the "evidence-based" brand promise. | [HYPOTHESIS] |
-| Independent reviews: none found on Google, Trustpilot or Treatwell in search results | [THIRD-PARTY search, absence ≠ nonexistence] — [NEEDS TESTING] via direct platform search |
-
-### 2.5 SEO observations
-
-| Finding | Label |
-|---|---|
-| Page titles target commercial local keywords, e.g. "Osteopath London", "Functional medicine clinic London", "Fatigue & Burnout Treatment in London", "Expert VISIA Skin Analysis London Clinical Hub" | [OFFICIAL-INDEXED] |
-| **Two URL schemes are indexed for similar content**, e.g. `/hvn-360-proactive-health-programme/` and `/pages/360-proactive-health-programme`; `/hvn-sleep-…-programme/` and `/pages/sleep-…-programme`; plus a `www.the-hvn.com/services/…` URL | [OFFICIAL-INDEXED] |
-| URL/title mismatch: `/fotona-5d-lift/` is titled "Fotona 4D Lift London" | [OFFICIAL-INDEXED] |
-| Off-site content: a Hashnode page under the handle "thehvn" carries promotional articles about The HVN (e.g. acne and scarring). **Who operates it is unverified**; it may be the clinic, an agency or an unrelated party. | [THIRD-PARTY]: [hashnode.com/@thehvn](https://hashnode.com/@thehvn) — ownership [NEEDS TESTING] |
-| **[HYPOTHESIS]** The dual URL schemes suggest a platform migration with legacy pages still indexed. This risks duplicate content, split ranking signals and stale prices. Canonical tags and redirects are needed. | [HYPOTHESIS] — [NEEDS TESTING] (crawl, canonical tags, Search Console) |
-| Core Web Vitals, mobile rendering, structured data (LocalBusiness / MedicalClinic schema), image alt text, internal linking | [NEEDS TESTING] |
+**Analysis [HYPOTHESIS]:** the ladder is fully priced up to about £750 and then becomes opaque. The "commitment cliff" tested in v1 has turned into a **"price fog"**: a client cannot learn what a full plan costs without first paying £175–£400. This is the main conversion question for S2.
 
 ---
 
-## 3. Customer intelligence (hypothetical personas)
+## 4. Website, discovery and conversion
+Summarised here; full evidence in `website-audit.md`.
 
-> **All personas below are [HYPOTHESIS].** They are inferred from The HVN's service mix, price points, location and public competitor positioning. They contain **no real customer data**. They exist to give MiroFish agents plausible, diverse viewpoints and must be validated with real research (interviews, CRM analysis) before business use.
-
-| # | Archetype | Likely triggers | Decision criteria | Likely objections |
-|---|---|---|---|---|
-| P1 | **Time-poor executive (40s–50s)**, burnout or fatigue, Knightsbridge/Belgravia/City | Fatigue, poor sleep, travel load (maps to the Fatigue & Burnout concern, Sleep programme, Anti-Jetlag) | Speed, discretion, medical credibility, concierge scheduling, evenings and Sundays | "Is IV/HBOT evidence-based?", programme cost (£8k–£14.5k), time commitment over 10–16 weeks |
-| P2 | **Longevity optimiser (35–60)**, data-driven, follows longevity podcasts | Biological-age testing, healthspan (8R, GlycanAge, DNA methylation) | Diagnostic depth, named doctors, protocols, measurable follow-up | Compares with Lanserhof, HUM2N and diagnostics-only providers; sceptical of spa elements; wants published test lists and prices |
-| P3 | **Aesthetics-first client (30s–50s)** | Skin quality, injectables, Fotona | Practitioner skill, natural results, before/afters, safety | Many Knightsbridge/Harrods alternatives; price per syringe; consultation fee (£175) |
-| P4 | **International / visiting HNW client** | Short stays, jet lag, treatment "while in London" | Location, prestige, multilingual concierge, packaged days | Booking lead times; 100% cancellation charge; unclear package options for a week's stay |
-| P5 | **Holistic wellbeing seeker** | Stress, gut health, hormonal wellbeing; TCM and acupuncture | Warmth, holistic philosophy, practitioner continuity | Perceived clinical coldness vs spa warmth; cost of courses (acupuncture course from £1,620) |
-| P6 | **Sceptical referrer / partner (spouse, PA, family office)** | Books or vets on behalf of P1/P4 | Regulation (CQC), clear pricing, cancellation terms, reputation | No inspection rating yet; no independent reviews found |
-
-**Hypothetical journey (P1):** trigger (exhaustion or a doctor's comment) → search ("burnout clinic London") → Concerns page → £100 Discovery Session or £175 consultation → testing → programme offer (£999 to £14,500) → adherence over 10–16 weeks → renewal into the Annual Longevity Programme (price unpublished). **[HYPOTHESIS]** The likely drop-off points are the consultation-to-programme step and the unpublished annual price.
-
----
-
-## 4. Market intelligence
-
-### 4.1 Market context (sourced figures only)
-
-- **UK wellness economy (Global Wellness Institute):**
-  - US$224 bn in 2022 (dedicated UK report, September 2024) [THIRD-PARTY]: [GWI press release](https://globalwellnessinstitute.org/press-room/press-releases/wellness-economy-reort-uk-2024/)
-  - ~US$261 bn in 2024, 5th globally [THIRD-PARTY]: [GWI 2026 rankings](https://globalwellnessinstitute.org/industry-research/2026-the-global-wellness-economy-country-rankings/)
-  - These are whole-economy figures, not the London premium clinic segment. **No reliable figure for the London luxury longevity/aesthetics segment was found, and none is estimated here.**
-- **UK longevity assessment pricing:** a directory site states clinic assessments typically range £2,000–£8,000, with London at the higher end [THIRD-PARTY, **low reliability**: unsourced directory content, excluded from the simulation seed]: [World Longevity Clinics](https://worldlongevityclinics.com/longevity-clinics-uk/).
-- **Regulation, aesthetics:** a licensing scheme for non-surgical cosmetic procedures in England, under the Health and Care Act 2022 (s.180), is proposed but **not yet in force**; botulinum toxin and fillers are in a proposed licensed tier [REGULATOR/THIRD-PARTY]: [House of Commons Library briefing CBP-10331](https://researchbriefings.files.parliament.uk/documents/CBP-10331/CBP-10331.pdf), [Institute of Licensing](https://instituteoflicensing.org/resources/health-and-care-act-2022-section-180/). Confirm current status on gov.uk.
-- **Regulation, IV therapy advertising:** see §2.4 (ASA rulings and guidance).
-
-### 4.2 Competitor set (publicly verifiable)
-
-| Competitor | Location | Positioning (as published) | Published prices (as found; check dates) | Label |
-|---|---|---|---|---|
-| **Lanserhof at The Arts Club** | Mayfair | Medical-led members' gym and health club | Membership ~£3,200/yr + £1,600 assessment fee (recent guide); older sources £6,500/yr + £1,500 joining fee; **conflicting**. 2022 price list: Integrative Consultation £390 (60 min), Functional Medicine Consultation £550 (90 min) | [THIRD-PARTY]: [2022 price list](https://www.theartsclub.co.uk/wp-content/uploads/2022/03/LATAC-Price-List-2022.pdf), [Luxury London](https://luxurylondon.co.uk/travel/uk/members-clubs-mayfair-london/) |
-| **HUM2N** | Chelsea (35 Ixworth Place, SW3) | Physician-led longevity, IV lab, biohacking | NAD+ IV £295 (250 mg) to £450 (500 mg); HBOT from £180, 5-session packs £990–£1,170; longevity programmes £495/month + £995 one-off, or £695/month + £1,495; "SuperHUM2N" 2-hour package £795 (promotional, RRP £900) | [THIRD-PARTY: competitor site]: [NAD](https://www.hum2n.com/iv-lab/nad-repletion), [HBOT](https://www.hum2n.com/biohacking/hyperbaric-oxygen-therapy), [Longevity](https://www.hum2n.com/protocols/longevity) |
-| **The Wellness Clinic at Harrods** | Knightsbridge (closest neighbour) | Department-store medical aesthetics and wellness concessions (NYDG, Dr Marwa Ali, Elixir Clinic, REVIV) | e.g. facial consultation £195; Profhilo from £800; polynucleotides £1,500–£2,500; Elixir bespoke programmes price on request; 50% deposit typical. **Some pages ~1,350 days old.** | [THIRD-PARTY: competitor site]: [Harrods Wellness Clinic](https://www.harrods.com/en-gb/c/services/the-wellness-clinic), [Dr Marwa Ali](https://www.harrods.com/en-gb/c/services/dr-marwa-ali-at-the-wellness-clinic) |
-| **The Lanesborough Club & Spa** | Knightsbridge (Hyde Park Corner) | Luxury members' club and spa; advanced aesthetics, regenerative and longevity offering with Dr Galyna Selezneva | Regenerative facial £500 (90 min); aesthetics days £400 / £500 / £1,000; membership from ~£3,500/yr (recent guide) vs £6,600 + £2,000 joining (older, citing The Times); **conflicting** | [THIRD-PARTY: competitor site + press]: [Treatments](https://www.lanesboroughclubandspa.com/spa-treatments/), [Aesthetics day](https://www.lanesboroughclubandspa.com/spa-days/the-ultimate-indulgence/) |
-| **IV Drip Clinic London** | Mayfair (Hill Street) | CQC-registered IV and longevity clinic | NAD+ from £350; vitamin drips from £260; HBOT from £145 (30 min) | [THIRD-PARTY: directory]: [MAS Longevity](https://maslongevity.com/united-kingdom/london/clinic/iv-drip-clinic-london) |
-| **REVIV at Harrods** | Knightsbridge | IV therapy concession | Not found in results | [THIRD-PARTY]: [REVIV Harrods](https://go.revivme.com/london-harrods/) |
-| **The Online GP** | Marylebone | Diagnostics-led longevity testing | Longevity panel from £645; epigenetic age from £595; 100+ biomarker assessment from £1,400; continuous care from £24,995/yr | [THIRD-PARTY: competitor site]: [The Online GP](https://www.theonlinegp.com/blog/longevity-testing-in-london-what-it-costs-and-which-tests-matter) |
-| **Mass-premium biohacking** (LondonCryo, Get A Drip) | St John's Wood; Chelsea/Kensington | Accessible cryo, IV and HBOT | Not compared (different tier) | [THIRD-PARTY] |
-
-### 4.3 Comparative observations
-
-- **Like-for-like price points** (as published, not verified live):
-  - **NAD+ IV:** The HVN from £350 vs HUM2N £295–£450 vs IV Drip Clinic from £350.
-  - **HBOT:** The HVN has no standalone price found, vs HUM2N from £180 and IV Drip Clinic from £145.
-  - **Consultations:** The HVN £175 aesthetic / £400 longevity vs Lanserhof £390–£550 (2022) vs Harrods £195 facial consultation.
-- **Model contrast:** HUM2N and Lanserhof use **membership/subscription** pricing (monthly). The HVN uses **fixed-term programmes** (£999–£14,500) plus an annual programme whose price isn't published. **[HYPOTHESIS]** The HVN may be under-indexed on recurring-revenue framing.
-- **Geography:** The Wellness Clinic at Harrods and The Lanesborough Club & Spa are also in Knightsbridge, making them The HVN's closest luxury neighbours. Both carry heritage retail and hospitality brands. **[HYPOTHESIS]** The HVN competes on integration and medical leadership rather than heritage.
-- **Gaps for further research:** Lanserhof, HUM2N and Harrods current live prices; Hooke, Bodyset and other Harley Street longevity clinics; Bulgari and Mandarin Oriental spas (luxury-spa substitutes). All [NEEDS TESTING].
+| Area | Status | Label |
+|---|---|---|
+| Crawl health | 216 sitemap URLs: 212 × 200, 2 × 301, 2 × 302 (basket/checkout) | [LIVE] |
+| Retired pages | Programme and HBOT pages 404; broken internal links listed in the audit | [LIVE] |
+| Women's-health content | 3 pages show acne treatments | [LIVE] |
+| SEO metadata | No duplicate titles; 6 titles over 60 characters; Fotona title says "4D" while the H1 says "5D®"; generic titles such as "Menopause - The HVN" | [LIVE] |
+| Structured data | Organization / WebSite / WebPage / Breadcrumb only; **no MedicalClinic or LocalBusiness**, no address, hours or service markup | [LIVE] |
+| Page weight | Median 713 KB of HTML and 55 images per page | [LIVE] |
+| Trust | CQC badge 212/212 (not linked); reviews widget 157/212; 2 phone numbers | [LIVE] |
+| Booking flow | Pabau widget; steps, deposit and mobile UX | [NEEDS TESTING] (domain blocked) |
 
 ---
 
-## 5. Simulation findings
+## 5. Customers and market
 
-**None yet.** MiroFish results will be added here, each labelled **[SIMULATED]**, with run parameters (model, agents, rounds, platform). Simulated output represents how LLM-generated personas react to the seed narrative. It is **not** evidence of real customer behaviour.
+### 5.1 Segments
+Nine hypothesised segments (`personas.md`). New in v2, based on live site content: **Women's Health & Hormonal Wellbeing**, **Fertility & Pregnancy Journey**, **Bridal & Pre-Event**. All persona attributes are [HYPOTHESIS].
+
+### 5.2 Competitive set
+Tiered in `competitors.md`:
+- Tier 1 direct: Surrenne, The Lanesborough Club & Spa, The Wellness Clinic at Harrods.
+- Tier 2 longevity substitutes: HUM2N, Lanserhof at The Arts Club, Pillar at Raffles OWO, Hooke, Clinique La Prairie partners, The Online GP.
+- Tier 3 service specialists: aesthetics, IV, menopause, fertility acupuncture.
+- Tier 4 hotel substitutes.
+- Levitas is a **partner**, not a competitor.
+
+### 5.3 Market and regulation
+- **UK wellness economy:** US$224 bn (2022), about US$261 bn (2024), 5th globally [TRADE/PRESS: [Global Wellness Institute](https://globalwellnessinstitute.org/press-room/press-releases/wellness-economy-reort-uk-2024/)]. This is a whole-economy figure; **no reliable figure for the London luxury clinic segment exists**, and none is estimated.
+- **IV advertising:** medicinal claims are not permitted for IV nutritional therapy. The ASA warns against extrapolating supplementation studies to one-off infusions and has upheld complaints about immune-boosting claims [REGULATOR: [ASA guidance](https://asa.org.uk/advice-online/healthcare-intravenous-nutritional-therapy.html), [Get A Drip ruling](https://asa.org.uk/rulings/get-a-drip-ltd-a19-549582-get-a-drip-ltd.html), [REVIV ruling](https://www.asa.org.uk/rulings/reviv-uk-ltd-a19-562605-reviv-uk-ltd.html)]. No 2025–26 IV rulings were found by search.
+- **Aesthetics licensing (England):** DHSC responded to its consultation in August 2025 (mandatory training, indemnity, premises standards, risk-tiered procedures). Government confirmed on 17 Oct 2025 that it intends to legislate; **no commencement date** had been found as of mid-2026 [TRADE/PRESS: [Clyde & Co, 2026](https://www.clydeco.com/en/insights/2026/05/non-surgical-cosmetic-procedures); [Mishcon de Reya](https://www.mishcon.com/news/non-surgical-aesthetic-treatments-do-they-need-better-regulation)]. Scotland is moving faster.
+
+### 5.4 Reputation signals
+- 2023–25 lifestyle and trade press is positive (Brummell, Globetrender, City A.M., Quintessentially) [TRADE/PRESS].
+- One June 2025 personal blog describes a skin-analysis result later disputed by a dermatologist, and a sense of being upsold [TRADE/PRESS, single anecdote: [A Lady in London](https://www.aladyinlondon.com/2025/06/weekend-in-knightsbridge.html)]. [HYPOTHESIS] Treat it as a theme to monitor, not a pattern.
+- Google reviews are embedded on site, but rating and volume are not visible in page source [NEEDS TESTING].
 
 ---
 
-## 6. Open questions and validation backlog
+## 6. Simulation findings
+**None.** Runs S1–S4 are specified in `simulation-plan.md`. Results will be appended to `results/` labelled [SIMULATED], with model, agent count, rounds and actual cost.
 
-1. Live website check: booking platform and steps, mobile UX, page speed, canonical tags and redirects, schema markup. [NEEDS TESTING]
-2. Which phone number is current (020 8015 7987 vs 020 7160 0003)? [NEEDS TESTING]
-3. Hydrobed "UK-only" claim; Hydrobed and HBOT standalone prices; Annual Longevity Programme price. [NEEDS TESTING]
-4. Independent reviews on Google Maps, Trustpilot and Treatwell. [NEEDS TESTING]
-5. IV benefit claims reviewed by a qualified advertising and regulatory adviser. [NEEDS TESTING]
-6. Real customer research (interviews, enquiry and conversion data) to replace hypothetical personas. [NEEDS TESTING]
+## 7. Open questions and validation backlog
+| # | Question | How |
+|---|---|---|
+| 1 | Were the programmes withdrawn, repriced or just unpublished? Which annual or membership options exist? | Ask management |
+| 2 | Pabau booking flow: steps, deposit, which services are bookable online, mobile UX | Allow `partner.pabau.com`, or a manual test booking stopping before payment |
+| 3 | Current CQC status of The HVN and Tier 1 rivals | Allow `cqc.org.uk` |
+| 4 | Google review rating, volume and themes | Google Business Profile access |
+| 5 | Which landing pages and queries drive enquiries | GA4 / Search Console |
+| 6 | IV and IM wording, the "London's leading" claim and the botulinum-toxin page | Qualified advertising / regulatory adviser |
+| 7 | Live competitor prices | Allow competitor domains (`competitors.md` §8) |
+| 8 | Real segment mix and conversion | Pabau data; 8–12 client interviews |
+
+## 8. Change log
+- **v2.0 (15 Oct 2026):** first live-site version; v1 claims retired (`archive/README.md`); added women's-health, fertility and bridal segments, tiered competitors, website audit, price register, and simulation seeds S1–S4.
+- **v1.0 (15 Oct 2026, earlier):** search-index-only dossier (archived).

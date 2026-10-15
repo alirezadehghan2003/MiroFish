@@ -1,0 +1,55 @@
+target,status,redirects_to,classification,linked_from_page_count,example_linking_pages
+https://the-hvn.com/clinical-treatments/,404,,BROKEN (404),212,/ /2025-wellness-trends-our-expert-predictions/ /2026-wellness-trends-our-expert-predictions/ /3-top-tips-for-protecting-ageing-skin-the-hvn/ /5-simple-breathwork-exercises-to-reduce-anxiety-and-promote-good-health/
+https://the-hvn.com/holistic-rituals/,404,,BROKEN (404),212,/ /2025-wellness-trends-our-expert-predictions/ /2026-wellness-trends-our-expert-predictions/ /3-top-tips-for-protecting-ageing-skin-the-hvn/ /5-simple-breathwork-exercises-to-reduce-anxiety-and-promote-good-health/
+https://the-hvn.com/reflexology-ritual-face-hands-feet/,404,,BROKEN (404),6,/cellulite-lymphatic/ /concerns/ /concerns/chronic-stress-and-anxiety/ /concerns/fatigue-and-burnout/ /concerns/insomnia-and-poor-sleep/
+https://the-hvn.com/fotona-refresh-revitalise-peel/,404,,BROKEN (404),5,/concerns/ /concerns/hyperpigmentation-sun-damage/ /transformative-bio-stimulating-peel/ /zo-brightening-peel/ /zo-restorative-peel/
+https://the-hvn.com/scalp-mesotherapy/,404,,BROKEN (404),3,/concerns/ /laser-hair-restoration/ /scalp-prp-platelet-rich-plasma/
+https://the-hvn.com/acupuncture-for-skin-health/,404,,BROKEN (404),2,/concerns/ /concerns/rosacea-acne-and-acne-scarring/
+https://the-hvn.com/anti-burnout-consultation/,404,,BROKEN (404),1,/treatments/
+https://the-hvn.com/back-and-shoulders-massage/,404,,BROKEN (404),1,/concerns/
+https://the-hvn.com/facial-threads/,404,,BROKEN (404),1,/concerns/
+https://the-hvn.com/hvn-glass-skin-microinfusion-facial/,404,,BROKEN (404),1,/lumineo-led/
+https://the-hvn.com/hvn-kansa-wand-facial/,404,,BROKEN (404),1,/face-or-decolletage-mask/
+https://the-hvn.com/nourishing-facial-ritual/,404,,BROKEN (404),1,/lumineo-led/
+https://the-hvn.com/pure-detox-ritual/,404,,BROKEN (404),1,/steam-bath/
+https://the-hvn.com/reflexology-ritual-mothers-journey/,404,,BROKEN (404),1,/concerns/post-pregnancy-changes/
+https://the-hvn.com/shirodhara-sleep-therapy/,404,,BROKEN (404),1,/your-gut-is-the-gateway-to-good-health/
+https://the-hvn.com/smootheye-lift/,404,,BROKEN (404),1,/fotona-vectorlift/
+https://the-hvn.com/soothing-sleep-ritual/,404,,BROKEN (404),1,/holistic-relaxation-in-the-heart-of-the-city/
+https://the-hvn.com/visia-skin-analysis/,404,,BROKEN (404),1,/discovery-consultation/
+https://the-hvn.com/vitamin-iv-infusion/,404,,BROKEN (404),1,/nad-therapy-for-mind-mood-and-longevity/
+https://the-hvn.com/body-rituals/,301,/body-rituals-massages/,redirect (update link),212,/ /2025-wellness-trends-our-expert-predictions/ /2026-wellness-trends-our-expert-predictions/ /3-top-tips-for-protecting-ageing-skin-the-hvn/ /5-simple-breathwork-exercises-to-reduce-anxiety-and-promote-good-health/
+https://the-hvn.com/hair-tonic-iv-infusion/,301,/hair-tonic-iv-infusion-1/,redirect (update link),212,/ /2025-wellness-trends-our-expert-predictions/ /2026-wellness-trends-our-expert-predictions/ /3-top-tips-for-protecting-ageing-skin-the-hvn/ /5-simple-breathwork-exercises-to-reduce-anxiety-and-promote-good-health/
+https://the-hvn.com/lymphatic-reset-facial/,200,,OK (not in sitemap),212,/ /2025-wellness-trends-our-expert-predictions/ /2026-wellness-trends-our-expert-predictions/ /3-top-tips-for-protecting-ageing-skin-the-hvn/ /5-simple-breathwork-exercises-to-reduce-anxiety-and-promote-good-health/
+https://the-hvn.com/hru-health-performance-assesssment/,301,/hru-health-performance-assessment/,redirect (update link),210,/ /2025-wellness-trends-our-expert-predictions/ /2026-wellness-trends-our-expert-predictions/ /3-top-tips-for-protecting-ageing-skin-the-hvn/ /5-simple-breathwork-exercises-to-reduce-anxiety-and-promote-good-health/
+https://the-hvn.com/blood-tests/,200,,OK (not in sitemap),17,/ /aesthetic-consultation/ /complete-wellness-profile/ /concerns/chronic-stress-and-anxiety/ /consultations/
+https://the-hvn.com/fotona-4d-lift/,301,/fotona-5d-lift/,redirect (update link),12,/ /concerns/ /concerns/wrinkles-fine-lines-and-age-spots/ /fotona-liplase/ /fotona-vectorlift/
+https://the-hvn.com/ems-powersculpt/,301,/powersculpt/,redirect (update link),10,/body-ballancer-lymphatic-drainage/ /concerns/ /concerns/fat-reduction-and-body-contouring/ /concerns/post-pregnancy-changes/ /cryotherapy-fat-freezing/
+https://the-hvn.com/im-shots/,301,/im-injections/,redirect (update link),9,/8r-longevity-programme-levitas/ /acupuncture-for-pain-management-susan-gu/ /concerns/ /emotional-wellbeing-with-susan-gu/ /fotona-nightlase-snoring-treatment/
+https://the-hvn.com/iv-infusion/,301,https://the-hvn.com/iv-infusions/,redirect (update link),7,/acupuncture-for-pain-management-susan-gu/ /bespoke-hydrobed-facial/ /emotional-wellbeing-with-susan-gu/ /hormonal-balance-with-susan-gu/ /ivf-and-fertility-susan-gu/
+https://www.the-hvn.com/contact-us/,,,not checked: www host blocked by environment proxy,6,/3-top-tips-for-protecting-ageing-skin-the-hvn/ /fotona-hairestart-hair-restoration-treatment-the-hvn/ /fotona-tightwave-body-contouring-and-toning-the-hvn/ /melasma-treatment-reduce-hyperpigmentation-the-hvn/ /powerful-acne-treatment-the-hvn/
+https://the-hvn.com/zo-radiance-peel/,301,/zo-restorative-peel/,redirect (update link),3,/concerns/ /treatments/ /zo-brightening-peel/
+https://the-hvn.com/acupuncture-for-mental-health/,301,/stress-and-anxiety-with-josh-barrows/,redirect (update link),2,/concerns/ /concerns/chronic-stress-and-anxiety/
+https://the-hvn.com/hydrobed-reset-ritual/,301,/hydrobed-reset-massage/,redirect (update link),2,/body-rituals-massages/ /treatments/
+https://the-hvn.com/lymphatic-reset-face-body/,301,/lymphatic-reset-facial/,redirect (update link),2,/cellulite-lymphatic/ /powersculpt/
+https://www.the-hvn.com/,,,not checked: www host blocked by environment proxy,2,/cookie-policy/ /terms-of-service/
+https://the-hvn.com/acupuncture-for-musculoskeletal-pain/,301,/neurological-support-with-josh-barrows/,redirect (update link),1,/concerns/
+https://the-hvn.com/antioxidant-im-shot/,301,/glutathione-im-shot/,redirect (update link),1,/glutathione-injection-for-skin-whitening-does-it-really-work/
+https://the-hvn.com/body-ballancer-lymphatic/,301,https://the-hvn.com/body-ballancer-lymphatic-drainage/,redirect (update link),1,/concerns/
+https://the-hvn.com/chakra-balancing-ritual/,301,/full-body-massage/,redirect (update link),1,/holistic-relaxation-in-the-heart-of-the-city/
+https://the-hvn.com/city-escape-ritual/,301,/body-contour-massage/,redirect (update link),1,/holistic-relaxation-in-the-heart-of-the-city/
+https://the-hvn.com/consultation/,301,https://the-hvn.com/consultations/,redirect (update link),1,/concerns/chronic-stress-and-anxiety/
+https://the-hvn.com/functional-medicine/,301,https://the-hvn.com/functional-medicine-programmes-2/,redirect (update link),1,/scalp-prp-platelet-rich-plasma/
+https://the-hvn.com/mood-boost-iv-infusion/,301,/myers-cocktail-iv-infusion/,redirect (update link),1,/nad-therapy-for-mind-mood-and-longevity/
+https://the-hvn.com/pages/exosomes/,301,https://the-hvn.com/exosomes/,redirect (update link),1,/how-exosomes-improve-skin-elasticity-and-hydration/
+https://the-hvn.com/reflexology-face-lift/,301,/reflexology/,redirect (update link),1,/concerns/
+https://the-hvn.com/vitamin-d-im-shot/,301,/vitamin-d-im-injection/,redirect (update link),1,/im-injections/
+https://the-hvn.com/fotona-3d-peel/,301,/fotona-refresh-revitalise-peel,REDIRECT INTO 404 (sitemap URL),,sitemap
+https://the-hvn.com/hvn-360-proactive-health-programme/,404,,RETIRED PAGE (404; cited in v1 dossier and 2024 press),0,direct check
+https://the-hvn.com/hvn-sleep-rest-recover-de-stress-programme/,404,,RETIRED PAGE (404),0,direct check
+https://the-hvn.com/hvn-skin-prevent-rejuvenate-restore-programme/,404,,RETIRED PAGE (404),0,direct check
+https://the-hvn.com/hvn-body-rebalance-reshape-programme/,404,,RETIRED PAGE (404),0,direct check
+https://the-hvn.com/anti-jetlag-programme/,404,,RETIRED PAGE (404),0,direct check
+https://the-hvn.com/hyperbaric-oxygen-therapy/,404,,RETIRED PAGE (404),0,direct check
+https://the-hvn.com/pages/hyperbaric-oxygen-therapy,404,,RETIRED PAGE (404; legacy URL scheme),0,direct check
+https://the-hvn.com/pages/360-proactive-health-programme,404,,RETIRED PAGE (404; legacy URL scheme),0,direct check
