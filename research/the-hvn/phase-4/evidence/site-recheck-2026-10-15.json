@@ -1,0 +1,1007 @@
+{
+ "fetched": "2026-10-15",
+ "method": "Python urllib, sequential, 2.5 s delay, UA research-check; raw HTML not committed",
+ "pages": [
+  {
+   "path": "/",
+   "http_status": 200,
+   "bytes": 855779,
+   "title": "Wellness & Longevity Clinic London | Acupuncture | The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=0&category=196297&serviceType=0",
+    "BOOK YOUR CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [
+    "tel:020 8015 7987"
+   ],
+   "mailto": [
+    "mailto:concierge@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/contact/",
+   "http_status": 200,
+   "bytes": 628172,
+   "title": "Contact The HVN | Expert Skin & Hair Clinic Support",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:concierge@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1",
+    "5"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/book-now/",
+   "http_status": 200,
+   "bytes": 707751,
+   "title": "Book Your Skin & Hair Treatment Appointment | The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> (no params)",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0",
+    "CLICK HERE TO BOOK ONLINE -> (no params)"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:concierge@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1",
+    "2"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/book-now-acupuncture/",
+   "http_status": 200,
+   "bytes": 711604,
+   "title": "Book Now – Acupuncture | The HVN Clinic London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> (no params)",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:concierge@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1",
+    "15"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/consultations/",
+   "http_status": 200,
+   "bytes": 744411,
+   "title": "Aesthetic & Longevity Consultations in London | The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717",
+    "BOOK A CONSULTATION -> ?serviceType=0&category=196297&groupCategory=0",
+    "BOOK CONSULTATION -> ?serviceType=0&category=196299&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/discovery-consultation/",
+   "http_status": 200,
+   "bytes": 731803,
+   "title": "Discovery Consultation - The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?serviceType=0&category=194250&groupCategory=15717",
+    "BOOK YOUR CONSULTATION -> ?serviceType=0&category=196297",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/aesthetic-consultation/",
+   "http_status": 200,
+   "bytes": 750194,
+   "title": "Expert Aesthetic Consultation in London | The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?serviceType=0&category=194249&groupCategory=15717",
+    "BOOK A CONSULTATION -> ?serviceType=0&category=196297",
+    "BOOK YOUR CONSULTATION -> ?serviceType=0&category=196297",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/terms-of-service/",
+   "http_status": 200,
+   "bytes": 624396,
+   "title": "Terms of Service – The HVN Clinic London",
+   "pabau_ctas": [
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:DataProtectionOfficer@the-hvn.com",
+    "mailto:info@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/privacy-policy/",
+   "http_status": 200,
+   "bytes": 622014,
+   "title": "Privacy Policy for The HVN Clinic London",
+   "pabau_ctas": [
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:DataProtectionOfficer@the-hvn.com",
+    "mailto:info@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/cookie-policy/",
+   "http_status": 200,
+   "bytes": 593516,
+   "title": "Cookies Policy | The HVN Clinic London",
+   "pabau_ctas": [
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:DataProtectionOfficer@the-hvn.com",
+    "mailto:info@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/menopause/",
+   "http_status": 200,
+   "bytes": 740921,
+   "title": "Menopause - The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717&category=194249&serviceType=0",
+    "BOOK YOUR CONSULTATION -> ?groupCategory=15717&category=194249&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1",
+    "4"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/pcos/",
+   "http_status": 200,
+   "bytes": 741049,
+   "title": "PCOS - The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717&category=194249&serviceType=0",
+    "BOOK YOUR CONSULTATION -> ?groupCategory=15717&category=194249&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1",
+    "4"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/premenstrual-dysphoric-disorder/",
+   "http_status": 200,
+   "bytes": 740407,
+   "title": "Premenstrual Dysphoric Disorder - The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717&category=194249&serviceType=0",
+    "BOOK YOUR CONSULTATION -> ?groupCategory=15717&category=194249&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1",
+    "4"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/acupuncture-for-perimenopause-menopause/",
+   "http_status": 200,
+   "bytes": 328002,
+   "title": "Acupuncture for Perimenopause & Menopause | The HVN London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?serviceType=0&category=196302",
+    "BOOK TREATMENT -> ?groupCategory=0&category=196302&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?groupCategory=0&category=196302&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [
+    "G-102ND03TWT"
+   ],
+   "gtm_js_loader_in_static_html": true,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "tiktok",
+    "trustindex"
+   ]
+  },
+  {
+   "path": "/acupuncture-for-female-hormonal-health/",
+   "http_status": 200,
+   "bytes": 776290,
+   "title": "Acupuncture for PCOS, PMDD & Hormones | The HVN London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?serviceType=0&category=196302",
+    "BOOK TREATMENT -> ?groupCategory=0&category=196302&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?groupCategory=0&category=196302&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/womens-health-with-susan-gu/",
+   "http_status": 200,
+   "bytes": 742147,
+   "title": "Women's Health with Susan Gu - The HVN",
+   "pabau_ctas": [
+    "BOOK TREATMENT -> ?serviceType=0&category=195471&groupCategory=15726&prepaidType=package&prepaidFlow=true",
+    "BOOK TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOK YOUR TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/hormonal-balance-with-susan-gu/",
+   "http_status": 200,
+   "bytes": 743117,
+   "title": "Hormonal Balance Acupuncture with Susan Gu | The HVN London",
+   "pabau_ctas": [
+    "BOOK TREATMENT -> ?serviceType=0&category=195070&groupCategory=15757&prepaidType=package&prepaidFlow=true",
+    "BOOK TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOK YOUR TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/the-expert-team/",
+   "http_status": 200,
+   "bytes": 727518,
+   "title": "Wellness & Aesthetics Expert Team in London | The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/fertility-panel/",
+   "http_status": 200,
+   "bytes": 740187,
+   "title": "Fertility Panel | Private Blood Tests in London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/essential-wellness-profile/",
+   "http_status": 200,
+   "bytes": 302746,
+   "title": "Essential Wellness Blood Panel | The HVN London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [
+    "G-102ND03TWT"
+   ],
+   "gtm_js_loader_in_static_html": true,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "tiktok",
+    "trustindex"
+   ]
+  },
+  {
+   "path": "/complete-wellness-profile/",
+   "http_status": 200,
+   "bytes": 739027,
+   "title": "Complete Wellness Blood Profile | The HVN London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/elite-functional-health-profile/",
+   "http_status": 200,
+   "bytes": 740058,
+   "title": "Elite Functional Health Profile | Blood Tests London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/vitamins-and-minerals-profile/",
+   "http_status": 200,
+   "bytes": 735627,
+   "title": "Vitamins & Minerals Profile | Blood Tests London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/nutritional-health-profile/",
+   "http_status": 200,
+   "bytes": 739671,
+   "title": "Nutritional Health Profile | Blood Tests London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "bing",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/iv-infusions/",
+   "http_status": 200,
+   "bytes": 735179,
+   "title": "IV Infusions for Energy & Immunity",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?category=196307&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/nad-iv-infusion/",
+   "http_status": 200,
+   "bytes": 745241,
+   "title": "NAD IV Infusion - The HVN",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?category=196297&serviceType=0",
+    "BOOK TREATMENT -> ?category=196307&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?category=196307&serviceType=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/concerns/fatigue-and-burnout/",
+   "http_status": 200,
+   "bytes": 721623,
+   "title": "Fatigue & Burnout Treatment in London | The HVN Clinic",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?groupCategory=15717&viewAll=true&category=194250&serviceType=0",
+    "BOOK A CONSULTATION -> ?serviceType=0&category=196297",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/acupuncture-for-fertility-ivf/",
+   "http_status": 200,
+   "bytes": 777417,
+   "title": "Acupuncture for Fertility & IVF | The HVN London",
+   "pabau_ctas": [
+    "BOOK A CONSULTATION -> ?serviceType=0&category=196302",
+    "BOOK TREATMENT -> ?groupCategory=0&category=196302&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?groupCategory=0&category=196302&serviceType=0",
+    "BOOK YOUR TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/ivf-and-fertility-susan-gu/",
+   "http_status": 200,
+   "bytes": 741198,
+   "title": "IVF & Fertility Acupuncture with Susan Gu | The HVN London",
+   "pabau_ctas": [
+    "BOOK TREATMENT -> ?serviceType=0&category=195070&groupCategory=15757&prepaidType=package&prepaidFlow=true",
+    "BOOK TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOK YOUR TREATMENT -> ?serviceType=0&category=196302&groupCategory=0",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [],
+   "gravity_form_ids": [
+    "1"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "Trustindex",
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustindex",
+    "trustpilot"
+   ]
+  },
+  {
+   "path": "/about/",
+   "http_status": 200,
+   "bytes": 992511,
+   "title": "About The HVN | Integrative Wellness & Longevity Clinic",
+   "pabau_ctas": [
+    "BOOK YOUR CONSULTATION -> ?groupCategory=15717",
+    "BOOKINGS -> (no params)",
+    "BUY GIFT CARDS -> ?groupCategory=0&viewAll=true&category=195070&serviceType=0&prepaidType=voucher&prepaidFlow=true",
+    "Bespoke Consultations -> (no params)",
+    "Bespoke Consultations -> ?groupCategory=0"
+   ],
+   "tel_links": [],
+   "mailto": [
+    "mailto:concierge@the-hvn.com"
+   ],
+   "gravity_form_ids": [
+    "1",
+    "2"
+   ],
+   "gtm_container_ids": [
+    "GTM-N7X2W4QF"
+   ],
+   "ga4_measurement_ids_in_html": [],
+   "gtm_js_loader_in_static_html": false,
+   "consent_platform_markers": [],
+   "other_third_party_markers": [
+    "google-site-verification",
+    "pinterest",
+    "tiktok",
+    "trustpilot"
+   ]
+  }
+ ]
+}

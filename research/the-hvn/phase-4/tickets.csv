@@ -1,0 +1,12 @@
+ticket,title,recommendations,priority,affected_urls,responsible_roles,approvals_needed,status
+T01,"Replace wrong treatment block and booking route on Menopause, PCOS, PMDD","R01,R04",P1,/menopause/; /pcos/; /premenstrual-dysphoric-disorder/,Marketing lead; women's-health doctor; compliance adviser; web developer,"AP02,AP03,AP04",Ready for approval
+T02,Fix two broken site-wide menu links,R02,P1,/clinical-treatments/; /holistic-rituals/ (menu on all 212 pages),Web developer; marketing lead,AP01,Ready for approval
+T03,"Fix 17 broken in-body links, 3D-peel chain, 22 redirected links",R02,P1,"See ticket table (17 targets, 29 linking pages)",Web developer; content owner,AP01,Ready for approval
+T04,Redirect 8 retired programme/HBOT URLs; resolve orphan page,R03,P1,8 retired URLs; /functional-medicine/ → /functional-medicine-programmes-2/,CEO + Medical Director; web developer,"AP13,AP01",Blocked: decision
+T05,Link CQC badge and add verified status line,R05,P1,Site-wide badge (212 pages),Registered manager; web developer,"AP05,AP06",Blocked: CQC verification
+T06,One phone number; tap-to-call; sticky mobile bar,R06,P1,All pages showing a phone number,Operations lead; web developer,"AP18,AP01",Ready for approval
+T07,Price consistency and acupuncture formats,R10,P1,/concerns/fatigue-and-burnout/; /nad-iv-infusion/; 6 acupuncture pages,Operations lead; marketing lead,AP01,Ready for approval
+T08,Consultation fees-and-credits table,R08,P1,/consultations/; /discovery-consultation/; /aesthetic-consultation/,CEO + Finance; marketing lead,"AP12,AP01",Blocked: policy decision
+T09,"Measurement baseline (verify, then tag)","R07,R19",P1,GTM-N7X2W4QF; GA4; Search Console; Pabau,Marketing lead + agency; DPO; Operations lead,"AP07,AP08,AP14",Blocked: access
+T10,Booking-route consistency and Skin & Hair titles,"N1,R15",P1,/book-now/; /contact/; IV pages; acupuncture package pages,Operations lead; marketing lead,"AP18,AP09,AP01",Blocked: booking answers
+T11,Privacy and consent hygiene review,N2,P1,"/privacy-policy/; /cookie-policy/; forms 2,4,5,15",Data protection officer,AP14,Ready for review

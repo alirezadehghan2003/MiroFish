@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HVN Phase 4 Tracker</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column; decision banner → status summary → filterable work list → verified / blocked side panels */
+:root{
+  --bg:#f5f7f7; --surface:#ffffff; --ink:#18272c; --muted:#5b6b70; --line:#d8e0e1; --accent:#1d6a72;
+  --ok:#2f7d4f; --ok-bg:#e3f2e8; --warn:#9a6a00; --warn-bg:#fbf0d4; --bad:#a63d2f; --bad-bg:#f7e2de; --idle:#5b6b70; --idle-bg:#e8edee;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111a1d; --surface:#18252a; --ink:#e3ebec; --muted:#9aabb0; --line:#2b3a3f; --accent:#6cc2c9;
+  --ok:#7fd3a0; --ok-bg:#1d3527; --warn:#e9c46a; --warn-bg:#3a3018; --bad:#f09a8b; --bad-bg:#3d211c; --idle:#9aabb0; --idle-bg:#243237; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111a1d; --surface:#18252a; --ink:#e3ebec; --muted:#9aabb0; --line:#2b3a3f; --accent:#6cc2c9;
+  --ok:#7fd3a0; --ok-bg:#1d3527; --warn:#e9c46a; --warn-bg:#3a3018; --bad:#f09a8b; --bad-bg:#3d211c; --idle:#9aabb0; --idle-bg:#243237; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+h1,h2{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:1.9rem;letter-spacing:.01em}
+h2{font-size:1.15rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.meta{color:var(--muted);font-size:.9rem;margin:4px 0 0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.decision{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:6px;padding:16px 18px;display:grid;gap:8px}
+.decision .label{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.decision p{margin:0;font-size:1.05rem;font-weight:500}
+.decision ol{margin:0;padding-left:1.3rem;color:var(--muted);font-size:.92rem;display:grid;gap:2px}
+.summary{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;display:inline-flex;gap:8px;align-items:center}
+.chip b{font-family:var(--f-mono);font-weight:500}
+.chip[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.chip:focus-visible,.row:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.list{display:grid;gap:8px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;display:grid;grid-template-columns:62px minmax(0,1fr) 190px;gap:6px 14px;align-items:start}
+.row .id{font-family:var(--f-mono);font-weight:500;color:var(--accent)}
+.row .title{font-weight:600;min-width:0}
+.row .group{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.row dl{grid-column:2 / 4;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:2px 12px;margin:2px 0 0;font-size:.88rem}
+.row dt{color:var(--muted)}
+.row dd{margin:0;min-width:0}
+.pill{justify-self:end;font-size:.78rem;font-weight:600;border-radius:4px;padding:3px 8px;white-space:nowrap}
+.s-done{color:var(--ok);background:var(--ok-bg)}
+.s-ready{color:var(--accent);background:var(--idle-bg)}
+.s-blocked{color:var(--bad);background:var(--bad-bg)}
+.s-partial,.s-draft{color:var(--warn);background:var(--warn-bg)}
+.s-idle{color:var(--idle);background:var(--idle-bg)}
+.dep{font-family:var(--f-mono);font-size:.8rem;border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-right:4px;white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:grid;gap:10px;min-width:0}
+.panel ul{margin:0;padding-left:1.1rem;display:grid;gap:4px;font-size:.92rem}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500}
+.note{color:var(--muted);font-size:.85rem;margin:0}
+@media (max-width:640px){.row{grid-template-columns:52px minmax(0,1fr)}.pill{grid-column:2;justify-self:start}.row dl{grid-column:1 / 3}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>The HVN · Phase 4 execution tracker</h1>
+    <p class="meta">Real-world validation and implementation readiness · status as of <span class="mono" id="updated"></span> · nothing deployed, nobody contacted, no spend incurred</p>
+  </header>
+
+  <section class="decision" aria-labelledby="nd">
+    <span class="label" id="nd">Next required decision</span>
+    <p>Grant read-only access to Google Tag Manager, GA4, Search Console and Pabau reports (AP07), and ask the registered manager to complete the CQC checklist (AP05).</p>
+    <ol id="order"></ol>
+  </section>
+
+  <section aria-labelledby="st" style="display:grid;gap:10px">
+    <h2 id="st">Work items by status</h2>
+    <div class="summary" id="chips" role="group" aria-label="Filter by status"></div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <div class="cols">
+    <section class="panel" aria-labelledby="vf">
+      <h2 id="vf">Verified on 15 Oct 2026</h2>
+      <ul id="verified"></ul>
+    </section>
+    <section class="panel" aria-labelledby="bl">
+      <h2 id="bl">Inaccessible systems</h2>
+      <div class="tbl"><table><thead><tr><th>System</th><th>Result</th><th>Effect</th></tr></thead><tbody id="blocked"></tbody></table></div>
+      <p class="note">Documented, not worked around. Results for these systems are not reported.</p>
+    </section>
+  </div>
+  <p class="note">Source files: research/the-hvn/phase-4/ in the repository. Data: 09-dashboard-data.json.</p>
+</div>
+
+<script>
+const DATA = {"updated": "2026-10-15", "items": [{"id": "D1", "group": "Deliverable", "title": "First-30-day priority selection", "status": "Done", "confidence": "High", "owner": "Research team", "depends": [], "next": "Management reads and confirms the action set", "file": "01-first-30-day-priorities.md"}, {"id": "D2", "group": "Deliverable", "title": "Booking journey audit (non-transactional)", "status": "Partly blocked", "confidence": "High (website) / Unknown (booking platform)", "owner": "Research team", "depends": ["AP09"], "next": "Approve the staff booking-flow test (AP09)", "file": "02-booking-journey-audit.md"}, {"id": "D3", "group": "Deliverable", "title": "Conversion measurement specification", "status": "Done", "confidence": "Medium (current setup unverified)", "owner": "Research team", "depends": ["AP07"], "next": "Grant read-only access to GTM, GA4, Search Console and Pabau (AP07)", "file": "03-measurement-spec.md"}, {"id": "D4", "group": "Deliverable", "title": "Real-customer research kit", "status": "Done", "confidence": "—", "owner": "Research team", "depends": ["AP10", "AP11", "AP14"], "next": "Approve usability tests (AP10) and interviews (AP11)", "file": "04-research-kit/README.md"}, {"id": "D5", "group": "Deliverable", "title": "Implementation tickets T01–T11", "status": "Done", "confidence": "High", "owner": "Research team", "depends": [], "next": "Approve low-risk fixes for deployment (AP01)", "file": "05-implementation-tickets.md"}, {"id": "D6", "group": "Deliverable", "title": "Draft women's-health copy", "status": "Draft — awaiting review", "confidence": "—", "owner": "Research team", "depends": ["AP02", "AP03"], "next": "Approve clinical review (AP02) and compliance adviser (AP03)", "file": "06-draft-copy-womens-health.md"}, {"id": "D7", "group": "Deliverable", "title": "CQC verification checklist", "status": "Done", "confidence": "Unknown (status not verified)", "owner": "Research team", "depends": ["AP05"], "next": "Ask the registered manager to complete it (AP05)", "file": "07-cqc-verification-checklist.md"}, {"id": "D8", "group": "Deliverable", "title": "Management approval register", "status": "Done", "confidence": "—", "owner": "Research team", "depends": [], "next": "Record decisions in the register", "file": "08-approval-register.md"}, {"id": "T01", "group": "Ticket", "title": "Women's-health pages: wrong treatments and booking route", "status": "Blocked", "confidence": "High", "owner": "Marketing lead · women's-health doctor · compliance adviser", "depends": ["AP02", "AP03", "AP04"], "next": "Clinical + compliance sign-off, then deploy", "file": "05-implementation-tickets.md#t01--womens-health-pages-wrong-treatments-and-booking-route"}, {"id": "T02", "group": "Ticket", "title": "Fix two broken site-wide menu links", "status": "Ready for approval", "confidence": "High", "owner": "Web developer", "depends": ["AP01"], "next": "Approve deployment (AP01)", "file": "05-implementation-tickets.md"}, {"id": "T03", "group": "Ticket", "title": "Fix 17 broken links, 3D-peel chain, 22 redirected links", "status": "Ready for approval", "confidence": "High", "owner": "Web developer · content owner", "depends": ["AP01"], "next": "Approve deployment; content owner confirms targets", "file": "05-implementation-tickets.md"}, {"id": "T04", "group": "Ticket", "title": "Retired programme URLs and orphan page", "status": "Blocked", "confidence": "High", "owner": "CEO + Medical Director", "depends": ["AP13", "AP01"], "next": "Decide which programmes exist (AP13)", "file": "05-implementation-tickets.md"}, {"id": "T05", "group": "Ticket", "title": "CQC badge link and status line", "status": "Blocked", "confidence": "Unknown", "owner": "Registered manager", "depends": ["AP05", "AP06"], "next": "Complete the CQC checklist (AP05)", "file": "05-implementation-tickets.md"}, {"id": "T06", "group": "Ticket", "title": "One phone number, tap-to-call, mobile bar", "status": "Ready for approval", "confidence": "High", "owner": "Operations lead · web developer", "depends": ["AP18", "AP01"], "next": "Choose the number (AP18)", "file": "05-implementation-tickets.md"}, {"id": "T07", "group": "Ticket", "title": "Price consistency and acupuncture formats", "status": "Ready for approval", "confidence": "High", "owner": "Operations lead · marketing lead", "depends": ["AP01"], "next": "Price owner confirms NAD and course prices", "file": "05-implementation-tickets.md"}, {"id": "T08", "group": "Ticket", "title": "Consultation fees-and-credits table", "status": "Blocked", "confidence": "High", "owner": "CEO + Finance", "depends": ["AP12", "AP01"], "next": "Set the credit policy (AP12)", "file": "05-implementation-tickets.md"}, {"id": "T09", "group": "Ticket", "title": "Measurement baseline (verify, then tag)", "status": "Blocked", "confidence": "Medium", "owner": "Marketing lead · agency · DPO", "depends": ["AP07", "AP14", "AP08"], "next": "Grant read-only access (AP07)", "file": "05-implementation-tickets.md"}, {"id": "T10", "group": "Ticket", "title": "Booking-route consistency and titles", "status": "Blocked", "confidence": "High", "owner": "Operations lead", "depends": ["AP18", "AP09", "AP01"], "next": "Decide IV and package booking rules (AP18)", "file": "05-implementation-tickets.md"}, {"id": "T11", "group": "Ticket", "title": "Privacy and consent hygiene review", "status": "Ready for review", "confidence": "High (observations)", "owner": "Data protection officer", "depends": ["AP14"], "next": "DPO reviews the six observations (AP14)", "file": "05-implementation-tickets.md"}, {"id": "W1", "group": "Research", "title": "Booking-platform walk-through (no booking, no payment)", "status": "Not started", "confidence": "—", "owner": "Operations lead / analyst", "depends": ["AP09"], "next": "Approve AP09", "file": "02-booking-journey-audit.md"}, {"id": "W2", "group": "Research", "title": "Usability tests, 5–6 non-clients", "status": "Not started", "confidence": "—", "owner": "Marketing lead", "depends": ["AP10", "AP14"], "next": "Approve AP10 (£400–£600)", "file": "04-research-kit/04-usability-test-protocol.md"}, {"id": "W3", "group": "Research", "title": "Interviews, 8–12 clients and non-bookers", "status": "Not started", "confidence": "—", "owner": "Marketing lead · DPO", "depends": ["AP11", "AP14"], "next": "Approve AP11 (£400–£600)", "file": "04-research-kit/05-interview-guide.md"}, {"id": "W4", "group": "Research", "title": "CQC register check", "status": "Not started", "confidence": "Unknown", "owner": "Registered manager", "depends": ["AP05"], "next": "Approve AP05", "file": "07-cqc-verification-checklist.md"}], "blocked": [{"system": "Pabau booking platform (partner.pabau.com)", "result": "Blocked by network proxy", "effect": "Booking steps, deposits and card wording unobserved"}, {"system": "Headless browser on the-hvn.com", "result": "Refused by the site's bot protection", "effect": "No rendered desktop or mobile screens"}, {"system": "Google Tag Manager / GA4", "result": "googletagmanager.com blocked; no access", "effect": "Tag contents and GA4 status unknown"}, {"system": "cqc.org.uk", "result": "Blocked", "effect": "CQC status unknown"}, {"system": "Competitor sites, ASA", "result": "Blocked", "effect": "Competitor facts stay Unknown"}], "verified": ["30 key pages re-fetched (all HTTP 200)", "27 broken or retired URLs re-checked: all still 404", "Women's-health pages still list acne treatments; their booking buttons use the same category ID as the aesthetic consultation", "Tap-to-call only on the home page (1 of 30 sampled)", "GTM container GTM-N7X2W4QF referenced; no GA4 ID or consent banner in static HTML", "Terms: 100% charge for <24 h cancellation and no-shows; card required", "IV booking instructions conflict between /book-now/ and IV pages", "Privacy policy names a different legal entity and has a malformed cookie link"], "decision_order": ["AP07 · read-only analytics and booking-system access", "AP05 · CQC register check", "AP09 · booking-flow walk-through", "AP12 · AP13 · AP18 · credit policy, programme tier, phone and booking rules", "AP01 · deploy low-risk fixes T02, T03, T06, T07", "AP02 + AP03 → AP04 · women's-health pages", "AP14 → AP08 · privacy decisions, then tagging", "AP10 · AP11 · usability tests and interviews"]};
+const cls = s => s.startsWith("Done") ? "s-done" : s.startsWith("Ready") ? "s-ready" : s.startsWith("Blocked") ? "s-blocked" : s.startsWith("Partly") ? "s-partial" : s.startsWith("Draft") ? "s-draft" : "s-idle";
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("updated").textContent = DATA.updated;
+document.getElementById("order").innerHTML = DATA.decision_order.map(d => `<li>${esc(d)}</li>`).join("");
+document.getElementById("verified").innerHTML = DATA.verified.map(v => `<li>${esc(v)}</li>`).join("");
+document.getElementById("blocked").innerHTML = DATA.blocked.map(b => `<tr><td>${esc(b.system)}</td><td>${esc(b.result)}</td><td>${esc(b.effect)}</td></tr>`).join("");
+const statuses = ["All", ...new Set(DATA.items.map(i => i.status))];
+let filter = "All";
+try { filter = localStorage.getItem("p4filter") || "All"; if (!statuses.includes(filter)) filter = "All"; } catch (e) {}
+function render(){
+  document.getElementById("chips").innerHTML = statuses.map(s => {
+    const n = s === "All" ? DATA.items.length : DATA.items.filter(i => i.status === s).length;
+    return `<button type="button" class="chip" id="chip-${s.replace(/\W+/g,'-')}" aria-pressed="${s===filter}" data-s="${esc(s)}">${esc(s)} <b>${n}</b></button>`;
+  }).join("");
+  const rows = DATA.items.filter(i => filter === "All" || i.status === filter);
+  document.getElementById("list").innerHTML = rows.map(i => `
+    <article class="row">
+      <span class="id">${esc(i.id)}</span>
+      <div style="min-width:0"><div class="group">${esc(i.group)}</div><div class="title">${esc(i.title)}</div></div>
+      <span class="pill ${cls(i.status)}">${esc(i.status)}</span>
+      <dl>
+        <dt>Next decision</dt><dd>${esc(i.next)}</dd>
+        <dt>Depends on</dt><dd>${i.depends.length ? i.depends.map(d => `<span class="dep">${esc(d)}</span>`).join("") : "—"}</dd>
+        <dt>Responsible</dt><dd>${esc(i.owner)}</dd>
+        <dt>Evidence confidence</dt><dd>${esc(i.confidence)}</dd>
+        <dt>File</dt><dd class="mono" style="font-size:.8rem;overflow-wrap:anywhere">${esc(i.file)}</dd>
+      </dl>
+    </article>`).join("");
+  document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+    filter = b.dataset.s; try { localStorage.setItem("p4filter", filter); } catch (e) {} render();
+  }));
+}
+render();
+</script>
+
+</body>
+</html>

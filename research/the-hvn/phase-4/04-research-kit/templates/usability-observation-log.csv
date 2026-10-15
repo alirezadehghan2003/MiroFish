@@ -1,0 +1,1 @@
+participant_id,session_date,device (desktop/phone model),task_id,timestamp_mmss,"observed_action (what they did, verbatim navigation)",page_url,evidence_type (OBS),quote_verbatim (if spoken),issue_code,severity (1-4),observer_initials

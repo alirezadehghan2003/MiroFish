@@ -1,0 +1,1 @@
+participant_id,segment,interview_date,question_id,statement_verbatim_or_close_paraphrase,evidence_type (REP/OPN/HYP/OBS),specific_episode? (Y/N),prompted? (unprompted/after probe/after stimulus),theme_code,hypothesis_id (H01-H13),note_taker

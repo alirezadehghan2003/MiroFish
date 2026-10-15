@@ -1,0 +1,360 @@
+{
+ "updated": "2026-10-15",
+ "items": [
+  {
+   "id": "D1",
+   "group": "Deliverable",
+   "title": "First-30-day priority selection",
+   "status": "Done",
+   "confidence": "High",
+   "owner": "Research team",
+   "depends": [],
+   "next": "Management reads and confirms the action set",
+   "file": "01-first-30-day-priorities.md"
+  },
+  {
+   "id": "D2",
+   "group": "Deliverable",
+   "title": "Booking journey audit (non-transactional)",
+   "status": "Partly blocked",
+   "confidence": "High (website) / Unknown (booking platform)",
+   "owner": "Research team",
+   "depends": [
+    "AP09"
+   ],
+   "next": "Approve the staff booking-flow test (AP09)",
+   "file": "02-booking-journey-audit.md"
+  },
+  {
+   "id": "D3",
+   "group": "Deliverable",
+   "title": "Conversion measurement specification",
+   "status": "Done",
+   "confidence": "Medium (current setup unverified)",
+   "owner": "Research team",
+   "depends": [
+    "AP07"
+   ],
+   "next": "Grant read-only access to GTM, GA4, Search Console and Pabau (AP07)",
+   "file": "03-measurement-spec.md"
+  },
+  {
+   "id": "D4",
+   "group": "Deliverable",
+   "title": "Real-customer research kit",
+   "status": "Done",
+   "confidence": "—",
+   "owner": "Research team",
+   "depends": [
+    "AP10",
+    "AP11",
+    "AP14"
+   ],
+   "next": "Approve usability tests (AP10) and interviews (AP11)",
+   "file": "04-research-kit/README.md"
+  },
+  {
+   "id": "D5",
+   "group": "Deliverable",
+   "title": "Implementation tickets T01–T11",
+   "status": "Done",
+   "confidence": "High",
+   "owner": "Research team",
+   "depends": [],
+   "next": "Approve low-risk fixes for deployment (AP01)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "D6",
+   "group": "Deliverable",
+   "title": "Draft women's-health copy",
+   "status": "Draft — awaiting review",
+   "confidence": "—",
+   "owner": "Research team",
+   "depends": [
+    "AP02",
+    "AP03"
+   ],
+   "next": "Approve clinical review (AP02) and compliance adviser (AP03)",
+   "file": "06-draft-copy-womens-health.md"
+  },
+  {
+   "id": "D7",
+   "group": "Deliverable",
+   "title": "CQC verification checklist",
+   "status": "Done",
+   "confidence": "Unknown (status not verified)",
+   "owner": "Research team",
+   "depends": [
+    "AP05"
+   ],
+   "next": "Ask the registered manager to complete it (AP05)",
+   "file": "07-cqc-verification-checklist.md"
+  },
+  {
+   "id": "D8",
+   "group": "Deliverable",
+   "title": "Management approval register",
+   "status": "Done",
+   "confidence": "—",
+   "owner": "Research team",
+   "depends": [],
+   "next": "Record decisions in the register",
+   "file": "08-approval-register.md"
+  },
+  {
+   "id": "T01",
+   "group": "Ticket",
+   "title": "Women's-health pages: wrong treatments and booking route",
+   "status": "Blocked",
+   "confidence": "High",
+   "owner": "Marketing lead · women's-health doctor · compliance adviser",
+   "depends": [
+    "AP02",
+    "AP03",
+    "AP04"
+   ],
+   "next": "Clinical + compliance sign-off, then deploy",
+   "file": "05-implementation-tickets.md#t01--womens-health-pages-wrong-treatments-and-booking-route"
+  },
+  {
+   "id": "T02",
+   "group": "Ticket",
+   "title": "Fix two broken site-wide menu links",
+   "status": "Ready for approval",
+   "confidence": "High",
+   "owner": "Web developer",
+   "depends": [
+    "AP01"
+   ],
+   "next": "Approve deployment (AP01)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T03",
+   "group": "Ticket",
+   "title": "Fix 17 broken links, 3D-peel chain, 22 redirected links",
+   "status": "Ready for approval",
+   "confidence": "High",
+   "owner": "Web developer · content owner",
+   "depends": [
+    "AP01"
+   ],
+   "next": "Approve deployment; content owner confirms targets",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T04",
+   "group": "Ticket",
+   "title": "Retired programme URLs and orphan page",
+   "status": "Blocked",
+   "confidence": "High",
+   "owner": "CEO + Medical Director",
+   "depends": [
+    "AP13",
+    "AP01"
+   ],
+   "next": "Decide which programmes exist (AP13)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T05",
+   "group": "Ticket",
+   "title": "CQC badge link and status line",
+   "status": "Blocked",
+   "confidence": "Unknown",
+   "owner": "Registered manager",
+   "depends": [
+    "AP05",
+    "AP06"
+   ],
+   "next": "Complete the CQC checklist (AP05)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T06",
+   "group": "Ticket",
+   "title": "One phone number, tap-to-call, mobile bar",
+   "status": "Ready for approval",
+   "confidence": "High",
+   "owner": "Operations lead · web developer",
+   "depends": [
+    "AP18",
+    "AP01"
+   ],
+   "next": "Choose the number (AP18)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T07",
+   "group": "Ticket",
+   "title": "Price consistency and acupuncture formats",
+   "status": "Ready for approval",
+   "confidence": "High",
+   "owner": "Operations lead · marketing lead",
+   "depends": [
+    "AP01"
+   ],
+   "next": "Price owner confirms NAD and course prices",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T08",
+   "group": "Ticket",
+   "title": "Consultation fees-and-credits table",
+   "status": "Blocked",
+   "confidence": "High",
+   "owner": "CEO + Finance",
+   "depends": [
+    "AP12",
+    "AP01"
+   ],
+   "next": "Set the credit policy (AP12)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T09",
+   "group": "Ticket",
+   "title": "Measurement baseline (verify, then tag)",
+   "status": "Blocked",
+   "confidence": "Medium",
+   "owner": "Marketing lead · agency · DPO",
+   "depends": [
+    "AP07",
+    "AP14",
+    "AP08"
+   ],
+   "next": "Grant read-only access (AP07)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T10",
+   "group": "Ticket",
+   "title": "Booking-route consistency and titles",
+   "status": "Blocked",
+   "confidence": "High",
+   "owner": "Operations lead",
+   "depends": [
+    "AP18",
+    "AP09",
+    "AP01"
+   ],
+   "next": "Decide IV and package booking rules (AP18)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "T11",
+   "group": "Ticket",
+   "title": "Privacy and consent hygiene review",
+   "status": "Ready for review",
+   "confidence": "High (observations)",
+   "owner": "Data protection officer",
+   "depends": [
+    "AP14"
+   ],
+   "next": "DPO reviews the six observations (AP14)",
+   "file": "05-implementation-tickets.md"
+  },
+  {
+   "id": "W1",
+   "group": "Research",
+   "title": "Booking-platform walk-through (no booking, no payment)",
+   "status": "Not started",
+   "confidence": "—",
+   "owner": "Operations lead / analyst",
+   "depends": [
+    "AP09"
+   ],
+   "next": "Approve AP09",
+   "file": "02-booking-journey-audit.md"
+  },
+  {
+   "id": "W2",
+   "group": "Research",
+   "title": "Usability tests, 5–6 non-clients",
+   "status": "Not started",
+   "confidence": "—",
+   "owner": "Marketing lead",
+   "depends": [
+    "AP10",
+    "AP14"
+   ],
+   "next": "Approve AP10 (£400–£600)",
+   "file": "04-research-kit/04-usability-test-protocol.md"
+  },
+  {
+   "id": "W3",
+   "group": "Research",
+   "title": "Interviews, 8–12 clients and non-bookers",
+   "status": "Not started",
+   "confidence": "—",
+   "owner": "Marketing lead · DPO",
+   "depends": [
+    "AP11",
+    "AP14"
+   ],
+   "next": "Approve AP11 (£400–£600)",
+   "file": "04-research-kit/05-interview-guide.md"
+  },
+  {
+   "id": "W4",
+   "group": "Research",
+   "title": "CQC register check",
+   "status": "Not started",
+   "confidence": "Unknown",
+   "owner": "Registered manager",
+   "depends": [
+    "AP05"
+   ],
+   "next": "Approve AP05",
+   "file": "07-cqc-verification-checklist.md"
+  }
+ ],
+ "blocked": [
+  {
+   "system": "Pabau booking platform (partner.pabau.com)",
+   "result": "Blocked by network proxy",
+   "effect": "Booking steps, deposits and card wording unobserved"
+  },
+  {
+   "system": "Headless browser on the-hvn.com",
+   "result": "Refused by the site's bot protection",
+   "effect": "No rendered desktop or mobile screens"
+  },
+  {
+   "system": "Google Tag Manager / GA4",
+   "result": "googletagmanager.com blocked; no access",
+   "effect": "Tag contents and GA4 status unknown"
+  },
+  {
+   "system": "cqc.org.uk",
+   "result": "Blocked",
+   "effect": "CQC status unknown"
+  },
+  {
+   "system": "Competitor sites, ASA",
+   "result": "Blocked",
+   "effect": "Competitor facts stay Unknown"
+  }
+ ],
+ "verified": [
+  "30 key pages re-fetched (all HTTP 200)",
+  "27 broken or retired URLs re-checked: all still 404",
+  "Women's-health pages still list acne treatments; their booking buttons use the same category ID as the aesthetic consultation",
+  "Tap-to-call only on the home page (1 of 30 sampled)",
+  "GTM container GTM-N7X2W4QF referenced; no GA4 ID or consent banner in static HTML",
+  "Terms: 100% charge for <24 h cancellation and no-shows; card required",
+  "IV booking instructions conflict between /book-now/ and IV pages",
+  "Privacy policy names a different legal entity and has a malformed cookie link"
+ ],
+ "decision_order": [
+  "AP07 · read-only analytics and booking-system access",
+  "AP05 · CQC register check",
+  "AP09 · booking-flow walk-through",
+  "AP12 · AP13 · AP18 · credit policy, programme tier, phone and booking rules",
+  "AP01 · deploy low-risk fixes T02, T03, T06, T07",
+  "AP02 + AP03 → AP04 · women's-health pages",
+  "AP14 → AP08 · privacy decisions, then tagging",
+  "AP10 · AP11 · usability tests and interviews"
+ ]
+}

@@ -87,7 +87,7 @@ Full register (342 price points on 148 pages): `evidence/hvn-price-register-2026
 | | 8R Longevity Consultation with Levitas (up to 90 min) | £400 |
 | **Diagnostics** | Igloo blood reader | £60 |
 | | Vitamins & minerals profile / Essential wellness profile | £180 / £220 |
-| | Complete Wellness profile (50+ biomarkers) / Elite Functional Health (60+) | £450 / £550 (+£150 doctor follow-up call) |
+| | Complete Wellness profile (48 markers) / Elite Functional Health (56 markers) *(corrected 15 Oct 2026, Phase 4 re-check)* | £450 / £550 (+£150 10-minute doctor results call) |
 | | Fertility panel | £500 |
 | | HRU Health & Performance Assessment (35 min, "230 physiological markers") | £750 |
 | **IV / IM** | 14 IV infusions, 60–90 min | £275–£425 |

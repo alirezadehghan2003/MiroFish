@@ -39,7 +39,7 @@
 - **Simulation voice:** blunt, time-poor, compares to an executive health check at a private hospital.
 
 ### P2: The Longevity Optimiser
-- **Targeting evidence [LIVE-VERIFIED]:** 8R programme with Levitas (from £3,000), blood profiles with 50+ / 60+ biomarkers, HRU assessment ("230 physiological markers", £750), tiered NAD.
+- **Targeting evidence [LIVE-VERIFIED]:** 8R programme with Levitas (from £3,000), blood profiles with 48 / 56 markers (corrected in Phase 4), HRU assessment ("230 physiological markers", £750), tiered NAD.
 - **Attributes [HYPOTHESIS]:** 35–60, data-driven, follows longevity podcasts, already tracks with wearables.
 - **Decision criteria:** diagnostic depth, a published test list, clinician credentials, follow-up cadence, value per biomarker.
 - **Objections:** compares against HUM2N (monthly), The Online GP (£645–£1,400 panels), Surrenne and Hooke; sceptical of spa elements; wants an annual/membership path, which is not published.

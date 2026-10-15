@@ -1,0 +1,1 @@
+test_id,tester_role,date,device_and_browser,start_url,cta_clicked,booking_link_params,first_screen_shown (service/category name),steps_to_time_slot,fields_required_before_availability,package_or_price_shown,cancellation_charge_shown_before_card (Y/N + wording),deposit_shown (Y/N + amount),stopped_at (must be before card entry),time_seconds,issues,screenshot_refs

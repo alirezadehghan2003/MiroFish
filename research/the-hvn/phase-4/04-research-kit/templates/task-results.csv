@@ -1,0 +1,1 @@
+participant_id,task_id,completed (Y/partial/N),time_seconds,errors_count,path_taken (URLs),gave_up_at (URL),confidence_1to5 (participant),ease_1to7 (SEQ),observer_note

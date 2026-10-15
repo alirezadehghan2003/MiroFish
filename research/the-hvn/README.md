@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Subject** | The HVN, 57–63 Knightsbridge, London ([the-hvn.com](https://the-hvn.com)) |
-| **Status** | Research, 6 simulation runs (total API cost **$0.713**) and the management strategy (v2.0, 15 Oct 2026) are complete. Real-world validation and all website changes await approval. |
+| **Status** | Research, 6 simulation runs (total API cost **$0.713**) and the management strategy (v2.0, 15 Oct 2026) are complete. Phase 4 readiness pack prepared (`phase-4/`); real-world validation and all website changes await approval. |
 | **Start here** | [`strategic-intelligence-report.md`](strategic-intelligence-report.md) (v2.0) · [`executive-presentation.pptx`](executive-presentation.pptx) / [PDF](executive-presentation.pdf) · [`recommendations-register.md`](recommendations-register.md) |
 | **Simulated results** | `results/` (one folder per run, each with `analysis.md`) · totals in `results/summary-metrics.json` |
 
@@ -20,6 +20,7 @@
 | [`report-audit.md`](report-audit.md) | Audit of report v1: confirmed, corrected, downgraded and unknown statements |
 | [`charts/`](charts/) | Charts plus `build_assets.py` / `build_deck.py` (regenerate offline) |
 | [`executive-presentation-outline.md`](executive-presentation-outline.md) | v1 outline (superseded) |
+| [`phase-4/`](phase-4/) | **Phase 4 (15 Oct 2026):** 30-day priorities, booking-journey audit, measurement spec, real-customer research kit, implementation tickets, draft women's-health copy, CQC checklist, approval register, execution dashboard |
 | [`dossier.md`](dossier.md) | Integrated evidence dossier v2: brand, offer and prices, trust, market, regulation, open questions |
 | [`website-audit.md`](website-audit.md) | Live website audit: 12 prioritised findings (P1–P3) with evidence and fixes |
 | [`competitors.md`](competitors.md) | Tiered competitor matrix (direct / longevity substitutes / specialists / substitutes / partner) |

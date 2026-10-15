@@ -1,0 +1,19 @@
+event_name,type,trigger (GTM),parameters,key_event,pii_rule,depends_on,notes
+page_view,GA4 automatic,"GA4 config tag (All Pages, after consent)","page_location, page_referrer, page_type*, service_line*",No,Strip query strings that contain email/phone if any appear,Consent banner; GA4 property,*custom dimensions from the page-group lookup (page-group-mapping-draft.csv)
+booking_click,Custom,Click - Just Links; Click URL contains partner.pabau.com AND not prepaidType=voucher/package,"link_url, booking_category_id, booking_group_category_id, booking_service_type, cta_text, link_position, page_type, service_line",Yes (primary),No user data; IDs are internal Pabau codes,Lookup of Pabau category IDs → service names (from Pabau admin),Measures booking intent only; completion happens on Pabau (see funnel F4)
+package_click,Custom,Click URL contains partner.pabau.com AND prepaidType=package,"link_url, booking_category_id, cta_text, page_type, service_line",Yes,As above,—,Prepaid packages (practitioner acupuncture pages)
+gift_card_click,Custom,Click URL contains prepaidType=voucher,"link_url, link_position",No (secondary),—,—,Separate so it does not inflate booking intent
+tel_click,Custom,Click URL starts with tel:,"link_position, page_type, service_line",Yes,Do not send the dialled number as a parameter beyond the clinic's own number,R06 (tel: links site-wide),Today only the home page has a tel: link
+email_click,Custom,Click URL starts with mailto:,"link_position, page_type",Secondary,Do not capture the visitor's email,—,—
+whatsapp_click,Custom,Click URL contains wa.me or api.whatsapp.com,"link_position, page_type",Yes (if WhatsApp is promoted),—,WhatsApp link to exist,WhatsApp is mentioned on 18 pages; no wa.me link found in the 30-page sample
+generate_lead,GA4 recommended,"Gravity Forms successful submission (gform_confirmation_loaded for AJAX forms, or page_view of the confirmation page)","form_id, form_name, page_type, service_line",Yes,"NEVER send field values (names, email, phone, free text, treatment chosen)",Gravity Forms confirmation behaviour verified on staging,"Forms 2 (book now), 5 (contact), 4 (speak to an expert), 15 (acupuncture package)"
+package_enquiry_submit,Custom,Gravity Form 15 success,"form_id, sessions_option (6/10) – optional",Yes,"Do NOT send the 'Treatment' choice (e.g. fertility, menopause): health-related",Privacy review,Alternative: send form_id only
+newsletter_signup,GA4 recommended (sign_up),Gravity Form 1 success,"form_id, page_type",No (secondary),No email,—,—
+nav_click,Custom,Click on header/footer menu items,"nav_item_text, link_url",No,—,—,Shows use of the broken 'Clinical Treatments'/'Holistic Rituals' items before the fix
+page_not_found,Custom,404 template loaded (page title or body class of the WordPress 404 template),"page_location, page_referrer",No (diagnostic),—,Confirm 404 template selector,Baseline for R02
+price_block_view,Custom (optional),Element visibility of price elements (e.g. text 'Price :') ≥ 50% for 1 s,"service_slug, page_type",No,—,Stable CSS selector,Tests 'price seen → booking' (H01)
+consultation_table_view,Custom (after R08),Element visibility of the new fees-and-credits table,page_type,No,—,R08 shipped,Before/after comparison
+cqc_link_click,Custom (after R05),Click URL contains cqc.org.uk,"link_position, page_type",No,—,R05 shipped,Trust-signal engagement
+practitioner_click,Custom (after R13),Click on 'Who will treat me' profile links,"practitioner_role, page_type",No,Role only; no names needed,R13 shipped,—
+view_search_results,GA4 enhanced measurement,Site search parameter s,search_term,No,Search terms can contain health info: enable only with privacy sign-off; consider redacting,Privacy review,WordPress search form present on all pages
+scroll / file_download / outbound click,GA4 enhanced measurement,Built-in,defaults,No,—,—,"Keep outbound clicks on, but rely on booking_click for Pabau"

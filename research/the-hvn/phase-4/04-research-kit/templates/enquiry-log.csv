@@ -1,0 +1,1 @@
+enquiry_id (pseudonymous),received_datetime,channel (phone/email/form/whatsapp/walk-in),form_id (if form),source_page (if known),service_line,reason_tags (price_total;fee_credit;practitioner;cqc_safety;availability;evidence_suitability;other),first_response_datetime,outcome (booked/pending/lost),lost_reason,booked_date,logged_by
