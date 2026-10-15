@@ -1,0 +1,12 @@
+Dr Tom Reeves: country 英国 -> United Kingdom
+Margaret Hughes: country 美国 -> United States
+Helena Marsh: country 英国 -> United Kingdom
+Natalie Ford: country 英国 -> United Kingdom
+Sofia Lambert: country 英国 -> United Kingdom
+James Holloway: country 英国 -> United Kingdom
+Priya Desai: country 英国 -> United Kingdom
+Emma Clarke: country 英国 -> United Kingdom
+Claire Whitfield: country 英国 -> United Kingdom
+Daniel Okafor: country 英国 -> United Kingdom
+Isla Bennett: country 英国 -> United Kingdom
+Sofia Lambert: profession translated; Isla Bennett: profession and interested_topics translated from Chinese to English (meaning preserved)

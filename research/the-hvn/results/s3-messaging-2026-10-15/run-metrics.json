@@ -1,0 +1,93 @@
+{
+  "scenario": "S3 Website Messaging (live copy vs TEST MESSAGES)",
+  "results_folder": "results/s3-messaging-2026-10-15/",
+  "model": [
+    "claude-haiku-5-5"
+  ],
+  "graph_memory_updates": false,
+  "mirofish_native_report": "skipped (analysis built from raw logs and interviews)",
+  "project_id": "proj_322c6660e95c",
+  "graph_id": "mirofish_b5d37ea035d74d76",
+  "simulation_id": "sim_99ac420edf4f",
+  "pruned_graph_nodes": [],
+  "agent_entity_types": [
+    "Person",
+    "WellnessJournalist"
+  ],
+  "agents": {
+    "count": 12,
+    "names": [
+      "Dr Tom Reeves",
+      "Margaret Hughes",
+      "Helena Marsh",
+      "Natalie Ford",
+      "Sofia Lambert",
+      "James Holloway",
+      "Priya Desai",
+      "Emma Clarke",
+      "Claire Whitfield",
+      "Daniel Okafor",
+      "Isla Bennett",
+      "Khalid Al-Mansouri"
+    ],
+    "all_invented": true
+  },
+  "clock": "round 1 behaves as 09:00 (config hour lists shifted)",
+  "rounds": {
+    "max": 24,
+    "completed": 24
+  },
+  "activity": {
+    "seed_posts": 3,
+    "agent_posts": 1,
+    "comments": 31,
+    "replies_to_others": 29,
+    "likes_dislikes": 24,
+    "participants": 12,
+    "meaningful": 32,
+    "actions": 61,
+    "seed_post_ids": [
+      1,
+      2,
+      3
+    ],
+    "gate_passed": true,
+    "authored_items_per_agent": {
+      "Claire Whitfield": 3,
+      "Margaret Hughes": 2,
+      "Isla Bennett": 3,
+      "Khalid Al-Mansouri": 1,
+      "Natalie Ford": 5,
+      "Emma Clarke": 4,
+      "Priya Desai": 3,
+      "Sofia Lambert": 3,
+      "Dr Tom Reeves": 2,
+      "Daniel Okafor": 2,
+      "James Holloway": 3,
+      "Helena Marsh": 1
+    },
+    "authors": 12,
+    "interviews": 12
+  },
+  "requests": {
+    "total": 71,
+    "free_connectivity_checks": 1,
+    "http_200": 71,
+    "upstream_errors": 0
+  },
+  "tokens": {
+    "input": 626405,
+    "output": 78707
+  },
+  "cost_usd": {
+    "total": 0.101994,
+    "cap": 1.0,
+    "by_stage": {
+      "ontology": 0.002603,
+      "prepare": 0.02357,
+      "simulation": 0.058309,
+      "interviews": 0.017512
+    },
+    "pricing": "claude-haiku-5-5: USD 0.10 per million input tokens, USD 0.50 per million output tokens"
+  }
+}

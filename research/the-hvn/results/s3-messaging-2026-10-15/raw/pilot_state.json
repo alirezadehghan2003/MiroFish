@@ -1,0 +1,114 @@
+{
+  "preflight": "2026-10-15T21:59:11",
+  "log": [
+    {
+      "stage": "preflight",
+      "t": "2026-10-15T21:59:11",
+      "spent_usd": 0.0
+    },
+    {
+      "stage": "ontology",
+      "t": "2026-10-15T21:59:26",
+      "spent_usd": 0.002603
+    },
+    {
+      "stage": "build",
+      "t": "2026-10-15T22:01:27",
+      "spent_usd": 0.002603
+    },
+    {
+      "stage": "entities",
+      "t": "2026-10-15T22:01:59",
+      "spent_usd": 0.002603
+    },
+    {
+      "stage": "prepare",
+      "t": "2026-10-15T22:03:51",
+      "spent_usd": 0.026173
+    },
+    {
+      "stage": "postprepare",
+      "t": "2026-10-15T22:04:01",
+      "spent_usd": 0.026173
+    },
+    {
+      "stage": "clockshift",
+      "t": "2026-10-15T22:04:01",
+      "spent_usd": 0.026173
+    },
+    {
+      "stage": "start",
+      "t": "2026-10-15T22:06:08",
+      "spent_usd": 0.084482
+    },
+    {
+      "stage": "activity",
+      "t": "2026-10-15T22:06:08",
+      "spent_usd": 0.084482
+    },
+    {
+      "stage": "interview",
+      "t": "2026-10-15T22:06:16",
+      "spent_usd": 0.101994
+    },
+    {
+      "stage": "close",
+      "t": "2026-10-15T22:06:22",
+      "spent_usd": 0.101994
+    }
+  ],
+  "project_id": "proj_322c6660e95c",
+  "entity_types": [
+    "ConsumerAccount",
+    "WellnessJournalist",
+    "PhysicianExpert",
+    "InfluencerAccount",
+    "ClinicPractitioner",
+    "WellnessClinic",
+    "CompetitorClinic",
+    "RegulatoryBody",
+    "Person",
+    "Organization"
+  ],
+  "graph_id": "mirofish_b5d37ea035d74d76",
+  "chosen_types": [
+    "Person",
+    "WellnessJournalist"
+  ],
+  "agent_count": 12,
+  "simulation_id": "sim_99ac420edf4f",
+  "agent_names": [
+    "Dr Tom Reeves",
+    "Margaret Hughes",
+    "Helena Marsh",
+    "Natalie Ford",
+    "Sofia Lambert",
+    "James Holloway",
+    "Priya Desai",
+    "Emma Clarke",
+    "Claire Whitfield",
+    "Daniel Okafor",
+    "Isla Bennett",
+    "Khalid Al-Mansouri"
+  ],
+  "clock_shift_hours": 9,
+  "run_status": "loop_complete",
+  "rounds_completed": 24,
+  "activity": {
+    "seed_posts": 3,
+    "agent_posts": 1,
+    "comments": 31,
+    "replies_to_others": 29,
+    "likes_dislikes": 24,
+    "participants": 12,
+    "meaningful": 32,
+    "actions": 61,
+    "seed_post_ids": [
+      1,
+      2,
+      3
+    ],
+    "gate_passed": true
+  },
+  "interviews": 12
+}
