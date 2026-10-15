@@ -29,6 +29,22 @@ Every claim carries one label.
 3. **No customer data.** There are no reviews, surveys, CRM or analytics data in this dossier. Independent review listings (Google, Trustpilot, Treatwell) were searched for and **not found** in results. Personas (§3) are hypotheses.
 4. **No personal patient information** was sought, collected or processed. Named individuals are limited to publicly listed company leadership and clinicians, in their professional capacity.
 5. **Competitor prices** are "as published" on competitor or third-party pages, with stated caveats. They are not quotes and may be outdated or promotional.
+6. **Quoted wording** from the-hvn.com comes from search-engine summaries of indexed pages. Exact phrasing may differ from the live page.
+
+### Verification review (15 October 2026)
+
+Every claim was re-checked against its cited source before the seed document was prepared. Changes made:
+
+| Claim | Change |
+|---|---|
+| Hashnode "thehvn" page described as The HVN's own content | Ownership marked **unverified** (§2.5) |
+| Site avoids brand names for botulinum toxin | Narrowed to the page **title** only (§2.4) |
+| Name pronounced "haven" | Source marked **unconfirmed** (§1.1) |
+| UK assessments "£2,000–£8,000" | Marked **low reliability**; excluded from the seed (§4.1) |
+| Quoted brand language | Noted as search-summary wording (limitation 6) |
+| Lanserhof described as having "German medical heritage" | **Removed**: not supported by any cited source (§4.2) |
+
+Unchanged but still caveated: conflicting membership fees for Lanserhof at The Arts Club and The Lanesborough (both values shown); the IV Drip Clinic London prices (directory source); the Harrods prices (some pages ~1,350 days old).
 
 ---
 
@@ -40,7 +56,7 @@ Every claim carries one label.
 |---|---|---|
 | Wellness clinic at 57–63 Knightsbridge, London SW1X 7BF | [OFFICIAL-INDEXED] | [Contact](https://the-hvn.com/contact/), [Consultations](https://the-hvn.com/consultations/) |
 | Opened October 2023 | [THIRD-PARTY] | [CLAD news](https://www.cladglobal.com/CLADnews/architecture-design/Conscious-wellbeing-inspires-Knightsbridges-newest-urban-retreat-The-Hvn/351987), [Globetrender](https://globetrender.com/2024/08/22/the-hvn-is-a-spa-that-promotes-conscious-wellbeing/) |
-| Name pronounced "haven" | [THIRD-PARTY] | [Cosmetics Business](https://www.cosmeticsbusiness.com/former-paco-rabanne-ceo-opens-new-wellness-retreat) |
+| Name reportedly pronounced "haven" (stated in a search summary of press coverage; the specific article was not pinned down) | [THIRD-PARTY] — source unconfirmed | Press coverage listed in §1.1 |
 | Founded by Muriel Zingraff (CEO, formerly CEO of Paco Rabanne), with Jo Harris (COO) and Dr Tanja Phillips (Medical Director) | [THIRD-PARTY] | [Cosmetics Business](https://www.cosmeticsbusiness.com/former-paco-rabanne-ceo-opens-new-wellness-retreat), [CLAD](https://www.cladglobal.com/CLADnews/architecture-design/Conscious-wellbeing-inspires-Knightsbridges-newest-urban-retreat-The-Hvn/351987) |
 | Medical Director's name is spelled both "Philips" and "Phillips" across sources. The official team page uses "Phillips". | [OFFICIAL-INDEXED] / [THIRD-PARTY] | [Expert team](https://the-hvn.com/the-expert-team/) |
 | Self-description: "the home of conscious wellbeing"; a "tailored, evidence-based approach"; approach "rooted in authenticity, transparency, and conscious luxury" | [OFFICIAL-INDEXED] | [Homepage](https://the-hvn.com/), [About](https://the-hvn.com/about/) |
@@ -140,7 +156,7 @@ Every claim carries one label.
 |---|---|
 | "CQC Regulated" label in footer; CQC register confirms registration, **not yet inspected** | [OFFICIAL-INDEXED] + [REGULATOR] |
 | Named clinicians with stated credentials on the [Expert Team](https://the-hvn.com/the-expert-team/) page (e.g. GMC-registered Medical Director; an aesthetic doctor; TCM lead; osteopath) | [OFFICIAL-INDEXED] |
-| Uses "muscle-relaxing injections" rather than brand names for botulinum toxin, which is consistent with UK rules against advertising prescription-only medicines to the public | [OFFICIAL-INDEXED] + [HYPOTHESIS on intent] |
+| The injectables page is **titled** "Muscle Relaxing Injections for Wrinkles London" rather than using a brand name for botulinum toxin, which is consistent with UK rules against advertising prescription-only medicines to the public. Whether brand names appear elsewhere on the site was not checked. | [OFFICIAL-INDEXED] (title only) + [HYPOTHESIS on intent] — full-site check [NEEDS TESTING] |
 | IV pages state benefits such as boosting energy, "Anti-Ageing Support", "Enhanced Cellular Repair", and faster recovery from colds, flu or infections | [OFFICIAL-INDEXED]: [NAD](https://the-hvn.com/nad-iv-infusion/), [Immunity](https://the-hvn.com/immunity-iv-infusion/) |
 | ASA has ruled against IV-drip benefit claims lacking adequate evidence in healthy people (Dec 2023 rulings, e.g. Get A Drip, REVIV), and against advertising prescription-only IVs and injections to the public | [REGULATOR]: [ASA guidance](https://www.asa.org.uk/advice-online/healthcare-intravenous-nutritional-therapy.html), [Get A Drip ruling](https://www.asa.org.uk/rulings/get-a-drip-ltd-a19-549582-get-a-drip-ltd.html), [REVIV ruling](https://www.asa.org.uk/rulings/reviv-uk-ltd-a19-562605-reviv-uk-ltd.html) |
 | **[HYPOTHESIS]** Some IV benefit wording may carry regulatory and reputational exposure under the ASA's approach. This is not a legal determination: a qualified advertising and regulatory adviser should review it. It is also the sharpest tension with the "evidence-based" brand promise. | [HYPOTHESIS] |
@@ -153,7 +169,7 @@ Every claim carries one label.
 | Page titles target commercial local keywords, e.g. "Osteopath London", "Functional medicine clinic London", "Fatigue & Burnout Treatment in London", "Expert VISIA Skin Analysis London Clinical Hub" | [OFFICIAL-INDEXED] |
 | **Two URL schemes are indexed for similar content**, e.g. `/hvn-360-proactive-health-programme/` and `/pages/360-proactive-health-programme`; `/hvn-sleep-…-programme/` and `/pages/sleep-…-programme`; plus a `www.the-hvn.com/services/…` URL | [OFFICIAL-INDEXED] |
 | URL/title mismatch: `/fotona-5d-lift/` is titled "Fotona 4D Lift London" | [OFFICIAL-INDEXED] |
-| Off-site content: a Hashnode blog under the handle "thehvn" publishes promotional articles (e.g. acne and scarring) | [THIRD-PARTY]: [hashnode.com/@thehvn](https://hashnode.com/@thehvn) |
+| Off-site content: a Hashnode page under the handle "thehvn" carries promotional articles about The HVN (e.g. acne and scarring). **Who operates it is unverified**; it may be the clinic, an agency or an unrelated party. | [THIRD-PARTY]: [hashnode.com/@thehvn](https://hashnode.com/@thehvn) — ownership [NEEDS TESTING] |
 | **[HYPOTHESIS]** The dual URL schemes suggest a platform migration with legacy pages still indexed. This risks duplicate content, split ranking signals and stale prices. Canonical tags and redirects are needed. | [HYPOTHESIS] — [NEEDS TESTING] (crawl, canonical tags, Search Console) |
 | Core Web Vitals, mobile rendering, structured data (LocalBusiness / MedicalClinic schema), image alt text, internal linking | [NEEDS TESTING] |
 
@@ -184,7 +200,7 @@ Every claim carries one label.
   - US$224 bn in 2022 (dedicated UK report, September 2024) [THIRD-PARTY]: [GWI press release](https://globalwellnessinstitute.org/press-room/press-releases/wellness-economy-reort-uk-2024/)
   - ~US$261 bn in 2024, 5th globally [THIRD-PARTY]: [GWI 2026 rankings](https://globalwellnessinstitute.org/industry-research/2026-the-global-wellness-economy-country-rankings/)
   - These are whole-economy figures, not the London premium clinic segment. **No reliable figure for the London luxury longevity/aesthetics segment was found, and none is estimated here.**
-- **UK longevity assessment pricing:** one UK overview states clinic assessments typically range £2,000–£8,000, with London at the higher end [THIRD-PARTY, directory content]: [World Longevity Clinics](https://worldlongevityclinics.com/longevity-clinics-uk/).
+- **UK longevity assessment pricing:** a directory site states clinic assessments typically range £2,000–£8,000, with London at the higher end [THIRD-PARTY, **low reliability**: unsourced directory content, excluded from the simulation seed]: [World Longevity Clinics](https://worldlongevityclinics.com/longevity-clinics-uk/).
 - **Regulation, aesthetics:** a licensing scheme for non-surgical cosmetic procedures in England, under the Health and Care Act 2022 (s.180), is proposed but **not yet in force**; botulinum toxin and fillers are in a proposed licensed tier [REGULATOR/THIRD-PARTY]: [House of Commons Library briefing CBP-10331](https://researchbriefings.files.parliament.uk/documents/CBP-10331/CBP-10331.pdf), [Institute of Licensing](https://instituteoflicensing.org/resources/health-and-care-act-2022-section-180/). Confirm current status on gov.uk.
 - **Regulation, IV therapy advertising:** see §2.4 (ASA rulings and guidance).
 
@@ -192,7 +208,7 @@ Every claim carries one label.
 
 | Competitor | Location | Positioning (as published) | Published prices (as found; check dates) | Label |
 |---|---|---|---|---|
-| **Lanserhof at The Arts Club** | Mayfair | Medical-led members' gym and health club; German medical heritage | Membership ~£3,200/yr + £1,600 assessment fee (recent guide); older sources £6,500/yr + £1,500 joining fee; **conflicting**. 2022 price list: Integrative Consultation £390 (60 min), Functional Medicine Consultation £550 (90 min) | [THIRD-PARTY]: [2022 price list](https://www.theartsclub.co.uk/wp-content/uploads/2022/03/LATAC-Price-List-2022.pdf), [Luxury London](https://luxurylondon.co.uk/travel/uk/members-clubs-mayfair-london/) |
+| **Lanserhof at The Arts Club** | Mayfair | Medical-led members' gym and health club | Membership ~£3,200/yr + £1,600 assessment fee (recent guide); older sources £6,500/yr + £1,500 joining fee; **conflicting**. 2022 price list: Integrative Consultation £390 (60 min), Functional Medicine Consultation £550 (90 min) | [THIRD-PARTY]: [2022 price list](https://www.theartsclub.co.uk/wp-content/uploads/2022/03/LATAC-Price-List-2022.pdf), [Luxury London](https://luxurylondon.co.uk/travel/uk/members-clubs-mayfair-london/) |
 | **HUM2N** | Chelsea (35 Ixworth Place, SW3) | Physician-led longevity, IV lab, biohacking | NAD+ IV £295 (250 mg) to £450 (500 mg); HBOT from £180, 5-session packs £990–£1,170; longevity programmes £495/month + £995 one-off, or £695/month + £1,495; "SuperHUM2N" 2-hour package £795 (promotional, RRP £900) | [THIRD-PARTY: competitor site]: [NAD](https://www.hum2n.com/iv-lab/nad-repletion), [HBOT](https://www.hum2n.com/biohacking/hyperbaric-oxygen-therapy), [Longevity](https://www.hum2n.com/protocols/longevity) |
 | **The Wellness Clinic at Harrods** | Knightsbridge (closest neighbour) | Department-store medical aesthetics and wellness concessions (NYDG, Dr Marwa Ali, Elixir Clinic, REVIV) | e.g. facial consultation £195; Profhilo from £800; polynucleotides £1,500–£2,500; Elixir bespoke programmes price on request; 50% deposit typical. **Some pages ~1,350 days old.** | [THIRD-PARTY: competitor site]: [Harrods Wellness Clinic](https://www.harrods.com/en-gb/c/services/the-wellness-clinic), [Dr Marwa Ali](https://www.harrods.com/en-gb/c/services/dr-marwa-ali-at-the-wellness-clinic) |
 | **The Lanesborough Club & Spa** | Knightsbridge (Hyde Park Corner) | Luxury members' club and spa; advanced aesthetics, regenerative and longevity offering with Dr Galyna Selezneva | Regenerative facial £500 (90 min); aesthetics days £400 / £500 / £1,000; membership from ~£3,500/yr (recent guide) vs £6,600 + £2,000 joining (older, citing The Times); **conflicting** | [THIRD-PARTY: competitor site + press]: [Treatments](https://www.lanesboroughclubandspa.com/spa-treatments/), [Aesthetics day](https://www.lanesboroughclubandspa.com/spa-days/the-ultimate-indulgence/) |

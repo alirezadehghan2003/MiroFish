@@ -1,7 +1,7 @@
 # The HVN — MiroFish Simulation Plan (for approval)
 
 **Status:** Proposal only. Nothing has been uploaded, simulated or charged.
-**Seed source:** [`dossier.md`](./dossier.md)
+**Seed source:** [`seed/hvn-seed.md`](./seed/hvn-seed.md) (public-information-only, de-identified version of [`dossier.md`](./dossier.md))
 **Branch:** `claude/focused-franklin-nfz9cx` (security-hardened)
 
 ---
@@ -94,7 +94,7 @@ Total: **5 runs** (A, B1, B2, C, D).
 ## 4. Data handling
 
 - The seed is sent to **Anthropic** (LLM processing) and **Zep Cloud** (stores the knowledge graph). Both are external services; please confirm you're comfortable with that.
-- The seed contains **only public information**. For the seed version I will:
+- The seed contains **only public information**. For the seed version:
   - replace named individuals with roles (e.g. "the Medical Director"), as names aren't needed for the simulations;
   - include **no** patient or customer data;
   - keep evidence labels, so agents can see which facts are verified versus hypothetical.
@@ -105,14 +105,16 @@ Total: **5 runs** (A, B1, B2, C, D).
 ## 5. Required environment settings and approvals
 
 **You change (environment settings, cloud environment menu → Edit):**
-1. **Network access:** add `api.getzep.com` to Allowed domains. Required.
+1. **Network access:** add both to Allowed domains. Required.
+   - `api.getzep.com` (the knowledge graph);
+   - `openaipublic.blob.core.windows.net`: the simulation library's token counter (`tiktoken`) downloads its data file from there on first use. Without it, simulations crash before the first round. It's a one-off download of public data; no project data is sent.
 2. **Network secrets:** add `LLM_API_KEY` (new Anthropic key with a low spend limit) and `ZEP_API_KEY`. Please don't paste keys into chat.
 3. **Optional, for a live website audit:** allow `the-hvn.com` and the competitor domains in §4.2. That lets me load pages directly, check the booking flow up to (not including) payment, and run Lighthouse to turn several [NEEDS TESTING] items into verified findings. In this session even search-based page fetching failed DNS lookup, so live verification needs this.
 
 **I do, after your approval:**
-1. **Code change, needs approval:** small Claude compatibility fix in `backend/app/utils/openai_chat_compat.py`. Current Claude models reject the temperature values MiroFish sends. Includes unit tests; committed to the working branch.
+1. ~~Claude compatibility fix~~ **Done** (commit `35db9c8`): temperature and `response_format` omitted for Claude, JSON requested by instruction, `max_tokens` always sent; 164 tests pass.
 2. **One test API call**, costing under $0.01, to confirm the Claude connection and JSON handling.
-3. **Create the seed file** (de-identified dossier plus scenario brief).
+3. ~~Create the seed file~~ **Done**: `seed/hvn-seed.md`.
 4. **Run A** (Haiku 5.5, Reddit, ~20 agents, 10 rounds), then report the actual cost.
 5. **Continue with B1, B2, C and D** only if the cost and quality look right.
 6. Add the **[SIMULATED]** findings to dossier §5 and summarise them.
