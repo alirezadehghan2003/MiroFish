@@ -1,0 +1,383 @@
+{
+  "simulation_id": "sim_3f853ae9fca5",
+  "project_id": "proj_5a960ac368ff",
+  "graph_id": "mirofish_154f0cd212f24cad",
+  "simulation_requirement": "Simulate a Reddit-style discussion in a London luxury-wellness community comparing The HVN with Surrenne, The Lanesborough Club & Spa, the Harrods Wellness Clinic, HUM2N and specialist clinics, using only the attached briefing. The agents are the twelve invented participants in Part D; clinics, staff and regulators are background facts, not participants. The thread starts with the question in Part C.\n\nResearch questions: (1) Which provider does each participant choose for their need, and why? (2) Where does The HVN win (integration, published prices, no membership, location, hours, medical team) and lose (no rating, no membership/belonging, heritage, specialist depth)? (3) Membership vs pay-per-visit preferences by participant. (4) What would make each participant switch to The HVN?\n\nRules: competitor details come only from the briefing and may be out of date, so participants must say so where relevant; stay in character; never invent prices, offers, reviews, ratings or treatment experiences; do not disparage any provider beyond the briefing facts.",
+  "time_config": {
+    "total_simulation_hours": 72,
+    "minutes_per_round": 60,
+    "agents_per_hour_min": 1,
+    "agents_per_hour_max": 9,
+    "peak_hours": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "peak_activity_multiplier": 1.5,
+    "off_peak_hours": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "off_peak_activity_multiplier": 0.05,
+    "morning_hours": [
+      21,
+      22,
+      23
+    ],
+    "morning_activity_multiplier": 0.4,
+    "work_hours": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "work_activity_multiplier": 0.7,
+    "clock_shift_note": "hour index 0 == 09:00 (hour lists shifted by -9)"
+  },
+  "agent_configs": [
+    {
+      "agent_id": 0,
+      "entity_uuid": "f6a9a4fd-62ba-4781-a08b-ecb5c307f0f6",
+      "entity_name": "Priya Desai",
+      "entity_type": "Patient",
+      "activity_level": 0.7,
+      "posts_per_hour": 0.4,
+      "comments_per_hour": 1.8,
+      "active_hours": [
+        3,
+        4,
+        11,
+        12,
+        13,
+        14,
+        22,
+        23
+      ],
+      "response_delay_min": 2,
+      "response_delay_max": 15,
+      "sentiment_bias": 0.1,
+      "stance": "neutral",
+      "influence_weight": 0.9
+    },
+    {
+      "agent_id": 1,
+      "entity_uuid": "e54cd162-6b51-44ef-a40b-0f94806e539d",
+      "entity_name": "Claire Whitfield",
+      "entity_type": "Patient",
+      "activity_level": 0.6,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 1.2,
+      "active_hours": [
+        0,
+        1,
+        4,
+        5,
+        10,
+        11,
+        12,
+        13
+      ],
+      "response_delay_min": 3,
+      "response_delay_max": 15,
+      "sentiment_bias": 0.0,
+      "stance": "neutral",
+      "influence_weight": 1.0
+    },
+    {
+      "agent_id": 2,
+      "entity_uuid": "c29cc6e0-7ce5-4d9a-bde7-d6d50501399d",
+      "entity_name": "Daniel Okafor",
+      "entity_type": "Executive",
+      "activity_level": 0.5,
+      "posts_per_hour": 0.4,
+      "comments_per_hour": 0.9,
+      "active_hours": [
+        3,
+        4,
+        11,
+        12,
+        13,
+        21,
+        22,
+        23
+      ],
+      "response_delay_min": 5,
+      "response_delay_max": 30,
+      "sentiment_bias": -0.2,
+      "stance": "opposing",
+      "influence_weight": 1.6
+    },
+    {
+      "agent_id": 3,
+      "entity_uuid": "ac47c149-6d8a-446e-9c95-834fea36d5f1",
+      "entity_name": "Helena Marsh",
+      "entity_type": "Patient",
+      "activity_level": 0.5,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 1.0,
+      "active_hours": [
+        3,
+        4,
+        12,
+        13,
+        14,
+        22,
+        23
+      ],
+      "response_delay_min": 5,
+      "response_delay_max": 25,
+      "sentiment_bias": 0.0,
+      "stance": "neutral",
+      "influence_weight": 1.1
+    },
+    {
+      "agent_id": 4,
+      "entity_uuid": "954b8c36-a1e4-410c-b52c-3589e8d969df",
+      "entity_name": "Khalid Al-Mansouri",
+      "entity_type": "Patient",
+      "activity_level": 0.6,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 1.1,
+      "active_hours": [
+        1,
+        2,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ],
+      "response_delay_min": 4,
+      "response_delay_max": 20,
+      "sentiment_bias": 0.0,
+      "stance": "neutral",
+      "influence_weight": 0.9
+    },
+    {
+      "agent_id": 5,
+      "entity_uuid": "7dfff5e1-affa-4301-975e-94f2095ed756",
+      "entity_name": "Natalie Ford",
+      "entity_type": "Journalist",
+      "activity_level": 0.5,
+      "posts_per_hour": 0.6,
+      "comments_per_hour": 1.4,
+      "active_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "response_delay_min": 5,
+      "response_delay_max": 30,
+      "sentiment_bias": 0.0,
+      "stance": "observer",
+      "influence_weight": 2.0
+    },
+    {
+      "agent_id": 6,
+      "entity_uuid": "460ecc38-759e-4991-8d56-9326c462b2f7",
+      "entity_name": "James Holloway",
+      "entity_type": "Person",
+      "activity_level": 0.6,
+      "posts_per_hour": 0.3,
+      "comments_per_hour": 1.2,
+      "active_hours": [
+        3,
+        4,
+        10,
+        11,
+        12,
+        13,
+        22,
+        23
+      ],
+      "response_delay_min": 2,
+      "response_delay_max": 12,
+      "sentiment_bias": -0.3,
+      "stance": "opposing",
+      "influence_weight": 1.0
+    },
+    {
+      "agent_id": 7,
+      "entity_uuid": "29fe0918-4b74-4769-974d-99eb644b48af",
+      "entity_name": "Sofia Lambert",
+      "entity_type": "Patient",
+      "activity_level": 0.7,
+      "posts_per_hour": 0.4,
+      "comments_per_hour": 1.6,
+      "active_hours": [
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "response_delay_min": 1,
+      "response_delay_max": 12,
+      "sentiment_bias": -0.1,
+      "stance": "neutral",
+      "influence_weight": 0.9
+    },
+    {
+      "agent_id": 8,
+      "entity_uuid": "29aa0fd5-ef06-4ec1-a885-2d5511eaca2f",
+      "entity_name": "Emma Clarke",
+      "entity_type": "Patient",
+      "activity_level": 0.8,
+      "posts_per_hour": 0.5,
+      "comments_per_hour": 2.0,
+      "active_hours": [
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        22,
+        23
+      ],
+      "response_delay_min": 1,
+      "response_delay_max": 10,
+      "sentiment_bias": 0.2,
+      "stance": "neutral",
+      "influence_weight": 0.8
+    },
+    {
+      "agent_id": 9,
+      "entity_uuid": "1ba8345b-13d2-4cc8-bbc6-8b19b5009b33",
+      "entity_name": "Isla Bennett",
+      "entity_type": "Patient",
+      "activity_level": 0.85,
+      "posts_per_hour": 0.5,
+      "comments_per_hour": 2.2,
+      "active_hours": [
+        0,
+        3,
+        4,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "response_delay_min": 1,
+      "response_delay_max": 10,
+      "sentiment_bias": 0.4,
+      "stance": "supportive",
+      "influence_weight": 1.0
+    },
+    {
+      "agent_id": 10,
+      "entity_uuid": "0541987d-45b2-4640-919a-7faa47361eff",
+      "entity_name": "Margaret Hughes",
+      "entity_type": "Executive",
+      "activity_level": 0.4,
+      "posts_per_hour": 0.2,
+      "comments_per_hour": 0.7,
+      "active_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        11,
+        12,
+        23
+      ],
+      "response_delay_min": 10,
+      "response_delay_max": 60,
+      "sentiment_bias": -0.1,
+      "stance": "observer",
+      "influence_weight": 1.8
+    }
+  ],
+  "event_config": {
+    "initial_posts": [
+      {
+        "content": "Question for the group, as I'm writing this for a feature: if you had a serious budget and lived or stayed in Knightsbridge, would you choose The HVN, Surrenne, the Lanesborough, the Harrods Wellness Clinic or HUM2N, or a specialist? Where would you go for what you need, and why? Please say which competitor details you think might be out of date, as most of what I've found comes from press and directories.",
+        "poster_type": "Journalist",
+        "poster_agent_id": 5
+      },
+      {
+        "content": "I'd start with a specialist for the fertility side. Specialist fertility acupuncture clinics are reported from about £90 a session, and that focus matters more to me than a glossy venue. The HVN has a senior acupuncturist and acupuncture is listed from £200, so I'd want to compare the specialist depth and the cost per session before deciding. Has anyone actually been to a fertility acupuncturist in Knightsbridge?",
+        "poster_type": "Patient",
+        "poster_agent_id": 0
+      },
+      {
+        "content": "For me it's about one trusted place with a doctor. I'm burnt out and I don't want to run between five providers. The HVN looks attractive on paper: one address, a GP-trained Medical Director, published prices for consultations and blood profiles, and no membership to sign up for. What worries me is that it's CQC registered but not yet inspected, so it's unrated. I'd want to see that resolved before committing serious money.",
+        "poster_type": "Patient",
+        "poster_agent_id": 3
+      },
+      {
+        "content": "I'm a longevity optimiser, so I look at testing depth first. The HVN publishes blood profiles at £450 and £550, an HRU assessment at £750 and an 8R longevity consultation at £400, which is more transparent than most places. But the 8R Longevity Programme is only shown as 'from £3,000' and other programme prices aren't published. HUM2N's monthly programmes are reported at about £495–£695 plus a one-off fee, though that may have changed. I'm leaning HUM2N for now, but I'd switch to The HVN if it published full programme pricing and a clear inspection outcome.",
+        "poster_type": "Executive",
+        "poster_agent_id": 2
+      },
+      {
+        "content": "I'd be wary of paying for a membership at this stage. Surrenne is reported at £10,000 a year plus a £5,000 joining fee, capped at about 100 members, and the Lanesborough's reported figures conflict between roughly £4,000 and £6,000 a year. Both may be out of date, so I'd check directly. Heritage and belonging are real things, but for my family-office decisions I need regulation and reputation first. Until The HVN has an inspection rating, I'd treat it as a pay-per-visit option only for lower-risk needs.",
+        "poster_type": "Executive",
+        "poster_agent_id": 10
+      }
+    ],
+    "scheduled_events": [],
+    "hot_topics": [
+      "The HVN Knightsbridge",
+      "Surrenne membership",
+      "Lanesborough Club & Spa",
+      "Harrods Wellness Clinic",
+      "HUM2N longevity",
+      "pay-per-visit vs membership",
+      "CQC unrated",
+      "fertility acupuncture",
+      "menopause clinic",
+      "8R longevity programme",
+      "Knightsbridge luxury wellness",
+      "medical team credibility"
+    ],
+    "narrative_direction": "The thread opens with a journalist's question about where to go in Knightsbridge with a serious budget. Early replies sort participants by need: fertility, perimenopause, aesthetics, longevity, and a burnt-out executive who wants one trusted doctor. Participants repeatedly note that The HVN combines aesthetics, acupuncture, IV, blood testing and spa therapies at one address, publishes most prices and sells without a membership. They also flag its limits: it is registered with the CQC but not yet inspected and therefore unrated, it has no membership or club belonging, and it has less heritage and fewer specialist depths than rivals. Competitor figures come from press and directories and are repeatedly qualified as possibly out of date. Membership-minded participants weigh Surrenne, the Lanesborough and HUM2N against pay-per-visit preferences, and the discussion closes on what would move each person to The HVN, such as a rating after inspection, a clear programme price list, or a named specialist."
+  },
+  "twitter_config": null,
+  "reddit_config": {
+    "platform": "reddit",
+    "recency_weight": 0.3,
+    "popularity_weight": 0.4,
+    "relevance_weight": 0.3,
+    "viral_threshold": 15,
+    "echo_chamber_strength": 0.6
+  },
+  "llm_model": "claude-haiku-5-5",
+  "llm_base_url": "http://127.0.0.1:8787/v1",
+  "generated_at": "2026-10-15T22:11:42.261326",
+  "generation_reasoning": "Time Config: The simulation is set in London, so the schedule uses London local time (BST, UTC+1, in force until 25 October 2026) rather than the UTC+8 reference. The participants are London-based or Knightsbridge-visiting adults: executives, professionals, patients managing appointments, a journalist and a members'-club member. Most would read and post in the evening after work, so 19:00-22:00 is the peak, with a lighter bump at lunchtime (12:00-13:00) for quick checks on phones. Work hours (9:00-17:00) are moderate, since several participants are employed and some, such as Natalie Ford and Dr Tom Reeves, may post during the day. Late night (0:00-5:00) is near silent and 23:00 is a drop-off. The 72-hour window lets the thread run over a weekend and captures follow-up replies. Activity is kept within 1-9 agents per hour, which matches the twelve participants without flooding the thread. Fertility, menopause and wedding-timeline participants, such as Priya Desai, Claire Whitfield and Emma Clarke, are likely to return in the evening. Provider facts in the briefing may be out of date, so the schedule allows slow, considered replies rather than instant reactions. | Event Config: Poster types are limited to the available entity types: Journalist for the Part C discussion prompt, Patient for participants with specific needs (fertility, burnout, perimenopause), Executive for the longevity optimiser and the family-office gatekeeper, and Person for the existing members' club member. Posts stay within briefing facts: published HVN prices, the no-membership position, the CQC 'not yet inspected and unrated' status, and reported competitor figures that are explicitly flagged as possibly out of date. No ratings, reviews, offers or treatment experiences are invented. The initial posts cover research questions 1 to 4 by setting out provider choice, HVN strengths and weaknesses, membership versus pay-per-visit preferences, and switching conditions. | Agent Config: 11 generated | Post Assignment: 5 posts assigned"
+}

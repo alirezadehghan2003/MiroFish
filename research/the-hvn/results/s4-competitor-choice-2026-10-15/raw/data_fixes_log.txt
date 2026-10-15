@@ -1,0 +1,11 @@
+Priya Desai: country 英国 -> United Kingdom
+Claire Whitfield: country 英国 -> United Kingdom
+Helena Marsh: country 英国 -> United Kingdom
+Khalid Al-Mansouri: country 英国 -> United Kingdom
+Natalie Ford: country 英国 -> United Kingdom
+James Holloway: country 英国 -> United Kingdom
+Sofia Lambert: country 英国 -> United Kingdom
+Emma Clarke: country 英国 -> United Kingdom
+Isla Bennett: country 英国 -> United Kingdom
+Claire Whitfield: profession translated from Chinese to English
+opening post 3 ('burnt out, one trusted place with a doctor'): author Claire Whitfield -> Helena Marsh (matches persona)

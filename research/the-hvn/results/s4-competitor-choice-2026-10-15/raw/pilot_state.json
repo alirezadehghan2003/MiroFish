@@ -1,0 +1,121 @@
+{
+  "preflight": "2026-10-15T22:06:45",
+  "log": [
+    {
+      "stage": "preflight",
+      "t": "2026-10-15T22:06:45",
+      "spent_usd": 0.0
+    },
+    {
+      "stage": "ontology",
+      "t": "2026-10-15T22:07:03",
+      "spent_usd": 0.002857
+    },
+    {
+      "stage": "build",
+      "t": "2026-10-15T22:08:44",
+      "spent_usd": 0.002857
+    },
+    {
+      "stage": "entities",
+      "t": "2026-10-15T22:09:51",
+      "spent_usd": 0.002857
+    },
+    {
+      "stage": "prepare",
+      "t": "2026-10-15T22:11:44",
+      "spent_usd": 0.024127
+    },
+    {
+      "stage": "postprepare",
+      "t": "2026-10-15T22:11:55",
+      "spent_usd": 0.024127
+    },
+    {
+      "stage": "clockshift",
+      "t": "2026-10-15T22:11:56",
+      "spent_usd": 0.024127
+    },
+    {
+      "stage": "start",
+      "t": "2026-10-15T22:15:03",
+      "spent_usd": 0.100004
+    },
+    {
+      "stage": "activity",
+      "t": "2026-10-15T22:15:03",
+      "spent_usd": 0.100004
+    },
+    {
+      "stage": "interview",
+      "t": "2026-10-15T22:15:18",
+      "spent_usd": 0.115949
+    },
+    {
+      "stage": "close",
+      "t": "2026-10-15T22:15:24",
+      "spent_usd": 0.115949
+    }
+  ],
+  "project_id": "proj_5a960ac368ff",
+  "entity_types": [
+    "Patient",
+    "Physician",
+    "Journalist",
+    "Executive",
+    "Influencer",
+    "WellnessClinic",
+    "MembersClub",
+    "RegulatoryBody",
+    "Person",
+    "Organization"
+  ],
+  "graph_id": "mirofish_154f0cd212f24cad",
+  "pruned_nodes": [
+    "d",
+    "d's principal"
+  ],
+  "chosen_types": [
+    "Patient",
+    "Executive",
+    "Journalist",
+    "Person"
+  ],
+  "agent_count": 11,
+  "simulation_id": "sim_3f853ae9fca5",
+  "agent_names": [
+    "Priya Desai",
+    "Claire Whitfield",
+    "Daniel Okafor",
+    "Helena Marsh",
+    "Khalid Al-Mansouri",
+    "Natalie Ford",
+    "James Holloway",
+    "Sofia Lambert",
+    "Emma Clarke",
+    "Isla Bennett",
+    "Margaret Hughes"
+  ],
+  "clock_shift_hours": 9,
+  "run_status": "loop_complete",
+  "rounds_completed": 24,
+  "activity": {
+    "seed_posts": 5,
+    "agent_posts": 3,
+    "comments": 41,
+    "replies_to_others": 36,
+    "likes_dislikes": 54,
+    "participants": 11,
+    "meaningful": 44,
+    "actions": 104,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "gate_passed": true
+  },
+  "interviews": 11
+}
