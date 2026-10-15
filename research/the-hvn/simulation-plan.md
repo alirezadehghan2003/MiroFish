@@ -1,6 +1,7 @@
 # The HVN: MiroFish Simulation Plan v2
 
 **Status (15 Oct 2026):** Phase 0 complete. **Phase 1 S1 pilot run once on 15 Oct 2026: $0.084, 10 agents, 8 rounds**. Results, raw logs and quality issues are in `results/s1-pilot-2026-10-15/`. Low agent activity (simulated night hours) means the go/no-go gate is **"go, after fixes Q1–Q4"**; see the analysis.
+**Run 2 (corrected) on 15 Oct 2026: $0.180, 12 agents, 24 rounds from 09:00, English, 39 meaningful posts and comments, gate passed**. See `results/s1-run2-2026-10-15/analysis.md`. Recommendation for S2–S4: same procedure; skip the MiroFish auto-report unless graph memory is enabled.
 **Supersedes:** `archive/simulation-plan-v1-2026-10-15.md`.
 
 ## 1. Principles

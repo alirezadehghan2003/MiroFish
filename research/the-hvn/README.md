@@ -3,8 +3,8 @@
 | | |
 |---|---|
 | **Subject** | The HVN, 57–63 Knightsbridge, London ([the-hvn.com](https://the-hvn.com)) |
-| **Status** | Phase 0 complete. **S1 pilot run once (15 Oct 2026, $0.084)**: see `results/`. |
-| **Simulated results** | `results/s1-pilot-2026-10-15/` (thin activity; read the analysis caveats) |
+| **Status** | Phase 0 complete. S1 run twice on 15 Oct 2026: pilot ($0.084, thin) and **corrected run 2 ($0.180; 12/12 agents, 39 posts and comments)**. |
+| **Simulated results** | `results/s1-run2-2026-10-15/` (main) · `results/s1-pilot-2026-10-15/` (first pilot) |
 
 ## Contents
 | File | What it is |

@@ -34,6 +34,13 @@ curl -s --noproxy 127.0.0.1 http://127.0.0.1:8787/__budget
 4. **Check `event_config.initial_posts` authors** before `start` (they were mis-assigned between personas).
 5. **Treat the MiroFish auto-report as raw output;** verify every claim against `simulation-db-export.json`.
 
+## Run-2 procedure additions (used on 15 Oct 2026)
+- New ledger per run: `LEDGER=ledger-run2.jsonl bash start_proxy.sh` (fresh $1 cap); separate `--state` file.
+- If an agent entity type contains a real person or a placeholder, delete those nodes from **that run's own graph** before `prepare`.
+- After `prepare`: check profiles and opening posts for non-English text and persona/author mismatches, and log any data fixes.
+- `--stage clockshift --start-hour 9`, then `--stage start --max-rounds 24`.
+- `--stage activity` (gate) → `--stage interview` (environment alive) → `--stage close` → `--stage report` (only if the gate passed).
+
 ## Verified safeguards (15 Oct 2026)
 - Backend process environment: placeholder key only, the real key absent (booleans checked).
 - Direct calls to Anthropic with the backend's credentials: HTTP 401.

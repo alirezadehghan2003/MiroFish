@@ -1,0 +1,14 @@
+Sofia Lambert: country 英国 -> United Kingdom
+Natalie Ford: country 英国 -> United Kingdom
+Isla Bennett: country 英国 -> United Kingdom
+Priya Desai: country 英国 -> United Kingdom
+Claire Whitfield: country 英国 -> United Kingdom
+Khalid Al-Mansouri: country 阿联酋 -> United Arab Emirates
+Helena Marsh: country 英国 -> United Kingdom
+Daniel Okafor: country 英国 -> United Kingdom
+Margaret Hughes: country 英国 -> United Kingdom
+Emma Clarke: country 英国 -> United Kingdom
+initial post 3: author Priya Desai -> Helena Marsh
+initial post 4: author Isla Bennett -> Sofia Lambert
+initial post 1: author Sofia Lambert -> Isla Bennett
+Claire Whitfield: persona typo '価格-aware' -> 'price-aware'

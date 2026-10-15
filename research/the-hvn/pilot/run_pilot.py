@@ -29,6 +29,7 @@ by this script.
 import argparse
 import json
 import os
+import sqlite3
 import sys
 import time
 import urllib.error
@@ -48,9 +49,20 @@ AGENT_MIN, AGENT_MAX = 10, 12
 SEED = os.path.join(HERE, "..", "seeds", "s1-brand-perception.md")
 REQUIREMENT = os.path.join(HERE, "..", "seeds", "s1-simulation-requirement.txt")
 
-PAID = {"ontology", "prepare", "start", "report"}
+SIM_ROOT = os.path.join(HERE, "..", "..", "..", "backend", "uploads", "simulations")
+# Activity gate before the (most expensive) report stage.
+GATE_MIN_PARTICIPANTS = 5          # distinct agents with posts/comments/likes of their own
+GATE_MIN_MEANINGFUL = 12           # agent-authored posts+comments with >= 80 characters
+INTERVIEW_PROMPT = (
+    "In English and in your own voice, in 4-6 sentences: what do you now think The HVN in Knightsbridge is "
+    "(spa, medical clinic, longevity clinic or aesthetics clinic)? What, if anything, makes it feel trustworthy "
+    "and premium, what worries you, and what would make you book or not book? Use only what you know from the "
+    "discussion and briefing; say if you are unsure.")
+
+PAID = {"ontology", "prepare", "start", "interview", "report"}
 ZEP = {"build", "cleanup"}
-ORDER = ["preflight", "ontology", "build", "entities", "prepare", "start", "report"]
+ORDER = ["preflight", "ontology", "build", "entities", "prepare", "clockshift", "start",
+         "activity", "interview", "close", "report"]
 
 # Opener that ignores HTTP(S)_PROXY: all traffic here is to local services.
 LOCAL = urllib.request.build_opener(urllib.request.ProxyHandler({}))
@@ -144,7 +156,7 @@ def stage_ontology(st, a):
     before = (spend() or {}).get("requests", 0)
     r = multipart("/api/graph/ontology/generate",
                   {"simulation_requirement": open(REQUIREMENT).read().strip(),
-                   "project_name": "HVN S1 Brand Perception Pilot"},
+                   "project_name": a.project_name},
                   [("files", SEED)])
     d = r["data"]
     st["project_id"] = d["project_id"]
@@ -214,31 +226,124 @@ def unsafe(b):
     return None
 
 
+def sim_dir(st):
+    return os.path.join(SIM_ROOT, st["simulation_id"])
+
+
+def activity(st):
+    """Independent agent activity from the OASIS database (read-only)."""
+    db = os.path.join(sim_dir(st), "reddit_simulation.db")
+    if not os.path.exists(db):
+        return {}
+    cfg = json.load(open(os.path.join(sim_dir(st), "simulation_config.json")))
+    n_seed = len((cfg.get("event_config") or {}).get("initial_posts") or [])
+    c = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+    posts = c.execute("select post_id, user_id, content from post order by post_id").fetchall()
+    agent_posts = posts[n_seed:]
+    comments = c.execute("select c.user_id, c.content, p.user_id from comment c "
+                         "left join post p on p.post_id = c.post_id").fetchall()
+    acts = c.execute("select user_id, action from trace where action not in "
+                     "('sign_up','refresh','do_nothing','interview')").fetchall()
+    c.close()
+    seed_ids = {pid for pid, _, _ in posts[:n_seed]}
+    participants = {u for u, a_ in acts} - set()
+    meaningful = [x for x in agent_posts if len(x[2] or "") >= 80] + [x for x in comments if len(x[1] or "") >= 80]
+    return {"seed_posts": n_seed, "agent_posts": len(agent_posts), "comments": len(comments),
+            "replies_to_others": sum(1 for u, _, pu in comments if pu is not None and pu != u),
+            "likes_dislikes": sum(1 for _, a_ in acts if "like" in a_),
+            "participants": len({u for u, a_ in acts if a_ != "create_post"} | {u for _, u, _ in agent_posts}),
+            "meaningful": len(meaningful), "actions": len(acts), "seed_post_ids": sorted(seed_ids)}
+
+
+def loop_done(st):
+    log = os.path.join(sim_dir(st), "simulation.log")
+    return os.path.exists(log) and "模拟循环完成" in open(log, errors="ignore").read()
+
+
+def stage_clockshift(st, a):
+    """Free data edit: make hour index 0 behave as --start-hour by shifting every hour-based setting."""
+    if not a.start_hour:
+        print("[clockshift] start hour 0: nothing to do")
+        return
+    path = os.path.join(sim_dir(st), "simulation_config.json")
+    cfg = json.load(open(path))
+    json.dump(cfg, open(path + ".before-clockshift.json", "w"), ensure_ascii=False, indent=2)
+    shift = lambda hs: sorted({(h - a.start_hour) % 24 for h in hs})
+    tc = cfg["time_config"]
+    for k in ("peak_hours", "off_peak_hours", "morning_hours", "work_hours"):
+        if isinstance(tc.get(k), list):
+            tc[k] = shift(tc[k])
+    for ag in cfg.get("agent_configs", []):
+        if isinstance(ag.get("active_hours"), list):
+            ag["active_hours"] = shift(ag["active_hours"])
+    tc["clock_shift_note"] = f"hour index 0 == {a.start_hour:02d}:00 (hour lists shifted by -{a.start_hour})"
+    json.dump(cfg, open(path, "w"), ensure_ascii=False, indent=2)
+    st["clock_shift_hours"] = a.start_hour
+    print(f"[clockshift] round 1 now behaves as {a.start_hour:02d}:00; backup saved next to config")
+
+
 def stage_start(st, a):
-    print(f"[start] PAID: Reddit, max_rounds={MAX_ROUNDS}, graph memory updates OFF")
+    print(f"[start] PAID: Reddit, max_rounds={a.max_rounds}, graph memory updates OFF")
     call("POST", "/api/simulation/start", {"simulation_id": st["simulation_id"], "platform": "reddit",
-                                           "max_rounds": MAX_ROUNDS, "enable_graph_memory_update": False})
+                                           "max_rounds": a.max_rounds, "enable_graph_memory_update": False})
     while True:
-        d = call("GET", f"/api/simulation/{st['simulation_id']}/run-status")["data"]
         b = spend()
-        print(f"  round {d.get('reddit_current_round', d.get('current_round'))}/{d.get('total_rounds')} "
-              f"{d.get('runner_status')} | spent ${(b or {}).get('spent_usd', '?')} "
-              f"| upstream errors {(b or {}).get('upstream_errors', '?')}", flush=True)
+        act = activity(st)
+        print(f"  {time.strftime('%H:%M:%S')} spent ${(b or {}).get('spent_usd', '?')} | errors "
+              f"{(b or {}).get('upstream_errors', '?')} | agent posts {act.get('agent_posts')} comments "
+              f"{act.get('comments')} likes {act.get('likes_dislikes')} participants {act.get('participants')}",
+              flush=True)
         reason = unsafe(b)
         if reason:
             call("POST", "/api/simulation/stop", {"simulation_id": st["simulation_id"]})
             st["run_status"] = "stopped_by_guard: " + reason
             save(a.state, st)
             sys.exit(f"  GUARD STOP: {reason}; simulation stopped")
-        if d.get("runner_status") in ("completed", "stopped", "failed"):
-            st["run_status"] = d.get("runner_status")
-            st["rounds_completed"] = d.get("reddit_current_round", d.get("current_round"))
+        if loop_done(st):
+            st["run_status"] = "loop_complete"
+            st["rounds_completed"] = a.max_rounds
             break
         time.sleep(15)
 
 
+def stage_activity(st, a):
+    act = activity(st)
+    act["gate_passed"] = act.get("participants", 0) >= GATE_MIN_PARTICIPANTS and \
+        act.get("meaningful", 0) >= GATE_MIN_MEANINGFUL
+    st["activity"] = act
+    print("[activity]", json.dumps(act))
+    print(f"  gate (>= {GATE_MIN_PARTICIPANTS} participants and >= {GATE_MIN_MEANINGFUL} meaningful items): "
+          f"{'PASSED' if act['gate_passed'] else 'FAILED - report will be skipped'}")
+
+
+def stage_interview(st, a):
+    print("[interview] PAID: one English question to every agent (environment must be alive)")
+    r = call("POST", "/api/simulation/interview/all", {"simulation_id": st["simulation_id"],
+                                                       "prompt": INTERVIEW_PROMPT, "platform": "reddit",
+                                                       "timeout": 300}, timeout=400)
+    out = os.path.join(sim_dir(st), "interviews.json")
+    json.dump(r, open(out, "w"), ensure_ascii=False, indent=2)
+    res = ((r.get("data") or {}).get("result") or {}).get("results") or {}
+    st["interviews"] = len(res)
+    print(f"  {len(res)} interview answers saved to {out}")
+
+
+def stage_close(st, a):
+    print("[close] closing the OASIS environment (no LLM calls)")
+    call("POST", "/api/simulation/close-env", {"simulation_id": st["simulation_id"]})
+    for _ in range(36):
+        d = call("GET", f"/api/simulation/{st['simulation_id']}/run-status")["data"]
+        if d.get("runner_status") in ("completed", "stopped", "failed"):
+            print("  runner status:", d.get("runner_status"))
+            return
+        time.sleep(5)
+    sys.exit("  environment did not reach a terminal status")
+
+
 def stage_report(st, a):
     print("[report] PAID: MiroFish report agent")
+    if not (st.get("activity") or {}).get("gate_passed"):
+        sys.exit("  GATE STOP: too little discussion; report skipped (run --stage activity first)")
     b = spend()
     if not b or b["spent_usd"] >= SKIP_REPORT_AT_USD:
         sys.exit(f"  GUARD STOP: report skipped (proxy {'down' if not b else 'spend $%s' % b['spent_usd']})")
@@ -262,6 +367,9 @@ def main():
     p.add_argument("--confirm-zep", action="store_true", help="allow stages that send/delete data in Zep")
     p.add_argument("--entity-types", help="comma-separated entity types to turn into agents")
     p.add_argument("--state", default=os.path.join(HERE, "pilot_state.json"))
+    p.add_argument("--max-rounds", type=int, default=MAX_ROUNDS)
+    p.add_argument("--start-hour", type=int, default=0, help="simulated clock hour for round 1 (clockshift)")
+    p.add_argument("--project-name", default="HVN S1 Brand Perception Pilot")
     a = p.parse_args()
     stages = ORDER if a.stage == "all" else [a.stage]
     st = load(a.state)

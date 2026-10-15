@@ -1,0 +1,102 @@
+{
+  "preflight": "2026-10-15T20:21:05",
+  "log": [
+    {
+      "stage": "preflight",
+      "t": "2026-10-15T20:21:05",
+      "spent_usd": 0.0
+    },
+    {
+      "stage": "ontology",
+      "t": "2026-10-15T20:21:25",
+      "spent_usd": 0.003211
+    },
+    {
+      "stage": "build",
+      "t": "2026-10-15T20:24:25",
+      "spent_usd": 0.003211
+    },
+    {
+      "stage": "entities",
+      "t": "2026-10-15T20:25:12",
+      "spent_usd": 0.003211
+    },
+    {
+      "stage": "prepare",
+      "t": "2026-10-15T20:27:07",
+      "spent_usd": 0.02855
+    },
+    {
+      "stage": "clockshift",
+      "t": "2026-10-15T20:27:41",
+      "spent_usd": 0.02855
+    },
+    {
+      "stage": "start",
+      "t": "2026-10-15T20:31:19",
+      "spent_usd": 0.114517
+    },
+    {
+      "stage": "activity",
+      "t": "2026-10-15T20:31:29",
+      "spent_usd": 0.114517
+    },
+    {
+      "stage": "interview",
+      "t": "2026-10-15T20:31:54",
+      "spent_usd": 0.131658
+    },
+    {
+      "stage": "close",
+      "t": "2026-10-15T20:32:10",
+      "spent_usd": 0.131658
+    },
+    {
+      "stage": "report",
+      "t": "2026-10-15T20:35:55",
+      "spent_usd": 0.179606
+    }
+  ],
+  "project_id": "proj_e4b02162729d",
+  "entity_types": [
+    "AffluentConsumer",
+    "ClinicalPractitioner",
+    "WellnessJournalist",
+    "ConciergeAdvisor",
+    "WellnessClinic",
+    "LuxuryMembersClub",
+    "RegulatoryBody",
+    "Person",
+    "Organization"
+  ],
+  "graph_id": "mirofish_912dfac77fc440b5",
+  "chosen_types": [
+    "Person",
+    "AffluentConsumer",
+    "WellnessJournalist"
+  ],
+  "agent_count": 12,
+  "simulation_id": "sim_00365ba43a31",
+  "clock_shift_hours": 9,
+  "run_status": "loop_complete",
+  "rounds_completed": 24,
+  "activity": {
+    "seed_posts": 4,
+    "agent_posts": 2,
+    "comments": 37,
+    "replies_to_others": 33,
+    "likes_dislikes": 38,
+    "participants": 12,
+    "meaningful": 39,
+    "actions": 82,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "gate_passed": true
+  },
+  "interviews": 12,
+  "report_id": "report_9677a969d61f"
+}

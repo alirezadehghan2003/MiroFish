@@ -1,0 +1,122 @@
+{
+  "run": "S1 Brand Perception, run 2 (corrected)",
+  "date": "2026-10-15",
+  "platform": "reddit (OASIS via MiroFish)",
+  "model": [
+    "claude-haiku-5-5"
+  ],
+  "graph_memory_updates": false,
+  "locale": "en (Accept-Language) + 11 country fields and 1 persona typo corrected to English",
+  "project_id": "proj_e4b02162729d",
+  "graph_id": "mirofish_912dfac77fc440b5",
+  "simulation_id": "sim_00365ba43a31",
+  "report_id": "report_9677a969d61f",
+  "pilot1_untouched": {
+    "graph_id": "mirofish_e60ebfc8501b4e0c",
+    "results": "results/s1-pilot-2026-10-15/"
+  },
+  "agents": {
+    "count": 12,
+    "all_invented": true,
+    "names": [
+      "Sofia Lambert",
+      "Natalie Ford",
+      "Isla Bennett",
+      "Priya Desai",
+      "Claire Whitfield",
+      "Khalid Al-Mansouri",
+      "James Holloway",
+      "Helena Marsh",
+      "Daniel Okafor",
+      "Margaret Hughes",
+      "Dr Tom Reeves",
+      "Emma Clarke"
+    ],
+    "entity_types": [
+      "Person",
+      "AffluentConsumer",
+      "WellnessJournalist"
+    ],
+    "graph_nodes_removed_before_prepare": [
+      "Former chief executive of a global fashion and fragrance house (real person's role)",
+      "London GP (generic duplicate)",
+      "WellnessJournalist (empty placeholder)"
+    ]
+  },
+  "clock": {
+    "start_hour_equivalent": "09:00",
+    "method": "hour lists in simulation_config shifted by -9 (OASIS has no start-hour option); OASIS log prints the unshifted index"
+  },
+  "rounds": {
+    "max": 24,
+    "completed": 24,
+    "evidence": "simulation.log: truncated 72 -> 24, loop complete in 180.9 s"
+  },
+  "activity": {
+    "seed_posts": 4,
+    "agent_posts": 2,
+    "comments": 37,
+    "replies_to_others": 33,
+    "likes_dislikes": 38,
+    "participants": 12,
+    "meaningful": 39,
+    "actions": 82,
+    "seed_post_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "gate_passed": true,
+    "authored_items_per_agent": {
+      "James Holloway": 5,
+      "Sofia Lambert": 5,
+      "Daniel Okafor": 5,
+      "Margaret Hughes": 4,
+      "Natalie Ford": 4,
+      "Khalid Al-Mansouri": 3,
+      "Isla Bennett": 3,
+      "Dr Tom Reeves": 3,
+      "Claire Whitfield": 2,
+      "Helena Marsh": 2,
+      "Priya Desai": 2,
+      "Emma Clarke": 1
+    },
+    "authors_of_posts_or_comments": 12,
+    "near_duplicates": 0,
+    "interviews": 12
+  },
+  "requests": {
+    "total": 126,
+    "free_connectivity_check": 1,
+    "http_200": 126,
+    "refused_by_proxy": 0,
+    "upstream_errors": 0
+  },
+  "tokens": {
+    "input": 1171411,
+    "output": 124929,
+    "max_input_per_request": 22970
+  },
+  "cost_usd": {
+    "total": 0.179606,
+    "cap": 1.0,
+    "by_stage": {
+      "ontology": 0.003211,
+      "prepare_profiles_config": 0.025339,
+      "simulation_24_rounds": 0.085967,
+      "interviews_12": 0.017141,
+      "mirofish_report": 0.047948
+    },
+    "pricing": "claude-haiku-5-5: USD 0.10 per million input tokens, USD 0.50 per million output tokens (prompts up to 100K tokens)"
+  },
+  "safeguards_verified_before_paid_calls": [
+    "backend env: placeholder key only, real key absent (booleans)",
+    "direct Anthropic call with backend credential: HTTP 401",
+    "proxy upstream via free count_tokens: 200",
+    "Sonnet request refused by proxy",
+    "routing verified on first paid call",
+    "no .env override",
+    "new ledger: fresh USD 1.00 cap"
+  ]
+}
