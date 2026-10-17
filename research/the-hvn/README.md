@@ -20,6 +20,7 @@
 | [`report-audit.md`](report-audit.md) | Audit of report v1: confirmed, corrected, downgraded and unknown statements |
 | [`charts/`](charts/) | Charts plus `build_assets.py` / `build_deck.py` (regenerate offline) |
 | [`executive-presentation-outline.md`](executive-presentation-outline.md) | v1 outline (superseded) |
+| [`agent-simulation-narrative-fa.md`](agent-simulation-narrative-fa.md) | Persian descriptive narrative of all MiroFish simulations: what each fictional agent said, asked and discussed (no recommendations) |
 | [`phase-4/`](phase-4/) | **Phase 4 (15 Oct 2026):** 30-day priorities, booking-journey audit, measurement spec, real-customer research kit, implementation tickets, draft women's-health copy, CQC checklist, approval register, execution dashboard |
 | [`dossier.md`](dossier.md) | Integrated evidence dossier v2: brand, offer and prices, trust, market, regulation, open questions |
 | [`website-audit.md`](website-audit.md) | Live website audit: 12 prioritised findings (P1–P3) with evidence and fixes |
